@@ -13,6 +13,7 @@ using NLog.Config;
 using NLog.Targets;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using PaletteBot.Common;
 
 namespace PaletteBot
 {
