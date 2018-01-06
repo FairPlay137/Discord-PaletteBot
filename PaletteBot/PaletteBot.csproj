@@ -154,9 +154,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modules\Admin\AdminModule.cs" />
+    <Compile Include="Modules\Counting\CountingModule.cs" />
+    <Compile Include="Modules\CustomReactions\CustomReactionsModule.cs" />
     <Compile Include="Modules\Fun\FunModule.cs" />
     <Compile Include="Modules\Palette\PaletteModule.cs" />
     <Compile Include="Modules\Help\HelpModule.cs" />
+    <Compile Include="Modules\Twitch\TwitchModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\BotStrings.Designer.cs">
@@ -182,11 +185,7 @@
       <LastGenOutput>BotStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modules\Counting\" />
-    <Folder Include="Modules\CustomReactions\" />
-    <Folder Include="Modules\Twitch\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
