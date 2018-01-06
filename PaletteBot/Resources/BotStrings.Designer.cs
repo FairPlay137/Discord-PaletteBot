@@ -70,6 +70,24 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Okay, I will now be playing &quot;{0}&quot;..
+        /// </summary>
+        public static string Admin_setGame {
+            get {
+                return ResourceManager.GetString("Admin_setGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully updated status..
+        /// </summary>
+        public static string Admin_setStatus {
+            get {
+                return ResourceManager.GetString("Admin_setStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shutting down....
         /// </summary>
         public static string Admin_shutdown {
@@ -471,6 +489,15 @@ namespace PaletteBot.Resources {
         public static string err_invalidHex {
             get {
                 return ResourceManager.GetString("err_invalidHex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have specified an invalid status. Valid types are: &quot;online&quot;, &quot;idle&quot;, &quot;dnd&quot;, and &quot;invisible&quot;.
+        /// </summary>
+        public static string err_invalidStatus {
+            get {
+                return ResourceManager.GetString("err_invalidStatus", resourceCulture);
             }
         }
         

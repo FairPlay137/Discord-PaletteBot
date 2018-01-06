@@ -376,4 +376,13 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Fun_8ball_question" xml:space="preserve">
     <value>:question: Question:</value>
   </data>
+  <data name="Admin_setGame" xml:space="preserve">
+    <value>Okay, I will now be playing "{0}".</value>
+  </data>
+  <data name="Admin_setStatus" xml:space="preserve">
+    <value>Successfully updated status.</value>
+  </data>
+  <data name="err_invalidStatus" xml:space="preserve">
+    <value>You have specified an invalid status. Valid types are: "online", "idle", "dnd", and "invisible"</value>
+  </data>
 </root>
