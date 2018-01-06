@@ -164,7 +164,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BotStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="StringResourceHandler.cs" />
+    <Compile Include="Common\StringResourceHandler.cs" />
     <Compile Include="Modules\Utils\UtilsModule.cs" />
   </ItemGroup>
   <ItemGroup>

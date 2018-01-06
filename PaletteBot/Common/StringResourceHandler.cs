@@ -11,7 +11,7 @@ using NLog;
 /*                 String fetching routines                 */
 /************************************************************/
 
-namespace PaletteBot
+namespace PaletteBot.Common
 {
     class StringResourceHandler
     {

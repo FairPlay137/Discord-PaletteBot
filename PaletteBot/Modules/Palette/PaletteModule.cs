@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Discord.Commands;
 using System.Diagnostics;
+using PaletteBot.Common;
 
 namespace PaletteBot
 {
