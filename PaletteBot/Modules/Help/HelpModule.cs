@@ -3,7 +3,7 @@ using Discord;
 using Discord.Commands;
 using PaletteBot.Common;
 
-namespace PaletteBot
+namespace PaletteBot.Modules
 {
     public class Help : ModuleBase<SocketCommandContext>
     {

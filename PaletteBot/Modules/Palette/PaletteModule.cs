@@ -7,7 +7,7 @@ using Discord.Commands;
 using System.Diagnostics;
 using PaletteBot.Common;
 
-namespace PaletteBot
+namespace PaletteBot.Modules
 {
     public class Palette : ModuleBase<SocketCommandContext>
     {

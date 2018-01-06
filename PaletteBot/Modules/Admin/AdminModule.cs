@@ -6,7 +6,7 @@ using System.Reflection;
 using NLog;
 using PaletteBot.Common;
 
-namespace PaletteBot
+namespace PaletteBot.Modules
 {
     public class Admin : ModuleBase<SocketCommandContext>
     {
