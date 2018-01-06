@@ -308,7 +308,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>If you encounter an issue, please tell whoever the bot owner is.</value>
   </data>
   <data name="Help_DMedHelp" xml:space="preserve">
-    <value>:mailbox: **Check your DMs!** I have sent documentation over.</value>
+    <value>:mailbox: **Check your DMs!** I have sent some useful tips over.</value>
   </data>
   <data name="Counting_lastPlayerStanding" xml:space="preserve">
     <value>It appears we have a winner! {0} has won this round! Good job everyone for managing to count to {1}! Stay tuned for the next round!</value>
@@ -371,10 +371,10 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>I couldn't quite get that. Type `{0}help` for help.</value>
   </data>
   <data name="Fun_8ball_answer" xml:space="preserve">
-    <value>:8ball: 8-Ball's response:</value>
+    <value>8-Ball's response:</value>
   </data>
   <data name="Fun_8ball_question" xml:space="preserve">
-    <value>:question: Question:</value>
+    <value>Question:</value>
   </data>
   <data name="Admin_setGame" xml:space="preserve">
     <value>Okay, I will now be playing "{0}".</value>

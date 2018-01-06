@@ -664,7 +664,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to :8ball: 8-Ball&apos;s response:.
+        ///   Looks up a localized string similar to 8-Ball&apos;s response:.
         /// </summary>
         public static string Fun_8ball_answer {
             get {
@@ -673,7 +673,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to :question: Question:.
+        ///   Looks up a localized string similar to Question:.
         /// </summary>
         public static string Fun_8ball_question {
             get {
@@ -733,7 +733,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to :mailbox: **Check your DMs!** I have sent documentation over..
+        ///   Looks up a localized string similar to :mailbox: **Check your DMs!** I have sent some useful tips over..
         /// </summary>
         public static string Help_DMedHelp {
             get {

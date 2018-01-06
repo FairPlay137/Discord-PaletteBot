@@ -18,8 +18,8 @@ namespace PaletteBot.Modules
             Random random = new Random();
             string answer = EightBallResponses[random.Next(EightBallResponses.Length)];
             await ReplyAsync("", false, new EmbedBuilder()
-                .AddField(StringResourceHandler.GetTextStatic("Fun", "8ball_question"), question)
-                .AddField(StringResourceHandler.GetTextStatic("Fun", "8ball_answer"), answer)
+                .AddField($":question: {StringResourceHandler.GetTextStatic("Fun", "8ball_question")}", question)
+                .AddField($":8ball: {StringResourceHandler.GetTextStatic("Fun", "8ball_answer")}", answer)
                 .Build());
         }
     }
