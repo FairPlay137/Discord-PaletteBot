@@ -385,4 +385,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="err_invalidStatus" xml:space="preserve">
     <value>You have specified an invalid status. Valid types are: "online", "idle", "dnd", and "invisible"</value>
   </data>
+  <data name="Help_commandListEmpty" xml:space="preserve">
+    <value>There seems to be no commands in this module.</value>
+  </data>
 </root>

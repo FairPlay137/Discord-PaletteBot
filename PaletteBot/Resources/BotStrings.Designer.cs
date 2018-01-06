@@ -682,6 +682,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There seems to be no commands in this module..
+        /// </summary>
+        public static string Help_commandListEmpty {
+            get {
+                return ResourceManager.GetString("Help_commandListEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 📃 Commands in module &quot;{0}&quot;:.
         /// </summary>
         public static string Help_commands_header {

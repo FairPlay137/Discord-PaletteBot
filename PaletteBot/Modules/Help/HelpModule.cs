@@ -44,8 +44,15 @@ namespace PaletteBot.Modules
             else
             {
                 var commandseb = new EmbedBuilder().WithTitle(StringResourceHandler.GetTextStatic("Help", "commands_header",targetmodule.Name)).WithColor(Color.Orange);
-                foreach (var command in targetmodule.Commands)
-                    commandseb.AddField("» " + Program.prefix + command.Name, command.Summary);
+                if (targetmodule.Commands.Count > 0)
+                {
+                    foreach (var command in targetmodule.Commands)
+                        commandseb.AddField("» " + Program.prefix + command.Name, command.Summary);
+                }
+                else
+                {
+                    commandseb.WithDescription(StringResourceHandler.GetTextStatic("Help", "commandListEmpty"));
+                }
                 await ReplyAsync(Context.User.Mention, false, commandseb.Build());
             }
         }
