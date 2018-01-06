@@ -88,7 +88,7 @@ namespace PaletteBot
 
             _client.Log += Log;
 
-            _log.Info("PaletteBot is starting up...");
+            _log.Info($"PaletteBot v{GetType().Assembly.GetName().Version} is starting up...");
 
             var json = "";
             try
