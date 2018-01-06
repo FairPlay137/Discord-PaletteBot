@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Admin_restart" xml:space="preserve">
+    <value>Restarting... This should take a few seconds.</value>
+  </data>
+  <data name="Admin_shutdown" xml:space="preserve">
+    <value>Shutting down...</value>
+  </data>
+  <data name="Core_color" xml:space="preserve">
+    <value>***Poof!*** You're **{0}** now.</value>
+  </data>
+  <data name="Core_customcolor" xml:space="preserve">
+    <value>***Poof!*** You have been assigned the custom color hex **{0}**!</value>
+  </data>
+  <data name="Core_guildJoinText" xml:space="preserve">
+    <value>Hi there! Thank you for inviting PaletteBot to your server! {0}, please type `{1}setup` to set up the bot.</value>
+  </data>
+  <data name="Core_setup" xml:space="preserve">
+    <value>:arrow_right: Continuing in DMs...</value>
+  </data>
+  <data name="Core_setup_complete" xml:space="preserve">
+    <value>Alright, setup is complete. PaletteBot is ready for use!</value>
+  </data>
+  <data name="Core_setup_syntaxerror" xml:space="preserve">
+    <value>I couldn't quite understand that. Try again.</value>
+  </data>
+  <data name="Core_setup_step1" xml:space="preserve">
+    <value>First off, do you want me to create color roles for you in "{0}"?</value>
+  </data>
+  <data name="Core_setup_step1_responseno" xml:space="preserve">
+    <value>Alright then. I won't create role colors.</value>
+  </data>
+  <data name="Core_setup_step1_responseyes" xml:space="preserve">
+    <value>Okay! I will create color roles for you! The list of colors I will add is as follows:</value>
+  </data>
+  <data name="Core_setup_step2" xml:space="preserve">
+    <value>Next, which roles would you like to be in the color list? (Type in the IDs of the roles, seperated by spaces)</value>
+  </data>
+  <data name="Core_setup_step2_invalidids" xml:space="preserve">
+    <value>Hmm...seems like I can't find the role with ID {0} in this server... Try again, perhaps?</value>
+  </data>
+  <data name="Core_setup_step3" xml:space="preserve">
+    <value>Finally, do you wish to enable custom color assignment on "{0}"?</value>
+  </data>
+  <data name="Core_setup_step3_responseno" xml:space="preserve">
+    <value>Alright, custom colors are disabled for this server.</value>
+  </data>
+  <data name="Core_setup_step3_responseyes" xml:space="preserve">
+    <value>Okay, users will be able to assign custom colors to themselves using the `{0}customcolor` command.</value>
+  </data>
+  <data name="Core_uncolor" xml:space="preserve">
+    <value>***Poof!*** You're no longer **{0}**!</value>
+  </data>
+  <data name="Core_uncolor_multipleRemoval" xml:space="preserve">
+    <value>***Poof!*** Your colors have been removed!</value>
+  </data>
+  <data name="err_cannotAssign" xml:space="preserve">
+    <value>I can't assign that color if I don't have the Manage Roles or Administrator permission, or it's higher than my role.</value>
+  </data>
+  <data name="err_ccDisabled" xml:space="preserve">
+    <value>Sorry, custom colors has been disabled on this server!</value>
+  </data>
+  <data name="err_exception" xml:space="preserve">
+    <value>An error occurred while processing this command: {0}</value>
+  </data>
+  <data name="err_invalidHex" xml:space="preserve">
+    <value>The hex you typed in is not valid.</value>
+  </data>
+  <data name="err_noColorsOnAuthor" xml:space="preserve">
+    <value>You don't have any colors on yourself!</value>
+  </data>
+  <data name="err_nonexistentColor" xml:space="preserve">
+    <value>That color does not exist.</value>
+  </data>
+  <data name="err_notBotOwner" xml:space="preserve">
+    <value>Sorry, you must be the bot owner to do that!</value>
+  </data>
+  <data name="err_notSetUpYet" xml:space="preserve">
+    <value>PaletteBot is not fully set up on this server yet. {0} needs to type "{1}setup" in order to finish the setup process.</value>
+  </data>
+  <data name="err_removedColor" xml:space="preserve">
+    <value>Oh dear...it seems that color doesn't exist anymore. I have removed it from the color list.</value>
+  </data>
+  <data name="err_setupAlreadyInProgress" xml:space="preserve">
+    <value>Setup is currently in progress.</value>
+  </data>
+  <data name="err_setupNotOwner" xml:space="preserve">
+    <value>You don't have permission to set up the bot. (This bot can only be set up by the server owner)</value>
+  </data>
+  <data name="err_tooFewArgs" xml:space="preserve">
+    <value>Not enough args have been given.</value>
+  </data>
+  <data name="err_tooManyArgs" xml:space="preserve">
+    <value>Too many args have been given.</value>
+  </data>
+  <data name="err_unknownCommand" xml:space="preserve">
+    <value>Unknown command. </value>
+  </data>
+  <data name="err_unusualPerms" xml:space="preserve">
+    <value>The permissions on this color seem a bit unusual. This color can't be used until the permissions on it are neutralized.</value>
+  </data>
+  <data name="Help_commands_header" xml:space="preserve">
+    <value>📃 Commands in module "{0}":</value>
+  </data>
+  <data name="Help_modules_header" xml:space="preserve">
+    <value>📃 Modules:</value>
+  </data>
+  <data name="Utils_invite" xml:space="preserve">
+    <value>**So you want to add me to your server? Here's my invite link:**</value>
+  </data>
+  <data name="Utils_ping" xml:space="preserve">
+    <value>**Pong!** Ping time was `{0}ms`!</value>
+  </data>
+  <data name="Utils_stats_botID" xml:space="preserve">
+    <value>Bot ID:</value>
+  </data>
+  <data name="Utils_stats_botOwner" xml:space="preserve">
+    <value>Owner:</value>
+  </data>
+  <data name="Utils_stats_commandsExecuted" xml:space="preserve">
+    <value>Commands executed this session:</value>
+  </data>
+  <data name="Utils_stats_description" xml:space="preserve">
+    <value>Hi! I'm PaletteBot, a multi-purpose bot with easy-to-use color assignment! I'm still under construction, so expect stuff to change as time goes on.</value>
+  </data>
+  <data name="Utils_stats_guilds" xml:space="preserve">
+    <value>Servers:</value>
+  </data>
+  <data name="Utils_stats_textChannels" xml:space="preserve">
+    <value>Text Channels:</value>
+  </data>
+  <data name="Utils_stats_title" xml:space="preserve">
+    <value>About PaletteBot</value>
+  </data>
+  <data name="Utils_stats_uptime" xml:space="preserve">
+    <value>Uptime:</value>
+  </data>
+  <data name="Utils_stats_voiceChannels" xml:space="preserve">
+    <value>Voice Channels:</value>
+  </data>
+  <data name="err_roleAlreadyInList" xml:space="preserve">
+    <value>That role is already in the color list.</value>
+  </data>
+  <data name="err_roleNotFound" xml:space="preserve">
+    <value>I couldn't find a role in this server with that ID.</value>
+  </data>
+  <data name="Core_addroletocolorlist" xml:space="preserve">
+    <value>Okay, I have added "{0}" to the color list.</value>
+  </data>
+  <data name="Core_removerolefromcolorlist" xml:space="preserve">
+    <value>Okay, I have removed "{0}" from the color list.</value>
+  </data>
+  <data name="err_notAdmin" xml:space="preserve">
+    <value>You don't have permission to use this command. (Administrator permission required)</value>
+  </data>
+  <data name="Core_listColors" xml:space="preserve">
+    <value>__**Here's a list of colors you can assign to yourself on this server:**__</value>
+  </data>
+  <data name="err_colorListEmpty" xml:space="preserve">
+    <value>It appear there aren't any colors in the color list. Type "{0}setup" to re-setup the bot, or type "{0}addcolor" to add a color to the color list.</value>
+  </data>
+  <data name="err_multipleCommandDefs" xml:space="preserve">
+    <value>This command exists in more than one module. Please report this to @FairPlay137-TTS#8972 via a DM or something.</value>
+    <comment>This should only happen if I accidentally do a terrible job copying and pasting some stuff.</comment>
+  </data>
+  <data name="err_noBotOwner" xml:space="preserve">
+    <value>It appears that no bot owner ID has been specified in config.json! This command can't be used.</value>
+  </data>
+  <data name="err_nonexistentModule" xml:space="preserve">
+    <value>I couldn't find that module.</value>
+  </data>
+  <data name="err_unmetPrecondition" xml:space="preserve">
+    <value>You don't have permission to use this command.</value>
+  </data>
+  <data name="Help_modules_commandcount" xml:space="preserve">
+    <value>*{0} command(s)*</value>
+  </data>
+  <data name="Help_DMContent" xml:space="preserve">
+    <value>__**Here's what you can try:**__
+Type `{0}modules` to view all available modules.
+Type `{0}commands (module name)` to view all commands in a module.
+Type `{0}invite` to get an invite link for this bot!
+
+PaletteBot is a work-in-progress, so expect issues to arise.
+</value>
+  </data>
+  <data name="Help_DMContentContactBotOwner" xml:space="preserve">
+    <value>If you encounter an issue, please contact {0}.</value>
+  </data>
+  <data name="Help_DMContentNoBotOwner" xml:space="preserve">
+    <value>If you encounter an issue, please tell whoever the bot owner is.</value>
+  </data>
+  <data name="Help_DMedHelp" xml:space="preserve">
+    <value>:mailbox: **Check your DMs!** I have sent documentation over.</value>
+  </data>
+  <data name="Counting_lastPlayerStanding" xml:space="preserve">
+    <value>It appears we have a winner! {0} has won this round! Good job everyone for managing to count to {1}! Stay tuned for the next round!</value>
+  </data>
+  <data name="Counting_lifeCounter_LastLife" xml:space="preserve">
+    <value>LAST LIFE!</value>
+  </data>
+  <data name="Counting_lifeCounter_MoreThanOne" xml:space="preserve">
+    <value>{0} lives left!</value>
+  </data>
+  <data name="Counting_loseLife_generic" xml:space="preserve">
+    <value>{0} has lost a life!</value>
+  </data>
+  <data name="Counting_loseLife_invalidFormat" xml:space="preserve">
+    <value>Because {0} posted a non-number, they have lost a life!</value>
+  </data>
+  <data name="Counting_loseLife_prematurePost" xml:space="preserve">
+    <value>{0} went twice! Therefore, they lost a life!</value>
+  </data>
+  <data name="Counting_loseLife_repeatedNumber" xml:space="preserve">
+    <value>Because the number {1} had been posted already, {0} has lost a life!</value>
+  </data>
+  <data name="Counting_loseLife_skippedNumber" xml:space="preserve">
+    <value>Because {0} skipped one or more numbers, they have lost a life!</value>
+  </data>
+  <data name="Counting_newRound" xml:space="preserve">
+    <value>NEW ROUND STARTING! I'll start.</value>
+  </data>
+  <data name="Counting_playerEliminated" xml:space="preserve">
+    <value>Oh dear, it seems {0} ran out of lives! They are eliminated from the game!</value>
+  </data>
+  <data name="Counting_resetAllPlayers" xml:space="preserve">
+    <value>All players' life counters have been reset!</value>
+  </data>
+  <data name="Counting_startGame" xml:space="preserve">
+    <value>Welcome to {0}! Start from 1, and count as high as you can! Make sure to not skip or repeat any numbers and keep it as whole decimal numbers, or you'll get a strike! Also, once you post your number, you gotta wait for another person posts the next number before you post your next number! GOOD LUCK!</value>
+  </data>
+  <data name="CustomReactions_CRID" xml:space="preserve">
+    <value>Custom Reaction ID:</value>
+  </data>
+  <data name="CustomReactions_DeleteCustomReaction" xml:space="preserve">
+    <value>Custom Reaction deleted!</value>
+  </data>
+  <data name="CustomReactions_EditCustomReaction" xml:space="preserve">
+    <value>Custom Reaction edited!</value>
+  </data>
+  <data name="CustomReactions_NewCustomReaction" xml:space="preserve">
+    <value>Custom Reaction created!</value>
+  </data>
+  <data name="CustomReactions_response" xml:space="preserve">
+    <value>Response:</value>
+  </data>
+  <data name="CustomReactions_trigger" xml:space="preserve">
+    <value>Trigger:</value>
+  </data>
+  <data name="err_cooldownRequired" xml:space="preserve">
+    <value>Whoa there, slow down! You can execute another command in {0} second(s)!</value>
+  </data>
+  <data name="err_DMCommandError" xml:space="preserve">
+    <value>I couldn't quite get that. Type `{0}help` for help.</value>
+  </data>
+  <data name="Fun_8ball_answer" xml:space="preserve">
+    <value>:8ball: 8-Ball's response:</value>
+  </data>
+  <data name="Fun_8ball_question" xml:space="preserve">
+    <value>:question: Question:</value>
+  </data>
+</root>
