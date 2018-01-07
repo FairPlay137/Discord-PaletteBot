@@ -244,7 +244,10 @@ namespace PaletteBot
                 _log.Info($" Cmd: \"{cmdinfo.Name}\" in module \"{cmdinfo.Module.Name}\"");
                 _log.Info($" Msg: \"{context.Message}\"");
                 _log.Info($" Usr: @{context.User.Username}#{context.User.Discriminator} ({context.User.Id})");
-                _log.Info($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
+                if(context.Guild == null)
+                    _log.Info(" Srvr: (PRIVATE)");
+                else
+                    _log.Info($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
             }
             else
             {
@@ -252,7 +255,10 @@ namespace PaletteBot
                 _log.Warn($" Cmd: \"{cmdinfo.Name}\" in module \"{cmdinfo.Module.Name}\"");
                 _log.Warn($" Msg: \"{context.Message}\"");
                 _log.Warn($" Usr: @{context.User.Username}#{context.User.Discriminator} ({context.User.Id})");
-                _log.Warn($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
+                if (context.Guild == null)
+                    _log.Info(" Srvr: (PRIVATE)");
+                else
+                    _log.Warn($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
             }
         }
         static void Main(string[] args)
