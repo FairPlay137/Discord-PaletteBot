@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaletteBot", "PaletteBot\PaletteBot.csproj", "{F311610D-DD2B-4FE5-B199-8BD57B0EEB8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaletteBot", "PaletteBot\PaletteBot.csproj", "{F9207B12-D84C-4241-A2BD-83FCA7CF9662}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{FC421F34-3E0A-4F72-AD06-2BCF9B7598EC}"
+	ProjectSection(SolutionItems) = preProject
+		index.md = index.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +16,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F311610D-DD2B-4FE5-B199-8BD57B0EEB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F311610D-DD2B-4FE5-B199-8BD57B0EEB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F311610D-DD2B-4FE5-B199-8BD57B0EEB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F311610D-DD2B-4FE5-B199-8BD57B0EEB8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9207B12-D84C-4241-A2BD-83FCA7CF9662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9207B12-D84C-4241-A2BD-83FCA7CF9662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9207B12-D84C-4241-A2BD-83FCA7CF9662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9207B12-D84C-4241-A2BD-83FCA7CF9662}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
