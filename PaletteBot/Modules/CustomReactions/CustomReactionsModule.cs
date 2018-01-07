@@ -9,6 +9,6 @@ namespace PaletteBot.Modules.CustomReactions
 {
     public class CustomReactions : ModuleBase<SocketCommandContext>
     {
-
+        //TODO: Add in commands
     }
 }

@@ -9,6 +9,6 @@ namespace PaletteBot.Modules
 {
     public class Twitch : ModuleBase<SocketCommandContext>
     {
-        
+        //TODO: Add in commands
     }
 }

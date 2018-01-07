@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NLog;
@@ -166,11 +164,16 @@ namespace PaletteBot
                 if ((defaultPlayingString == null) || (defaultPlayingString == ""))
                     defaultPlayingString = "pal:help";
                 if (databaseKey == null)
-                    databaseKey = ""; //it is not secure to just leave the key blank, so make sure you specify one in config.json
+                    databaseKey = "";
             }
 
             _client.JoinedGuild += GuildJoin;
             _client.LeftGuild += GuildLeave;
+
+            if (databaseKey == "")
+                _log.Warn("The database key is blank! This could pose a potential security risk!");
+            if (OwnerID == 0)
+                _log.Warn("An owner ID has not been specified!");
 
             _log.Info("Initializing modules...");
 

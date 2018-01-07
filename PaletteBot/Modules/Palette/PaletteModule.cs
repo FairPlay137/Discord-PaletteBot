@@ -11,7 +11,7 @@ namespace PaletteBot.Modules
 {
     public class Palette : ModuleBase<SocketCommandContext>
     {
-
+        //TODO: Add in commands
     }
     public class PaletteHandlers
     {
