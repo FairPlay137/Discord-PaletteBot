@@ -376,16 +376,46 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Fun_8ball_question" xml:space="preserve">
     <value>Question:</value>
   </data>
+  <data name="Admin_changeGlobalPrefix" xml:space="preserve">
+    <value>Okay, {0}'s default prefix is now `{1}`.</value>
+  </data>
+  <data name="Admin_changeServerPrefix" xml:space="preserve">
+    <value>Alright, {0}'s prefix on this server is now `{1}`.</value>
+  </data>
   <data name="Admin_setGame" xml:space="preserve">
     <value>Okay, I will now be playing "{0}".</value>
   </data>
   <data name="Admin_setStatus" xml:space="preserve">
     <value>Successfully updated status.</value>
   </data>
+  <data name="err_botMissingAdmin" xml:space="preserve">
+    <value>This action requires the bot to have the "Administrator" permission.</value>
+  </data>
+  <data name="err_DMCommandsDisabled" xml:space="preserve">
+    <value>Commands in DMs are currently disabled. DM functionality will be reenabled shortly.</value>
+  </data>
   <data name="err_invalidStatus" xml:space="preserve">
     <value>You have specified an invalid status. Valid types are: "online", "idle", "dnd", and "invisible"</value>
   </data>
+  <data name="Help_aliasList" xml:space="preserve">
+    <value>Aliases:</value>
+  </data>
   <data name="Help_commandListEmpty" xml:space="preserve">
     <value>There seems to be no commands in this module.</value>
+  </data>
+  <data name="Moderation_ban" xml:space="preserve">
+    <value>Successfully banned {0} from the server, deleting {1} day(s) of messages.</value>
+  </data>
+  <data name="Moderation_banFailed" xml:space="preserve">
+    <value>Couldn't ban {0}. Either the user has a higher role than me, or I do not have permission to ban people.</value>
+  </data>
+  <data name="Moderation_kick" xml:space="preserve">
+    <value>Successfully kicked {0} from the server.</value>
+  </data>
+  <data name="Moderation_kickFailed" xml:space="preserve">
+    <value>Couldn't kick {0}. Either the user has a higher role than me, or I do not have permission to kick people.</value>
+  </data>
+  <data name="Moderation_softban" xml:space="preserve">
+    <value>Successfully kicked {0} from the server and deleted {1} day(s) of messages.</value>
   </data>
 </root>

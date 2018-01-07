@@ -61,6 +61,24 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Okay, {0}&apos;s default prefix is now `{1}`..
+        /// </summary>
+        public static string Admin_changeGlobalPrefix {
+            get {
+                return ResourceManager.GetString("Admin_changeGlobalPrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alright, {0}&apos;s prefix on this server is now `{1}`..
+        /// </summary>
+        public static string Admin_changeServerPrefix {
+            get {
+                return ResourceManager.GetString("Admin_changeServerPrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restarting... This should take a few seconds..
         /// </summary>
         public static string Admin_restart {
@@ -430,6 +448,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This action requires the bot to have the &quot;Administrator&quot; permission..
+        /// </summary>
+        public static string err_botMissingAdmin {
+            get {
+                return ResourceManager.GetString("err_botMissingAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I can&apos;t assign that color if I don&apos;t have the Manage Roles or Administrator permission, or it&apos;s higher than my role..
         /// </summary>
         public static string err_cannotAssign {
@@ -471,6 +498,15 @@ namespace PaletteBot.Resources {
         public static string err_DMCommandError {
             get {
                 return ResourceManager.GetString("err_DMCommandError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commands in DMs are currently disabled. DM functionality will be reenabled shortly..
+        /// </summary>
+        public static string err_DMCommandsDisabled {
+            get {
+                return ResourceManager.GetString("err_DMCommandsDisabled", resourceCulture);
             }
         }
         
@@ -682,6 +718,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aliases:.
+        /// </summary>
+        public static string Help_aliasList {
+            get {
+                return ResourceManager.GetString("Help_aliasList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There seems to be no commands in this module..
         /// </summary>
         public static string Help_commandListEmpty {
@@ -756,6 +801,51 @@ namespace PaletteBot.Resources {
         public static string Help_modules_header {
             get {
                 return ResourceManager.GetString("Help_modules_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully banned {0} from the server, deleting {1} day(s) of messages..
+        /// </summary>
+        public static string Moderation_ban {
+            get {
+                return ResourceManager.GetString("Moderation_ban", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Couldn&apos;t ban {0}. Either the user has a higher role than me, or I do not have permission to ban people..
+        /// </summary>
+        public static string Moderation_banFailed {
+            get {
+                return ResourceManager.GetString("Moderation_banFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully kicked {0} from the server..
+        /// </summary>
+        public static string Moderation_kick {
+            get {
+                return ResourceManager.GetString("Moderation_kick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Couldn&apos;t kick {0}. Either the user has a higher role than me, or I do not have permission to kick people..
+        /// </summary>
+        public static string Moderation_kickFailed {
+            get {
+                return ResourceManager.GetString("Moderation_kickFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully kicked {0} from the server and deleted {1} day(s) of messages..
+        /// </summary>
+        public static string Moderation_softban {
+            get {
+                return ResourceManager.GetString("Moderation_softban", resourceCulture);
             }
         }
         
