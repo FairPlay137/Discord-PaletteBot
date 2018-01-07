@@ -5,11 +5,6 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaletteBot", "PaletteBot\PaletteBot.csproj", "{F9207B12-D84C-4241-A2BD-83FCA7CF9662}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{FC421F34-3E0A-4F72-AD06-2BCF9B7598EC}"
-	ProjectSection(SolutionItems) = preProject
-		index.md = index.md
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
