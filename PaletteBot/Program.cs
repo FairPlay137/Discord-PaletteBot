@@ -168,6 +168,10 @@ namespace PaletteBot
                 if (databaseKey == null)
                     databaseKey = ""; //it is not secure to just leave the key blank, so make sure you specify one in config.json
             }
+
+            _client.JoinedGuild += GuildJoin;
+            _client.LeftGuild += GuildLeave;
+
             _log.Info("Initializing modules...");
 
             _services = new ServiceCollection()
@@ -235,12 +239,11 @@ namespace PaletteBot
                 await context.Channel.SendMessageAsync($":no_entry: `{errtext}`");
             }
         }
-        private async Task LogCommandExecution(CommandInfo cmdinfo, ICommandContext context, IResult result)
-            //TODO: Make this synchronous too
+        private Task LogCommandExecution(CommandInfo cmdinfo, ICommandContext context, IResult result)
         {
             if (result.IsSuccess)
             {
-                _log.Info($">>COMMAND EXECUTED");
+                _log.Info(">>COMMAND EXECUTED");
                 _log.Info($" Cmd: \"{cmdinfo.Name}\" in module \"{cmdinfo.Module.Name}\"");
                 _log.Info($" Msg: \"{context.Message}\"");
                 _log.Info($" Usr: @{context.User.Username}#{context.User.Discriminator} ({context.User.Id})");
@@ -260,6 +263,22 @@ namespace PaletteBot
                 else
                     _log.Warn($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
             }
+            return Task.CompletedTask;
+        }
+        private Task GuildJoin(SocketGuild guild)
+        {
+            _log.Info($"Joined guild: {guild.Name} ({guild.Id})");
+            _log.Info($" {guild.TextChannels.Count} Text Channel(s)");
+            _log.Info($" {guild.VoiceChannels.Count} Voice Channel(s)");
+            _log.Info($" {guild.Users.Count} users");
+            _log.Info($" Owner: @{guild.Owner.Username}#{guild.Owner.Discriminator} ({guild.OwnerId})");
+            _log.Info($" Created {guild.CreatedAt}");
+            return Task.CompletedTask;
+        }
+        private Task GuildLeave(SocketGuild guild)
+        {
+            _log.Info($"Left guild: {guild.Name} ({guild.Id})");
+            return Task.CompletedTask;
         }
         static void Main(string[] args)
             => new Program().StartAsync().GetAwaiter().GetResult();
