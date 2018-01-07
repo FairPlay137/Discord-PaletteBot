@@ -750,6 +750,8 @@ namespace PaletteBot.Resources {
         ///Type `{0}commands (module name)` to view all commands in a module.
         ///Type `{0}invite` to get an invite link for this bot!
         ///
+        ///GitHub: https://github.com/FairPlay137/Discord-PaletteBot
+        ///
         ///PaletteBot is a work-in-progress, so expect issues to arise.
         ///.
         /// </summary>
