@@ -22,5 +22,16 @@ namespace PaletteBot.Modules
                 .AddField($":8ball: {StringResourceHandler.GetTextStatic("Fun", "8ball_answer")}", answer)
                 .Build());
         }
+        [Command("choose")]
+        [Summary("Choose an option from a given set")]
+        public async Task Choose([Remainder] [Summary("Options (seperate with `;`)")] string options)
+        {
+            Random random = new Random();
+            string[] optionsIndiv = options.Split(';');
+            string choice = optionsIndiv[random.Next(optionsIndiv.Length)];
+            await ReplyAsync("", false, new EmbedBuilder()
+                .AddField(":thinking:", choice)
+                .Build());
+        }
     }
 }
