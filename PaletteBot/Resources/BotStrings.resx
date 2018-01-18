@@ -237,7 +237,7 @@
   <data name="Utils_stats_commandsExecuted" xml:space="preserve">
     <value>Commands executed this session:</value>
   </data>
-  <data name="Utils_stats_description" xml:space="preserve">
+  <data name="Utils_stats_descriptionPublic" xml:space="preserve">
     <value>Hi! I'm PaletteBot, a multi-purpose bot with easy-to-use color assignment! I'm still under construction, so expect stuff to change as time goes on.</value>
   </data>
   <data name="Utils_stats_guilds" xml:space="preserve">
@@ -293,7 +293,8 @@
     <value>*{0} command(s)*</value>
   </data>
   <data name="Help_DMContent" xml:space="preserve">
-    <value>__**Here's what you can try:**__
+    <value>Hi there! {1}
+__**Here's what you can try:**__
 Type `{0}modules` to view all available modules.
 Type `{0}commands (module name)` to view all commands in a module.
 Type `{0}invite` to get an invite link for this bot!
@@ -302,6 +303,7 @@ GitHub: https://github.com/FairPlay137/Discord-PaletteBot
 
 PaletteBot is a work-in-progress, so expect issues to arise.
 </value>
+    <comment>I might revise this in the future.</comment>
   </data>
   <data name="Help_DMContentContactBotOwner" xml:space="preserve">
     <value>If you encounter an issue, please contact {0}.</value>
@@ -419,5 +421,29 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   </data>
   <data name="Moderation_softban" xml:space="preserve">
     <value>Successfully kicked {0} from the server and deleted {1} day(s) of messages.</value>
+  </data>
+  <data name="Admin_setName" xml:space="preserve">
+    <value>Okay, my username is now "{0}".</value>
+  </data>
+  <data name="Admin_setNick" xml:space="preserve">
+    <value>I will now be referred to as "{0}" on this server.</value>
+  </data>
+  <data name="Help_intro" xml:space="preserve">
+    <value>I'm **{0}**, a fork of FairPlay137-TTS's PaletteBot!</value>
+  </data>
+  <data name="Help_introPublic" xml:space="preserve">
+    <value>I'm **PaletteBot**! I'm a public bot written by FairPlay137-TTS!</value>
+  </data>
+  <data name="Help_upcomingFeatures" xml:space="preserve">
+    <value>Here's a list of upcoming features (may not be up-to-date):
+```
+* Sharding. Pretty much all widespread public bots need this.
+* Core features.
+* The rest of the moderation features
+* The list goes on...
+```</value>
+  </data>
+  <data name="Utils_stats_description" xml:space="preserve">
+    <value>Hi! I'm **{0}**! I'm based off of PaletteBot, a multi-purpose bot with easy-to-use color assignment! I'm still under construction, so expect stuff to change as time goes on.</value>
   </data>
 </root>

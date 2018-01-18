@@ -12,6 +12,7 @@ using NLog.Targets;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using PaletteBot.Common;
+using Discord.Net.Providers.WS4Net;
 
 namespace PaletteBot
 {
@@ -27,6 +28,7 @@ namespace PaletteBot
         public static string prefix = null;
         public static ulong OwnerID = 0;
         public static string databaseKey = null;
+        public static string botName = "PaletteBot clone";
 
         public static DateTime StartTime = DateTime.Now;
         public static DateTime ConnectedAtTime;
@@ -81,7 +83,11 @@ namespace PaletteBot
             SetupLogger();
             _log = LogManager.GetCurrentClassLogger();
 
-            _client = new DiscordSocketClient();
+            _client = new DiscordSocketClient(new DiscordSocketConfig()
+            {
+                WebSocketProvider = WS4NetProvider.Instance,
+                LogLevel = LogSeverity.Verbose
+            });
             _commands = new CommandService();
 
             _client.Log += Log;
@@ -146,6 +152,7 @@ namespace PaletteBot
                 defaultPlayingString = cfgjson.DefaultPlayingString;
                 OwnerID = cfgjson.OwnerID;
                 databaseKey = cfgjson.DatabaseKey;
+                botName = cfgjson.BotName;
             }catch (Exception e){
                 _log.Error(e, "Exception during JSON loading. Setting unassigned values to default...");
                 if ((token == null) || (token == ""))
@@ -302,5 +309,8 @@ namespace PaletteBot
 
         [JsonProperty("databasekey")]
         public string DatabaseKey { get; private set; }
+
+        [JsonProperty("botname")]
+        public string BotName { get; private set; }
     }
 }

@@ -97,6 +97,24 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Okay, my username is now &quot;{0}&quot;..
+        /// </summary>
+        public static string Admin_setName {
+            get {
+                return ResourceManager.GetString("Admin_setName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I will now be referred to as &quot;{0}&quot; on this server..
+        /// </summary>
+        public static string Admin_setNick {
+            get {
+                return ResourceManager.GetString("Admin_setNick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Successfully updated status..
         /// </summary>
         public static string Admin_setStatus {
@@ -745,7 +763,8 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to __**Here&apos;s what you can try:**__
+        ///   Looks up a localized string similar to Hi there! {1}
+        ///__**Here&apos;s what you can try:**__
         ///Type `{0}modules` to view all available modules.
         ///Type `{0}commands (module name)` to view all commands in a module.
         ///Type `{0}invite` to get an invite link for this bot!
@@ -789,6 +808,24 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I&apos;m **{0}**, a fork of FairPlay137-TTS&apos;s PaletteBot!.
+        /// </summary>
+        public static string Help_intro {
+            get {
+                return ResourceManager.GetString("Help_intro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m **PaletteBot**! I&apos;m a public bot written by FairPlay137-TTS!.
+        /// </summary>
+        public static string Help_introPublic {
+            get {
+                return ResourceManager.GetString("Help_introPublic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to *{0} command(s)*.
         /// </summary>
         public static string Help_modules_commandcount {
@@ -803,6 +840,21 @@ namespace PaletteBot.Resources {
         public static string Help_modules_header {
             get {
                 return ResourceManager.GetString("Help_modules_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here&apos;s a list of upcoming features (may not be up-to-date):
+        ///```
+        ///* Sharding. Pretty much all widespread public bots need this.
+        ///* Core features.
+        ///* The rest of the moderation features
+        ///* The list goes on...
+        ///```.
+        /// </summary>
+        public static string Help_upcomingFeatures {
+            get {
+                return ResourceManager.GetString("Help_upcomingFeatures", resourceCulture);
             }
         }
         
@@ -897,11 +949,20 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi! I&apos;m PaletteBot, a multi-purpose bot with easy-to-use color assignment! I&apos;m still under construction, so expect stuff to change as time goes on..
+        ///   Looks up a localized string similar to Hi! I&apos;m **{0}**! I&apos;m based off of PaletteBot, a multi-purpose bot with easy-to-use color assignment! I&apos;m still under construction, so expect stuff to change as time goes on..
         /// </summary>
         public static string Utils_stats_description {
             get {
                 return ResourceManager.GetString("Utils_stats_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi! I&apos;m PaletteBot, a multi-purpose bot with easy-to-use color assignment! I&apos;m still under construction, so expect stuff to change as time goes on..
+        /// </summary>
+        public static string Utils_stats_descriptionPublic {
+            get {
+                return ResourceManager.GetString("Utils_stats_descriptionPublic", resourceCulture);
             }
         }
         
