@@ -432,7 +432,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>I'm **{0}**, a fork of FairPlay137-TTS's PaletteBot!</value>
   </data>
   <data name="Help_introPublic" xml:space="preserve">
-    <value>I'm **PaletteBot**! I'm a public bot written by FairPlay137-TTS!</value>
+    <value>I'm **PaletteBot**, a public bot written by FairPlay137-TTS!</value>
   </data>
   <data name="Help_upcomingFeatures" xml:space="preserve">
     <value>Here's a list of upcoming features (may not be up-to-date):

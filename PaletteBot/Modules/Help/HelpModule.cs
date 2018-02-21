@@ -13,7 +13,14 @@ namespace PaletteBot.Modules
         public async Task HelpCmd()
         {
             var dmchannel = await Context.User.GetOrCreateDMChannelAsync();
-            string dmcontent = StringResourceHandler.GetTextStatic("Help", "DMContent",Program.prefix);
+
+            string dmcontent = StringResourceHandler.GetTextStatic("Help", "DMContent",Program.prefix,
+                (Program.botName == "PaletteBot")? //I did have some compiler flags to switch out the two strings when it was a PublicRelease build, but they didn't work, so I removed them before I committed this change
+                StringResourceHandler.GetTextStatic("Help", "introPublic")
+                :
+                StringResourceHandler.GetTextStatic("Help", "intro", Program.botName)
+
+                );
             if (Program.OwnerID == 0)
                 dmcontent += StringResourceHandler.GetTextStatic("Help", "DMContentNoBotOwner");
             else

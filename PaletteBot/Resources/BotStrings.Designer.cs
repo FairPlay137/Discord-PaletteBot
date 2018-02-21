@@ -817,7 +817,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I&apos;m **PaletteBot**! I&apos;m a public bot written by FairPlay137-TTS!.
+        ///   Looks up a localized string similar to I&apos;m **PaletteBot**, a public bot written by FairPlay137-TTS!.
         /// </summary>
         public static string Help_introPublic {
             get {
