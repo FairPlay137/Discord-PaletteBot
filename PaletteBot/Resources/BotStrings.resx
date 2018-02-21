@@ -446,4 +446,74 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Utils_stats_description" xml:space="preserve">
     <value>Hi! I'm **{0}**! I'm based off of PaletteBot, a multi-purpose bot with easy-to-use color assignment! I'm still under construction, so expect stuff to change as time goes on.</value>
   </data>
+  <data name="akiDefaultLocale" xml:space="preserve">
+    <value>us</value>
+    <comment>TRANSLATORS: Change this if you want Akinator to start in a different language. Possible options are us, de, fr, in, en, es, cn, ar, il, it, jp, kr, nl, pl, pt, ru, tr</comment>
+  </data>
+  <data name="Akinator_AgainPrompt" xml:space="preserve">
+    <value>Type `{0}aki` to play again!</value>
+  </data>
+  <data name="Akinator_akianswer_InvalidAnswerG" xml:space="preserve">
+    <value>Invalid answer. Valid answers are "yes" or "no".</value>
+  </data>
+  <data name="Akinator_akianswer_InvalidAnswerQ" xml:space="preserve">
+    <value>Invalid answer. Valid answers are "yes", "no", "dunno", "probably", or "probably not".</value>
+  </data>
+  <data name="Akinator_akiregion_invalidRegion" xml:space="preserve">
+    <value>Invalid region!</value>
+  </data>
+  <data name="Akinator_akiregion_success" xml:space="preserve">
+    <value>Successfully set your Akinator region to `{0}`</value>
+  </data>
+  <data name="Akinator_DefeatedDesc" xml:space="preserve">
+    <value>You have defeated me!</value>
+  </data>
+  <data name="Akinator_DefeatedTitle" xml:space="preserve">
+    <value>Bravo!</value>
+  </data>
+  <data name="Akinator_EmbedFooter" xml:space="preserve">
+    <value>Powered by https://akinator.com/ - API implementation is WIP</value>
+  </data>
+  <data name="Akinator_ErrorTitle" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="Akinator_FinalGuess" xml:space="preserve">
+    <value>**FINAL GUESS**</value>
+  </data>
+  <data name="Akinator_GuessCorrectDesc" xml:space="preserve">
+    <value>I love playing with you!</value>
+  </data>
+  <data name="Akinator_GuessCorrectTitle" xml:space="preserve">
+    <value>Great! Guessed right one more time.</value>
+  </data>
+  <data name="Akinator_GuessPrompt" xml:space="preserve">
+    <value>Type `{0}aa [answer]` where `[answer]` is "yes" or "no".</value>
+  </data>
+  <data name="Akinator_GuessRank" xml:space="preserve">
+    <value>Ranking as **#{0}**</value>
+  </data>
+  <data name="Akinator_GuessTitle" xml:space="preserve">
+    <value>Here's my guess:</value>
+  </data>
+  <data name="Akinator_IntroDesc" xml:space="preserve">
+    <value>Think about a real or fictional character. I will try to guess who it is.</value>
+  </data>
+  <data name="Akinator_IntroTitle" xml:space="preserve">
+    <value>Akinator</value>
+  </data>
+  <data name="Akinator_QuestionPromptInstructions" xml:space="preserve">
+    <value>Type `{0}aa [answer]` where `[answer]` is "yes", "no", "dunno", "probably", or "probably not".</value>
+  </data>
+  <data name="Akinator_QuestionPromptTitle" xml:space="preserve">
+    <value>**Question {0}**</value>
+  </data>
+  <data name="Akinator_ServersDown" xml:space="preserve">
+    <value>Sorry, Akinator's servers are down for the `{0}` region! Try again later!</value>
+  </data>
+  <data name="Akinator_TechnicalError" xml:space="preserve">
+    <value>Sorry, Akinator's servers have encountered a technical error in the `{0}` region! Try again later!</value>
+  </data>
+  <data name="Akinator_UnknownError" xml:space="preserve">
+    <value>An unknown error has occurred! It has been logged, and hopefully it'll be resolved soon!</value>
+  </data>
 </root>

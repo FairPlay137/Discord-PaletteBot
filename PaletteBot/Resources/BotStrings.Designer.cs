@@ -133,6 +133,213 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to us.
+        /// </summary>
+        public static string akiDefaultLocale {
+            get {
+                return ResourceManager.GetString("akiDefaultLocale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type `{0}aki` to play again!.
+        /// </summary>
+        public static string Akinator_AgainPrompt {
+            get {
+                return ResourceManager.GetString("Akinator_AgainPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid answer. Valid answers are &quot;yes&quot; or &quot;no&quot;..
+        /// </summary>
+        public static string Akinator_akianswer_InvalidAnswerG {
+            get {
+                return ResourceManager.GetString("Akinator_akianswer_InvalidAnswerG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid answer. Valid answers are &quot;yes&quot;, &quot;no&quot;, &quot;dunno&quot;, &quot;probably&quot;, or &quot;probably not&quot;..
+        /// </summary>
+        public static string Akinator_akianswer_InvalidAnswerQ {
+            get {
+                return ResourceManager.GetString("Akinator_akianswer_InvalidAnswerQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid region!.
+        /// </summary>
+        public static string Akinator_akiregion_invalidRegion {
+            get {
+                return ResourceManager.GetString("Akinator_akiregion_invalidRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully set your Akinator region to `{0}`.
+        /// </summary>
+        public static string Akinator_akiregion_success {
+            get {
+                return ResourceManager.GetString("Akinator_akiregion_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have defeated me!.
+        /// </summary>
+        public static string Akinator_DefeatedDesc {
+            get {
+                return ResourceManager.GetString("Akinator_DefeatedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bravo!.
+        /// </summary>
+        public static string Akinator_DefeatedTitle {
+            get {
+                return ResourceManager.GetString("Akinator_DefeatedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Powered by https://akinator.com/ - API implementation is WIP.
+        /// </summary>
+        public static string Akinator_EmbedFooter {
+            get {
+                return ResourceManager.GetString("Akinator_EmbedFooter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error!.
+        /// </summary>
+        public static string Akinator_ErrorTitle {
+            get {
+                return ResourceManager.GetString("Akinator_ErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to **FINAL GUESS**.
+        /// </summary>
+        public static string Akinator_FinalGuess {
+            get {
+                return ResourceManager.GetString("Akinator_FinalGuess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I love playing with you!.
+        /// </summary>
+        public static string Akinator_GuessCorrectDesc {
+            get {
+                return ResourceManager.GetString("Akinator_GuessCorrectDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Great! Guessed right one more time..
+        /// </summary>
+        public static string Akinator_GuessCorrectTitle {
+            get {
+                return ResourceManager.GetString("Akinator_GuessCorrectTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type `{0}aa [answer]` where `[answer]` is &quot;yes&quot; or &quot;no&quot;..
+        /// </summary>
+        public static string Akinator_GuessPrompt {
+            get {
+                return ResourceManager.GetString("Akinator_GuessPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ranking as **#{0}**.
+        /// </summary>
+        public static string Akinator_GuessRank {
+            get {
+                return ResourceManager.GetString("Akinator_GuessRank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here&apos;s my guess:.
+        /// </summary>
+        public static string Akinator_GuessTitle {
+            get {
+                return ResourceManager.GetString("Akinator_GuessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Think about a real or fictional character. I will try to guess who it is..
+        /// </summary>
+        public static string Akinator_IntroDesc {
+            get {
+                return ResourceManager.GetString("Akinator_IntroDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Akinator.
+        /// </summary>
+        public static string Akinator_IntroTitle {
+            get {
+                return ResourceManager.GetString("Akinator_IntroTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type `{0}aa [answer]` where `[answer]` is &quot;yes&quot;, &quot;no&quot;, &quot;dunno&quot;, &quot;probably&quot;, or &quot;probably not&quot;..
+        /// </summary>
+        public static string Akinator_QuestionPromptInstructions {
+            get {
+                return ResourceManager.GetString("Akinator_QuestionPromptInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to **Question {0}**.
+        /// </summary>
+        public static string Akinator_QuestionPromptTitle {
+            get {
+                return ResourceManager.GetString("Akinator_QuestionPromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, Akinator&apos;s servers are down for the `{0}` region! Try again later!.
+        /// </summary>
+        public static string Akinator_ServersDown {
+            get {
+                return ResourceManager.GetString("Akinator_ServersDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, Akinator&apos;s servers have encountered a technical error in the `{0}` region! Try again later!.
+        /// </summary>
+        public static string Akinator_TechnicalError {
+            get {
+                return ResourceManager.GetString("Akinator_TechnicalError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unknown error has occurred! It has been logged, and hopefully it&apos;ll be resolved soon!.
+        /// </summary>
+        public static string Akinator_UnknownError {
+            get {
+                return ResourceManager.GetString("Akinator_UnknownError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Okay, I have added &quot;{0}&quot; to the color list..
         /// </summary>
         public static string Core_addroletocolorlist {
