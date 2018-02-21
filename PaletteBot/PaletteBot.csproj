@@ -292,6 +292,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modules\Admin\AdminModule.cs" />
+    <Compile Include="Modules\Akinator\AkinatorModule.cs" />
     <Compile Include="Modules\Counting\CountingModule.cs" />
     <Compile Include="Modules\CustomReactions\CustomReactionsModule.cs" />
     <Compile Include="Modules\Fun\FunModule.cs" />
@@ -323,9 +324,7 @@
       <LastGenOutput>BotStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modules\Akinator\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

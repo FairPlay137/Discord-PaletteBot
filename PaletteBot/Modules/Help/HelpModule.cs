@@ -37,6 +37,7 @@ namespace PaletteBot.Modules
             foreach (var module in Program._commands.Modules)
                 moduleseb.AddField("» " + module.Name, StringResourceHandler.GetTextStatic("Help", "modules_commandcount",module.Commands.Count));
             await ReplyAsync(Context.User.Mention, false, moduleseb.Build());
+            await ReplyAsync("", false, new EmbedBuilder().WithDescription(StringResourceHandler.GetTextStatic("Help", "modules_moreInfo", Program.prefix)).WithColor(Color.Orange).Build());
         }
         [Command("commands")]
         [Summary("Lists all commands in a module.")]

@@ -516,4 +516,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Akinator_UnknownError" xml:space="preserve">
     <value>An unknown error has occurred! It has been logged, and hopefully it'll be resolved soon!</value>
   </data>
+  <data name="Help_modules_moreInfo" xml:space="preserve">
+    <value>To list a module's commands, just type `{0}cmds ModuleName`</value>
+  </data>
 </root>

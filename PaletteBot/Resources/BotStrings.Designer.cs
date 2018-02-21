@@ -1051,6 +1051,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To list a module&apos;s commands, just type `{0}cmds ModuleName`.
+        /// </summary>
+        public static string Help_modules_moreInfo {
+            get {
+                return ResourceManager.GetString("Help_modules_moreInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here&apos;s a list of upcoming features (may not be up-to-date):
         ///```
         ///* Sharding. Pretty much all widespread public bots need this.
