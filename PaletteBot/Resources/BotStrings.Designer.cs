@@ -988,7 +988,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you encounter an issue, please contact {0}..
+        ///   Looks up a localized string similar to If you encounter an issue, please contact {0} (@{1}#{2})..
         /// </summary>
         public static string Help_DMContentContactBotOwner {
             get {

@@ -306,7 +306,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <comment>I might revise this in the future.</comment>
   </data>
   <data name="Help_DMContentContactBotOwner" xml:space="preserve">
-    <value>If you encounter an issue, please contact {0}.</value>
+    <value>If you encounter an issue, please contact {0} (@{1}#{2}).</value>
   </data>
   <data name="Help_DMContentNoBotOwner" xml:space="preserve">
     <value>If you encounter an issue, please tell whoever the bot owner is.</value>

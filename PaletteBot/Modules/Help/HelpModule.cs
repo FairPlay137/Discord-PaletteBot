@@ -24,9 +24,10 @@ namespace PaletteBot.Modules
             if (Program.OwnerID == 0)
                 dmcontent += StringResourceHandler.GetTextStatic("Help", "DMContentNoBotOwner");
             else
-                dmcontent += StringResourceHandler.GetTextStatic("Help", "DMContentContactBotOwner",Context.Client.GetUser(Program.OwnerID).Mention);
+                dmcontent += StringResourceHandler.GetTextStatic("Help", "DMContentContactBotOwner",Context.Client.GetUser(Program.OwnerID).Mention, Context.Client.GetUser(Program.OwnerID).Username, Context.Client.GetUser(Program.OwnerID).Discriminator);
             await dmchannel.SendMessageAsync(dmcontent);
-            await ReplyAsync(StringResourceHandler.GetTextStatic("Help", "DMedHelp"));
+            if(!Context.IsPrivate)
+                await ReplyAsync(StringResourceHandler.GetTextStatic("Help", "DMedHelp"));
         }
         [Command("modules")]
         [Summary("Lists all modules.")]
