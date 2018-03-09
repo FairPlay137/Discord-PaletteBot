@@ -9,6 +9,25 @@ namespace PaletteBot.Modules
 {
     public class Akinator : ModuleBase<SocketCommandContext>
     {
-        //TODO: Work on this module.
+        [Command("akinator")]
+        [Summary("Starts an Akinator game (COMING SOON)")]
+        [Alias("aki")]
+        public async Task StartAkinator()
+        {
+
+        }
+        [Command("akistop")]
+        [Summary("Stops the currently running Akinator game (COMING SOON)")]
+        public async Task StopAkinator()
+        {
+
+        }
+        [Command("akianswer")]
+        [Summary("Within Akinator: Answers a question (COMING SOON)")]
+        [Alias("aa")]
+        public async Task SendAnswer(string answer)
+        {
+
+        }
     }
 }
