@@ -1,5 +1,5 @@
 # Discord-PaletteBot
-![Travis CI Build Status](https://travis-ci.org/FairPlay137/Discord-PaletteBot.svg?branch=master)
+[![Build Status](https://travis-ci.org/FairPlay137/Discord-PaletteBot.svg?branch=master)](https://travis-ci.org/FairPlay137/Discord-PaletteBot)
 
 An open-source, multipurpose Discord bot.
 
