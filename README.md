@@ -1,4 +1,6 @@
 # Discord-PaletteBot
+![Travis CI Build Status](https://travis-ci.org/FairPlay137/Discord-PaletteBot.svg?branch=master)
+
 An open-source, multipurpose Discord bot.
 
 ## How to compile for self-hosting?
