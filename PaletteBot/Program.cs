@@ -47,8 +47,7 @@ namespace PaletteBot
             LogManager.Configuration = logConfig;
         }
 
-        private async Task Log(LogMessage msg)
-            //TODO: Make this synchronous
+        private Task Log(LogMessage msg)
         {
             switch (msg.Severity)
             {
@@ -77,6 +76,8 @@ namespace PaletteBot
 
             if (msg.Exception != null)
                 _log.Warn(msg.Exception);
+            
+            return Task.CompletedTask;
         }
         public async Task StartAsync()
         {
