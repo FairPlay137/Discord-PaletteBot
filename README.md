@@ -5,6 +5,7 @@ PaletteBot is a Discord Chatbot written by FairPlay137-TTS using C# along with t
 
 * [PaletteBot Website](https://fairplay137.github.io/PaletteBot-Webpage/)
 * [Add PaletteBot to your server](https://discordapp.com/oauth2/authorize?client_id=385963697631395840&permissions=8&scope=bot) (NOT RECOMMENDED RIGHT NOW)
+* Join the PaletteBot Central server (COMING SOON)
 
 ## How to compile for self-hosting?
 ### To compile, you will need:
