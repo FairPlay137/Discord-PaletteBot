@@ -364,6 +364,7 @@
       <HintPath>..\packages\WebSocket4Net.0.15.1\lib\net45\WebSocket4Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+	<Reference Include="netstandard" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modules\Admin\AdminModule.cs" />
