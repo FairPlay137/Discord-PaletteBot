@@ -260,4 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 
+# PaletteBot Configuration file (Don't you go stealing my tokens now!)
 config.json
