@@ -187,6 +187,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sorry, Akinator on PaletteBot is not available yet! Check back later!.
+        /// </summary>
+        public static string Akinator_comingSoon {
+            get {
+                return ResourceManager.GetString("Akinator_comingSoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have defeated me!.
         /// </summary>
         public static string Akinator_DefeatedDesc {
@@ -360,9 +369,9 @@ namespace PaletteBot.Resources {
         /// <summary>
         ///   Looks up a localized string similar to ***Poof!*** You have been assigned the custom color hex **{0}**!.
         /// </summary>
-        public static string Core_customcolor {
+        public static string Core_customColor {
             get {
-                return ResourceManager.GetString("Core_customcolor", resourceCulture);
+                return ResourceManager.GetString("Core_customColor", resourceCulture);
             }
         }
         
@@ -684,9 +693,9 @@ namespace PaletteBot.Resources {
         /// <summary>
         ///   Looks up a localized string similar to I can&apos;t assign that color if I don&apos;t have the Manage Roles or Administrator permission, or it&apos;s higher than my role..
         /// </summary>
-        public static string err_cannotAssign {
+        public static string err_cannotAssignColor {
             get {
-                return ResourceManager.GetString("err_cannotAssign", resourceCulture);
+                return ResourceManager.GetString("err_cannotAssignColor", resourceCulture);
             }
         }
         
@@ -705,6 +714,24 @@ namespace PaletteBot.Resources {
         public static string err_colorListEmpty {
             get {
                 return ResourceManager.GetString("err_colorListEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The hex you typed in is not valid..
+        /// </summary>
+        public static string err_colorsInvalidHex {
+            get {
+                return ResourceManager.GetString("err_colorsInvalidHex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The permissions on this color seem a bit unusual. This color can&apos;t be used until the permissions on it are neutralized..
+        /// </summary>
+        public static string err_colorUnusualPerms {
+            get {
+                return ResourceManager.GetString("err_colorUnusualPerms", resourceCulture);
             }
         }
         
@@ -745,15 +772,6 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The hex you typed in is not valid..
-        /// </summary>
-        public static string err_invalidHex {
-            get {
-                return ResourceManager.GetString("err_invalidHex", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to You have specified an invalid status. Valid types are: &quot;online&quot;, &quot;idle&quot;, &quot;dnd&quot;, and &quot;invisible&quot;.
         /// </summary>
         public static string err_invalidStatus {
@@ -763,7 +781,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This command exists in more than one module. Please report this to @FairPlay137-TTS#8972 via a DM or something..
+        ///   Looks up a localized string similar to This command exists in more than one module. Therefore, it cannot be used at the moment. Please report this to @FairPlay137-TTS#8972 via a DM or something..
         /// </summary>
         public static string err_multipleCommandDefs {
             get {
@@ -846,9 +864,9 @@ namespace PaletteBot.Resources {
         /// <summary>
         ///   Looks up a localized string similar to That role is already in the color list..
         /// </summary>
-        public static string err_roleAlreadyInList {
+        public static string err_roleAlreadyInColorList {
             get {
-                return ResourceManager.GetString("err_roleAlreadyInList", resourceCulture);
+                return ResourceManager.GetString("err_roleAlreadyInColorList", resourceCulture);
             }
         }
         
@@ -898,7 +916,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unknown command. .
+        ///   Looks up a localized string similar to Unknown command. Did you type it wrong,.
         /// </summary>
         public static string err_unknownCommand {
             get {
@@ -912,15 +930,6 @@ namespace PaletteBot.Resources {
         public static string err_unmetPrecondition {
             get {
                 return ResourceManager.GetString("err_unmetPrecondition", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The permissions on this color seem a bit unusual. This color can&apos;t be used until the permissions on it are neutralized..
-        /// </summary>
-        public static string err_unusualPerms {
-            get {
-                return ResourceManager.GetString("err_unusualPerms", resourceCulture);
             }
         }
         
@@ -1129,11 +1138,101 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to **Pong!** Ping time was `{0}ms`!.
+        ///   Looks up a localized string similar to Holy smokes, that&apos;s REALLY fast!.
         /// </summary>
-        public static string Utils_ping {
+        public static string Utils_ping_footer1 {
             get {
-                return ResourceManager.GetString("Utils_ping", resourceCulture);
+                return ResourceManager.GetString("Utils_ping_footer1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pretty quick, if you ask me..
+        /// </summary>
+        public static string Utils_ping_footer2 {
+            get {
+                return ResourceManager.GetString("Utils_ping_footer2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection is OK..
+        /// </summary>
+        public static string Utils_ping_footer3 {
+            get {
+                return ResourceManager.GetString("Utils_ping_footer3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hmm...seems a bit slow....
+        /// </summary>
+        public static string Utils_ping_footer4 {
+            get {
+                return ResourceManager.GetString("Utils_ping_footer4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;ve been waiting ages for the ball to come back!.
+        /// </summary>
+        public static string Utils_ping_footer5 {
+            get {
+                return ResourceManager.GetString("Utils_ping_footer5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Ping time was `{0}ms`!.
+        /// </summary>
+        public static string Utils_ping_pingtime {
+            get {
+                return ResourceManager.GetString("Utils_ping_pingtime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oh, uh, my paddle seems to be turning a little red... Is this normal?.
+        /// </summary>
+        public static string Utils_ping_subtitle1 {
+            get {
+                return ResourceManager.GetString("Utils_ping_subtitle1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to That was fun! Let&apos;s play again!.
+        /// </summary>
+        public static string Utils_ping_subtitle2 {
+            get {
+                return ResourceManager.GetString("Utils_ping_subtitle2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nothing like a little ping-pong to brighten the mood!.
+        /// </summary>
+        public static string Utils_ping_subtitle3 {
+            get {
+                return ResourceManager.GetString("Utils_ping_subtitle3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to **Pong!**.
+        /// </summary>
+        public static string Utils_ping_title {
+            get {
+                return ResourceManager.GetString("Utils_ping_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting for Discord API to return the ball....
+        /// </summary>
+        public static string Utils_ping_wait {
+            get {
+                return ResourceManager.GetString("Utils_ping_wait", resourceCulture);
             }
         }
         
@@ -1165,7 +1264,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi! I&apos;m **{0}**! I&apos;m based off of PaletteBot, a multi-purpose bot with easy-to-use color assignment! I&apos;m still under construction, so expect stuff to change as time goes on..
+        ///   Looks up a localized string similar to Hi! I&apos;m **{0}**! I&apos;m based off of PaletteBot, an open-source, multi-purpose bot! I&apos;m still under construction, so expect stuff to change as time goes on..
         /// </summary>
         public static string Utils_stats_description {
             get {
@@ -1174,7 +1273,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi! I&apos;m PaletteBot, a multi-purpose bot with easy-to-use color assignment! I&apos;m still under construction, so expect stuff to change as time goes on..
+        ///   Looks up a localized string similar to Hi! I&apos;m PaletteBot, an open-source, multi-purpose bot! I&apos;m still under construction, so expect stuff to change as time goes on..
         /// </summary>
         public static string Utils_stats_descriptionPublic {
             get {

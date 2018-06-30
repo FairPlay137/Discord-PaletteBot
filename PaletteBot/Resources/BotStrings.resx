@@ -126,7 +126,7 @@
   <data name="Core_color" xml:space="preserve">
     <value>***Poof!*** You're **{0}** now.</value>
   </data>
-  <data name="Core_customcolor" xml:space="preserve">
+  <data name="Core_customColor" xml:space="preserve">
     <value>***Poof!*** You have been assigned the custom color hex **{0}**!</value>
   </data>
   <data name="Core_guildJoinText" xml:space="preserve">
@@ -171,7 +171,7 @@
   <data name="Core_uncolor_multipleRemoval" xml:space="preserve">
     <value>***Poof!*** Your colors have been removed!</value>
   </data>
-  <data name="err_cannotAssign" xml:space="preserve">
+  <data name="err_cannotAssignColor" xml:space="preserve">
     <value>I can't assign that color if I don't have the Manage Roles or Administrator permission, or it's higher than my role.</value>
   </data>
   <data name="err_ccDisabled" xml:space="preserve">
@@ -180,7 +180,7 @@
   <data name="err_exception" xml:space="preserve">
     <value>An error occurred while processing this command: {0}</value>
   </data>
-  <data name="err_invalidHex" xml:space="preserve">
+  <data name="err_colorsInvalidHex" xml:space="preserve">
     <value>The hex you typed in is not valid.</value>
   </data>
   <data name="err_noColorsOnAuthor" xml:space="preserve">
@@ -211,9 +211,9 @@
     <value>Too many args have been given.</value>
   </data>
   <data name="err_unknownCommand" xml:space="preserve">
-    <value>Unknown command. </value>
+    <value>Unknown command. Did you type it wrong,</value>
   </data>
-  <data name="err_unusualPerms" xml:space="preserve">
+  <data name="err_colorUnusualPerms" xml:space="preserve">
     <value>The permissions on this color seem a bit unusual. This color can't be used until the permissions on it are neutralized.</value>
   </data>
   <data name="Help_commands_header" xml:space="preserve">
@@ -225,8 +225,8 @@
   <data name="Utils_invite" xml:space="preserve">
     <value>**So you want to add me to your server? Here's my invite link:**</value>
   </data>
-  <data name="Utils_ping" xml:space="preserve">
-    <value>**Pong!** Ping time was `{0}ms`!</value>
+  <data name="Utils_ping_title" xml:space="preserve">
+    <value>**Pong!**</value>
   </data>
   <data name="Utils_stats_botID" xml:space="preserve">
     <value>Bot ID:</value>
@@ -238,7 +238,7 @@
     <value>Commands executed this session:</value>
   </data>
   <data name="Utils_stats_descriptionPublic" xml:space="preserve">
-    <value>Hi! I'm PaletteBot, a multi-purpose bot with easy-to-use color assignment! I'm still under construction, so expect stuff to change as time goes on.</value>
+    <value>Hi! I'm PaletteBot, an open-source, multi-purpose bot! I'm still under construction, so expect stuff to change as time goes on.</value>
   </data>
   <data name="Utils_stats_guilds" xml:space="preserve">
     <value>Servers:</value>
@@ -255,7 +255,7 @@
   <data name="Utils_stats_voiceChannels" xml:space="preserve">
     <value>Voice Channels:</value>
   </data>
-  <data name="err_roleAlreadyInList" xml:space="preserve">
+  <data name="err_roleAlreadyInColorList" xml:space="preserve">
     <value>That role is already in the color list.</value>
   </data>
   <data name="err_roleNotFound" xml:space="preserve">
@@ -277,7 +277,7 @@
     <value>It appear there aren't any colors in the color list. Type "{0}setup" to re-setup the bot, or type "{0}addcolor" to add a color to the color list.</value>
   </data>
   <data name="err_multipleCommandDefs" xml:space="preserve">
-    <value>This command exists in more than one module. Please report this to @FairPlay137-TTS#8972 via a DM or something.</value>
+    <value>This command exists in more than one module. Therefore, it cannot be used at the moment. Please report this to @FairPlay137-TTS#8972 via a DM or something.</value>
     <comment>This should only happen if I accidentally do a terrible job copying and pasting some stuff.</comment>
   </data>
   <data name="err_noBotOwner" xml:space="preserve">
@@ -444,7 +444,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
 ```</value>
   </data>
   <data name="Utils_stats_description" xml:space="preserve">
-    <value>Hi! I'm **{0}**! I'm based off of PaletteBot, a multi-purpose bot with easy-to-use color assignment! I'm still under construction, so expect stuff to change as time goes on.</value>
+    <value>Hi! I'm **{0}**! I'm based off of PaletteBot, an open-source, multi-purpose bot! I'm still under construction, so expect stuff to change as time goes on.</value>
   </data>
   <data name="akiDefaultLocale" xml:space="preserve">
     <value>us</value>
@@ -518,5 +518,38 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   </data>
   <data name="Help_modules_moreInfo" xml:space="preserve">
     <value>To list a module's commands, just type `{0}cmds ModuleName`</value>
+  </data>
+  <data name="Akinator_comingSoon" xml:space="preserve">
+    <value>Sorry, Akinator on PaletteBot is not available yet! Check back later!</value>
+  </data>
+  <data name="Utils_ping_footer1" xml:space="preserve">
+    <value>Holy smokes, that's REALLY fast!</value>
+  </data>
+  <data name="Utils_ping_footer2" xml:space="preserve">
+    <value>Pretty quick, if you ask me.</value>
+  </data>
+  <data name="Utils_ping_footer3" xml:space="preserve">
+    <value>Connection is OK.</value>
+  </data>
+  <data name="Utils_ping_footer4" xml:space="preserve">
+    <value>Hmm...seems a bit slow...</value>
+  </data>
+  <data name="Utils_ping_footer5" xml:space="preserve">
+    <value>I've been waiting ages for the ball to come back!</value>
+  </data>
+  <data name="Utils_ping_pingtime" xml:space="preserve">
+    <value>API Ping time was `{0}ms`!</value>
+  </data>
+  <data name="Utils_ping_subtitle1" xml:space="preserve">
+    <value>Oh, uh, my paddle seems to be turning a little red... Is this normal?</value>
+  </data>
+  <data name="Utils_ping_subtitle2" xml:space="preserve">
+    <value>That was fun! Let's play again!</value>
+  </data>
+  <data name="Utils_ping_subtitle3" xml:space="preserve">
+    <value>Nothing like a little ping-pong to brighten the mood!</value>
+  </data>
+  <data name="Utils_ping_wait" xml:space="preserve">
+    <value>Waiting for Discord API to return the ball...</value>
   </data>
 </root>

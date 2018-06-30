@@ -13,12 +13,26 @@ namespace PaletteBot.Modules
         [Summary("Pings the bot.")]
         public async Task Ping()
         {
+            string pingwaitmsg = StringResourceHandler.GetTextStatic("Utils", "ping_wait");
             var sw = Stopwatch.StartNew();
-            var msg = await Context.Channel.SendMessageAsync("🏓").ConfigureAwait(false);
+            var msg = await Context.Channel.SendMessageAsync("🏓 " + pingwaitmsg).ConfigureAwait(false);
             sw.Stop();
             await msg.DeleteAsync();
+            Random random = new Random();
+            string subtitleText = StringResourceHandler.GetTextStatic("Utils", "ping_subtitle" + random.Next(1, 3));
+            string footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer1");
+            if(sw.ElapsedMilliseconds > 200)
+                footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer2");
+            if (sw.ElapsedMilliseconds > 500)
+                footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer3");
+            if (sw.ElapsedMilliseconds > 1000)
+                footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer4");
+            if (sw.ElapsedMilliseconds > 2000)
+                footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer5");
             await ReplyAsync(Context.User.Mention, false, new EmbedBuilder()
-                .WithDescription("🏓 "+ StringResourceHandler.GetTextStatic("Utils","ping",sw.ElapsedMilliseconds))
+                .WithTitle("🏓 " + StringResourceHandler.GetTextStatic("Utils", "ping_title"))
+                .WithDescription(subtitleText+'\n'+StringResourceHandler.GetTextStatic("Utils", "ping_pingtime", sw.ElapsedMilliseconds))
+                .WithFooter(footerText)
                 .Build());
         }
         [Command("invite")]
@@ -38,7 +52,10 @@ namespace PaletteBot.Modules
             TimeSpan uptime = new TimeSpan(DateTime.Now.Ticks - Program.StartTime.Ticks);
             await ReplyAsync(Context.User.Mention, false, new EmbedBuilder()
                 .WithTitle(StringResourceHandler.GetTextStatic("Utils", "stats_title"))
-                .WithDescription(StringResourceHandler.GetTextStatic("Utils", "stats_description"))
+                .WithDescription((Program.botName == "PaletteBot") ?
+                StringResourceHandler.GetTextStatic("Utils", "stats_descriptionPublic")
+                :
+                StringResourceHandler.GetTextStatic("Utils", "stats_description", Program.botName))
                 .WithAuthor($"{Context.Client.CurrentUser.Username} v{typeof(Program).Assembly.GetName().Version}",Context.Client.CurrentUser.GetAvatarUrl())
                 .AddField(StringResourceHandler.GetTextStatic("Utils", "stats_guilds"),Context.Client.Guilds.Count,true)
                 .AddField(StringResourceHandler.GetTextStatic("Utils", "stats_uptime"), uptime.ToString(), true)
