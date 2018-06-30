@@ -283,6 +283,7 @@
     <Compile Include="Modules\Counting\CountingModule.cs" />
     <Compile Include="Modules\CustomReactions\CustomReactionsModule.cs" />
     <Compile Include="Modules\Fun\FunModule.cs" />
+    <Compile Include="Modules\Moderation\ModerationModule.cs" />
     <Compile Include="Modules\Palette\PaletteModule.cs" />
     <Compile Include="Modules\Help\HelpModule.cs" />
     <Compile Include="Modules\Twitch\TwitchModule.cs" />
@@ -312,7 +313,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modules\Akinator\Services\" />
+    <Folder Include="Modules\CustomReactions\Common\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
