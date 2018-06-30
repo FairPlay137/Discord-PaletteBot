@@ -209,7 +209,7 @@ namespace PaletteBot
             // Hook the MessageReceived Event into our Command Handler
             _client.MessageReceived += HandleCommandAsync;
             // Discover all of the commands in this assembly and load them.
-            await _commands.AddModulesAsync(Assembly.GetEntryAssembly());
+            await _commands.AddModulesAsync(Assembly.GetEntryAssembly()); //Pre-2.0.0beta2 format
             //await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), null);
         }
 
