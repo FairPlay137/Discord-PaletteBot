@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("FairPlay137")]
 [assembly: AssemblyProduct("PaletteBot")]
-[assembly: AssemblyCopyright("Copyright © FairPlay137 2017")]
+[assembly: AssemblyCopyright("Copyright © FairPlay137 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
