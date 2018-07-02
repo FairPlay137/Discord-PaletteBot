@@ -14,20 +14,20 @@ namespace PaletteBot.Modules
         public async Task Ping()
         {
             string pingwaitmsg = StringResourceHandler.GetTextStatic("Utils", "ping_wait");
-            var sw = Stopwatch.StartNew();
             var msg = await Context.Channel.SendMessageAsync("🏓 " + pingwaitmsg).ConfigureAwait(false);
-            sw.Stop();
+            var sw = Stopwatch.StartNew();
             await msg.DeleteAsync();
+            sw.Stop();
             Random random = new Random();
-            string subtitleText = StringResourceHandler.GetTextStatic("Utils", "ping_subtitle" + random.Next(1, 3));
+            string subtitleText = StringResourceHandler.GetTextStatic("Utils", "ping_subtitle" + random.Next(1, 5));
             string footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer1");
             if(sw.ElapsedMilliseconds > 200)
                 footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer2");
             if (sw.ElapsedMilliseconds > 500)
                 footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer3");
-            if (sw.ElapsedMilliseconds > 1000)
+            if (sw.ElapsedMilliseconds > 1200)
                 footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer4");
-            if (sw.ElapsedMilliseconds > 2000)
+            if (sw.ElapsedMilliseconds > 5000)
                 footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer5");
             await ReplyAsync(Context.User.Mention, false, new EmbedBuilder()
                 .WithTitle("🏓 " + StringResourceHandler.GetTextStatic("Utils", "ping_title"))

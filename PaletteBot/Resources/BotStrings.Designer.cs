@@ -1069,21 +1069,6 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here&apos;s a list of upcoming features (may not be up-to-date):
-        ///```
-        ///* Sharding. Pretty much all widespread public bots need this.
-        ///* Core features.
-        ///* The rest of the moderation features
-        ///* The list goes on...
-        ///```.
-        /// </summary>
-        public static string Help_upcomingFeatures {
-            get {
-                return ResourceManager.GetString("Help_upcomingFeatures", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Successfully banned {0} from the server, deleting {1} day(s) of messages..
         /// </summary>
         public static string Moderation_ban {
@@ -1116,6 +1101,33 @@ namespace PaletteBot.Resources {
         public static string Moderation_kickFailed {
             get {
                 return ResourceManager.GetString("Moderation_kickFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This channel has been placed on lockdown for {0}..
+        /// </summary>
+        public static string Moderation_lockdown {
+            get {
+                return ResourceManager.GetString("Moderation_lockdown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to lock down channel. I might not have the Manage Channel permission..
+        /// </summary>
+        public static string Moderation_lockdown_fail {
+            get {
+                return ResourceManager.GetString("Moderation_lockdown_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lockdown on this channel has been lifted..
+        /// </summary>
+        public static string Moderation_lockdown_lift {
+            get {
+                return ResourceManager.GetString("Moderation_lockdown_lift", resourceCulture);
             }
         }
         
@@ -1215,6 +1227,24 @@ namespace PaletteBot.Resources {
         public static string Utils_ping_subtitle3 {
             get {
                 return ResourceManager.GetString("Utils_ping_subtitle3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pingus pangus pongus!.
+        /// </summary>
+        public static string Utils_ping_subtitle4 {
+            get {
+                return ResourceManager.GetString("Utils_ping_subtitle4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right back at ya!.
+        /// </summary>
+        public static string Utils_ping_subtitle5 {
+            get {
+                return ResourceManager.GetString("Utils_ping_subtitle5", resourceCulture);
             }
         }
         

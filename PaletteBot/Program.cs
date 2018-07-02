@@ -28,7 +28,7 @@ namespace PaletteBot
         public static string prefix = null;
         public static ulong OwnerID = 0;
         public static string databaseKey = null;
-        public static string botName = "PaletteBot clone";
+        public static string botName = "PaletteBot";
 
         public static DateTime StartTime = DateTime.Now;
         public static DateTime ConnectedAtTime;

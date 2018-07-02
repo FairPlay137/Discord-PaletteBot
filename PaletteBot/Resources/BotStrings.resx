@@ -434,15 +434,6 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Help_introPublic" xml:space="preserve">
     <value>I'm **PaletteBot**, a public bot written by FairPlay137-TTS!</value>
   </data>
-  <data name="Help_upcomingFeatures" xml:space="preserve">
-    <value>Here's a list of upcoming features (may not be up-to-date):
-```
-* Sharding. Pretty much all widespread public bots need this.
-* Core features.
-* The rest of the moderation features
-* The list goes on...
-```</value>
-  </data>
   <data name="Utils_stats_description" xml:space="preserve">
     <value>Hi! I'm **{0}**! I'm based off of PaletteBot, an open-source, multi-purpose bot! I'm still under construction, so expect stuff to change as time goes on.</value>
   </data>
@@ -551,5 +542,21 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   </data>
   <data name="Utils_ping_wait" xml:space="preserve">
     <value>Waiting for Discord API to return the ball...</value>
+  </data>
+  <data name="Moderation_lockdown" xml:space="preserve">
+    <value>This channel has been placed on lockdown for {0}.</value>
+  </data>
+  <data name="Moderation_lockdown_fail" xml:space="preserve">
+    <value>Failed to lock down channel. I might not have the Manage Channel permission.</value>
+    <comment>Perhaps this could be revised in the future?</comment>
+  </data>
+  <data name="Moderation_lockdown_lift" xml:space="preserve">
+    <value>The lockdown on this channel has been lifted.</value>
+  </data>
+  <data name="Utils_ping_subtitle4" xml:space="preserve">
+    <value>Pingus pangus pongus!</value>
+  </data>
+  <data name="Utils_ping_subtitle5" xml:space="preserve">
+    <value>Right back at ya!</value>
   </data>
 </root>
