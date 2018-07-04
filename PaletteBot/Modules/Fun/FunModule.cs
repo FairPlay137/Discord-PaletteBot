@@ -20,8 +20,7 @@ namespace PaletteBot.Modules
                 LogManager.GetCurrentClassLogger().Warn("No 8ball responses found in config.json! Defaulting to built-in responses...");
             }else
             {
-                EightBallResponses = Program.EightBallResponses;
-                LogManager.GetCurrentClassLogger().Info($"Loaded {EightBallResponses.Length} 8ball response(s).");
+                LogManager.GetCurrentClassLogger().Info($"Found {EightBallResponses.Length} 8ball response(s).");
             }
         }
 
@@ -30,7 +29,9 @@ namespace PaletteBot.Modules
         public async Task EightBall([Remainder] [Summary("The question")] string question)
         {
             Random random = new Random();
-            string answer = EightBallResponses[random.Next(EightBallResponses.Length)];
+            string answer = (Program.EightBallResponses.Length > 0)?
+                EightBallResponses[random.Next(Program.EightBallResponses.Length)]:
+                EightBallResponses[random.Next(EightBallResponses.Length)];
             await ReplyAsync("", false, new EmbedBuilder()
                 .AddField($":question: {StringResourceHandler.GetTextStatic("Fun", "8ball_question")}", question)
                 .AddField($":8ball: {StringResourceHandler.GetTextStatic("Fun", "8ball_answer")}", answer)
