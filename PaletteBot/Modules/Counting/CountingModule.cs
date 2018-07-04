@@ -14,8 +14,8 @@ using PaletteBot.Common;
 
 namespace PaletteBot.Modules
 {
-    public class Counting : ModuleBase<SocketCommandContext>
+    public class Counting : PaletteBotModuleBase<SocketCommandContext>
     {
-        //TODO: Start this feature.
+        //TODO: Start this feature
     }
 }

@@ -13,22 +13,28 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using PaletteBot.Common;
 using Discord.Net.Providers.WS4Net;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace PaletteBot
 {
     class Program
     {
-        public static CommandService _commands;
+        public static PaletteBotCommandService _commands;
         private DiscordSocketClient _client;
         private IServiceProvider _services;
 
         public Logger _log;
 
+        private static string token = null;
         public static string defaultPlayingString = null;
         public static string prefix = null;
         public static ulong OwnerID = 0;
         public static string databaseKey = null;
         public static string botName = "PaletteBot";
+        public static bool verboseErrors = false;
+        public static string[] EightBallResponses = { };
+        public static Dictionary<string, List<string>> CustomReactions = new Dictionary<string, List<string>>();
 
         public static DateTime StartTime = DateTime.Now;
         public static DateTime ConnectedAtTime;
@@ -89,7 +95,7 @@ namespace PaletteBot
                 WebSocketProvider = WS4NetProvider.Instance,
                 LogLevel = LogSeverity.Verbose
             });
-            _commands = new CommandService();
+            _commands = new PaletteBotCommandService();
 
             _client.Log += Log;
 
@@ -126,7 +132,7 @@ namespace PaletteBot
                     Environment.Exit(0);
                 }
             }
-            string token = "";
+            token = "";
             try
             {
                 var cfgjson = JsonConvert.DeserializeObject<ConfigJson>(json);
@@ -142,7 +148,7 @@ namespace PaletteBot
                     Console.WriteLine(" 4. Copy the Bot Token (NOT THE CLIENT SECRET) to this prompt.");
                     Console.WriteLine("Enter your bot token below...");
                     token = Console.ReadLine();
-                    Console.WriteLine("To avoid getting this message later, please put the bot token into config.json.");
+                    Console.WriteLine("Okay, this'll be saved into config.json.");
                 }
                 prefix = cfgjson.CommandPrefix;
                 if ((prefix == null) || (prefix == ""))
@@ -154,7 +160,11 @@ namespace PaletteBot
                 OwnerID = cfgjson.OwnerID;
                 databaseKey = cfgjson.DatabaseKey;
                 botName = cfgjson.BotName;
-            }catch (Exception e){
+                EightBallResponses = cfgjson.EightBallResponses;
+                CustomReactions = cfgjson.CustomReactions;
+                SaveConfig();
+            }
+            catch (Exception e){
                 _log.Error(e, "Exception during JSON loading. Setting unassigned values to default...");
                 if ((token == null) || (token == ""))
                 {
@@ -165,7 +175,9 @@ namespace PaletteBot
                     Console.WriteLine(" 3. Below where it says \"App Bot User\", you should see an option to show your bot user's token. Click it.");
                     Console.WriteLine(" 4. Copy the Bot Token (NOT THE CLIENT SECRET) to this prompt.");
                     Console.WriteLine("Enter your bot token below...");
+                    Console.Write("> ");
                     token = Console.ReadLine();
+                    Console.WriteLine("Okay, I'll save that whenever I need to save config.json.");
                 }
                 if ((prefix == null) || (prefix == ""))
                     prefix = "pal:";
@@ -173,6 +185,12 @@ namespace PaletteBot
                     defaultPlayingString = "pal:help";
                 if (databaseKey == null)
                     databaseKey = "";
+                Console.WriteLine("Would you like to save these into config.json now? YOUR OLD CONFIG.JSON WILL BE OVERWRITTEN.");
+                Console.WriteLine("If you want, make a backup of your current config.json before continuing.");
+                Console.Write("(Y/N)> ");
+                string choice = Console.ReadLine();
+                if(choice.ToLower().StartsWith("y"))
+                    SaveConfig();
             }
 
             _client.JoinedGuild += GuildJoin;
@@ -181,7 +199,7 @@ namespace PaletteBot
             if (databaseKey == "")
                 _log.Warn("The database key is blank! This could pose a potential security risk!");
             if (OwnerID == 0)
-                _log.Warn("An owner ID has not been specified!");
+                _log.Warn("An owner ID has not been specified! You will need to shut down the bot manually.");
 
             _log.Info("Initializing modules...");
 
@@ -209,8 +227,8 @@ namespace PaletteBot
             // Hook the MessageReceived Event into our Command Handler
             _client.MessageReceived += HandleCommandAsync;
             // Discover all of the commands in this assembly and load them.
-            await _commands.AddModulesAsync(Assembly.GetEntryAssembly()); //Pre-2.0.0beta2 format
-            //await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), null);
+            //await _commands.AddModulesAsync(Assembly.GetEntryAssembly()); //Pre-2.0.0beta2 format
+            await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), null);
         }
 
         private async Task HandleCommandAsync(SocketMessage messageParam)
@@ -218,6 +236,17 @@ namespace PaletteBot
             // Don't process the command if it was a System Message
             var message = messageParam as SocketUserMessage;
             if (message == null) return;
+
+            // If it's part of a custom reaction, skip command processing
+            foreach (var key in CustomReactions.Keys)
+            {
+                string k = key.ToLower()
+                    .Replace("%mention%", _client.CurrentUser.Mention)
+                    .Replace("%user%",message.Author.Mention);
+                if (message.Content.ToLower().StartsWith(k))
+                    return;
+            }
+
             // Create a number to track where the prefix ends and the command begins
             int argPos = 0;
             if (!(message.HasStringPrefix(prefix, ref argPos))) return;
@@ -260,7 +289,7 @@ namespace PaletteBot
                 _log.Info($" Msg: \"{context.Message}\"");
                 _log.Info($" Usr: @{context.User.Username}#{context.User.Discriminator} ({context.User.Id})");
                 if(context.Guild == null)
-                    _log.Info(" Srvr: (PRIVATE)");
+                    _log.Info(" Srvr: (DIRECT)");
                 else
                     _log.Info($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
             }
@@ -271,7 +300,7 @@ namespace PaletteBot
                 _log.Warn($" Msg: \"{context.Message}\"");
                 _log.Warn($" Usr: @{context.User.Username}#{context.User.Discriminator} ({context.User.Id})");
                 if (context.Guild == null)
-                    _log.Info(" Srvr: (PRIVATE)");
+                    _log.Info(" Srvr: (DIRECT)");
                 else
                     _log.Warn($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
             }
@@ -294,25 +323,59 @@ namespace PaletteBot
         }
         static void Main(string[] args)
             => new Program().StartAsync().GetAwaiter().GetResult();
+        private void SaveConfig()
+        {
+            _log.Info("Saving config.json...");
+            try
+            {
+                ConfigJson cfg = new ConfigJson();
+                cfg.Token = token;
+                cfg.CommandPrefix = prefix;
+                cfg.DefaultPlayingString = defaultPlayingString;
+                cfg.OwnerID = OwnerID;
+                cfg.DatabaseKey = databaseKey;
+                cfg.BotName = botName;
+                cfg.VerboseErrors = verboseErrors;
+                cfg.EightBallResponses = EightBallResponses;
+                cfg.CustomReactions = CustomReactions;
+                string json = JsonConvert.SerializeObject(cfg, Formatting.Indented);
+
+                _log.Info("Save complete!");
+            }
+            catch(Exception e)
+            {
+                _log.Error("Save failed!");
+                _log.Error(e);
+            }
+        }
     }
     public struct ConfigJson
     {
         [JsonProperty("token")]
-        public string Token { get; private set; }
+        public string Token { get; set; }
 
         [JsonProperty("prefix")]
-        public string CommandPrefix { get; private set; }
+        public string CommandPrefix { get; set; }
 
         [JsonProperty("defaultplaying")]
-        public string DefaultPlayingString { get; private set; }
+        public string DefaultPlayingString { get; set; }
 
         [JsonProperty("ownerid")]
-        public ulong OwnerID { get; private set; }
+        public ulong OwnerID { get; set; }
 
         [JsonProperty("databasekey")]
-        public string DatabaseKey { get; private set; }
+        public string DatabaseKey { get; set; }
 
         [JsonProperty("botname")]
-        public string BotName { get; private set; }
+        public string BotName { get; set; }
+
+        [JsonProperty("verboseerrors")]
+        public bool VerboseErrors { get; set; }
+
+        [JsonProperty("8ballResponses")]
+        public string[] EightBallResponses { get; set; }
+
+        [JsonProperty("customReactions")]
+        public Dictionary<string, List<string>> CustomReactions { get; set; }
     }
 }

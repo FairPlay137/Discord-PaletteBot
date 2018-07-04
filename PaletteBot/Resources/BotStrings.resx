@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Admin_restart" xml:space="preserve">
-    <value>Restarting... This should take a few seconds.</value>
+    <value>Restarting... I'll be back in a few moments!</value>
   </data>
   <data name="Admin_shutdown" xml:space="preserve">
     <value>Shutting down...</value>
@@ -205,13 +205,13 @@
     <value>You don't have permission to set up the bot. (This bot can only be set up by the server owner)</value>
   </data>
   <data name="err_tooFewArgs" xml:space="preserve">
-    <value>Not enough args have been given.</value>
+    <value>Not enough arguments have been given.</value>
   </data>
   <data name="err_tooManyArgs" xml:space="preserve">
-    <value>Too many args have been given.</value>
+    <value>Too many arguments have been given.</value>
   </data>
   <data name="err_unknownCommand" xml:space="preserve">
-    <value>Unknown command. Did you type it wrong,</value>
+    <value>Unknown command. Be sure you typed it correctly, or type "{0}help" for help.</value>
   </data>
   <data name="err_colorUnusualPerms" xml:space="preserve">
     <value>The permissions on this color seem a bit unusual. This color can't be used until the permissions on it are neutralized.</value>
@@ -281,10 +281,10 @@
     <comment>This should only happen if I accidentally do a terrible job copying and pasting some stuff.</comment>
   </data>
   <data name="err_noBotOwner" xml:space="preserve">
-    <value>It appears that no bot owner ID has been specified in config.json! This command can't be used.</value>
+    <value>It appears that the owner hasn't put their user ID in config.json! This command can't be used.</value>
   </data>
   <data name="err_nonexistentModule" xml:space="preserve">
-    <value>I couldn't find that module.</value>
+    <value>I couldn't find that module. (Did you type it wrong?)</value>
   </data>
   <data name="err_unmetPrecondition" xml:space="preserve">
     <value>You don't have permission to use this command.</value>
@@ -314,7 +314,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Help_DMedHelp" xml:space="preserve">
     <value>:mailbox: **Check your DMs!** I have sent some useful tips over.</value>
   </data>
-  <data name="Counting_lastPlayerStanding" xml:space="preserve">
+  <data name="Counting_roundComplete" xml:space="preserve">
     <value>It appears we have a winner! {0} has won this round! Good job everyone for managing to count to {1}! Stay tuned for the next round!</value>
   </data>
   <data name="Counting_lifeCounter_LastLife" xml:space="preserve">
@@ -339,7 +339,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Because {0} skipped one or more numbers, they have lost a life!</value>
   </data>
   <data name="Counting_newRound" xml:space="preserve">
-    <value>NEW ROUND STARTING! I'll start.</value>
+    <value>Alright, **new round!** I'll start.</value>
   </data>
   <data name="Counting_playerEliminated" xml:space="preserve">
     <value>Oh dear, it seems {0} ran out of lives! They are eliminated from the game!</value>
@@ -350,8 +350,8 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Counting_startGame" xml:space="preserve">
     <value>Welcome to {0}! Start from 1, and count as high as you can! Make sure to not skip or repeat any numbers and keep it as whole decimal numbers, or you'll get a strike! Also, once you post your number, you gotta wait for another person posts the next number before you post your next number! GOOD LUCK!</value>
   </data>
-  <data name="CustomReactions_CRID" xml:space="preserve">
-    <value>Custom Reaction ID:</value>
+  <data name="CustomReactions_ViewCustomReaction" xml:space="preserve">
+    <value>Viewing Custom Reaction:</value>
   </data>
   <data name="CustomReactions_DeleteCustomReaction" xml:space="preserve">
     <value>Custom Reaction deleted!</value>
@@ -363,7 +363,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Custom Reaction created!</value>
   </data>
   <data name="CustomReactions_response" xml:space="preserve">
-    <value>Response:</value>
+    <value>Response #{0}:</value>
   </data>
   <data name="CustomReactions_trigger" xml:space="preserve">
     <value>Trigger:</value>
@@ -543,6 +543,18 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Utils_ping_wait" xml:space="preserve">
     <value>Waiting for Discord API to return the ball...</value>
   </data>
+  <data name="Counting_lastPlayerStanding" xml:space="preserve">
+    <value>Oh my! It seems like {0} is the last one standing! Therefore, {0} won this round! We made it to {1}.</value>
+  </data>
+  <data name="CustomReactions_restartPrompt" xml:space="preserve">
+    <value>Please restart the bot for this change to take effect.</value>
+  </data>
+  <data name="err_CustomReactionNotExistent" xml:space="preserve">
+    <value>That custom reaction doesn't exist.</value>
+  </data>
+  <data name="err_malformedConfig" xml:space="preserve">
+    <value>The configuration file appears to be corrupt! Please report this to the owner.</value>
+  </data>
   <data name="Moderation_lockdown" xml:space="preserve">
     <value>This channel has been placed on lockdown for {0}.</value>
   </data>
@@ -558,5 +570,11 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   </data>
   <data name="Utils_ping_subtitle5" xml:space="preserve">
     <value>Right back at ya!</value>
+  </data>
+  <data name="Utils_verboseErrors_off" xml:space="preserve">
+    <value>Alright, incorrectly used commands will no longer show errors.</value>
+  </data>
+  <data name="Utils_verboseErrors_on" xml:space="preserve">
+    <value>Okay, incorrectly used commands will now show errors.</value>
   </data>
 </root>

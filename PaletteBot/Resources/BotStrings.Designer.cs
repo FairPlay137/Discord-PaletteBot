@@ -79,7 +79,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restarting... This should take a few seconds..
+        ///   Looks up a localized string similar to Restarting... I&apos;ll be back in a few moments!.
         /// </summary>
         public static string Admin_restart {
             get {
@@ -520,7 +520,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It appears we have a winner! {0} has won this round! Good job everyone for managing to count to {1}! Stay tuned for the next round!.
+        ///   Looks up a localized string similar to Oh my! It seems like {0} is the last one standing! Therefore, {0} won this round! We made it to {1}..
         /// </summary>
         public static string Counting_lastPlayerStanding {
             get {
@@ -592,7 +592,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NEW ROUND STARTING! I&apos;ll start..
+        ///   Looks up a localized string similar to Alright, **new round!** I&apos;ll start..
         /// </summary>
         public static string Counting_newRound {
             get {
@@ -619,20 +619,20 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to It appears we have a winner! {0} has won this round! Good job everyone for managing to count to {1}! Stay tuned for the next round!.
+        /// </summary>
+        public static string Counting_roundComplete {
+            get {
+                return ResourceManager.GetString("Counting_roundComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome to {0}! Start from 1, and count as high as you can! Make sure to not skip or repeat any numbers and keep it as whole decimal numbers, or you&apos;ll get a strike! Also, once you post your number, you gotta wait for another person posts the next number before you post your next number! GOOD LUCK!.
         /// </summary>
         public static string Counting_startGame {
             get {
                 return ResourceManager.GetString("Counting_startGame", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Custom Reaction ID:.
-        /// </summary>
-        public static string CustomReactions_CRID {
-            get {
-                return ResourceManager.GetString("CustomReactions_CRID", resourceCulture);
             }
         }
         
@@ -664,11 +664,20 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Response:.
+        ///   Looks up a localized string similar to Response #{0}:.
         /// </summary>
         public static string CustomReactions_response {
             get {
                 return ResourceManager.GetString("CustomReactions_response", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please restart the bot for this change to take effect..
+        /// </summary>
+        public static string CustomReactions_restartPrompt {
+            get {
+                return ResourceManager.GetString("CustomReactions_restartPrompt", resourceCulture);
             }
         }
         
@@ -678,6 +687,15 @@ namespace PaletteBot.Resources {
         public static string CustomReactions_trigger {
             get {
                 return ResourceManager.GetString("CustomReactions_trigger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Viewing Custom Reaction:.
+        /// </summary>
+        public static string CustomReactions_ViewCustomReaction {
+            get {
+                return ResourceManager.GetString("CustomReactions_ViewCustomReaction", resourceCulture);
             }
         }
         
@@ -745,6 +763,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to That custom reaction doesn&apos;t exist..
+        /// </summary>
+        public static string err_CustomReactionNotExistent {
+            get {
+                return ResourceManager.GetString("err_CustomReactionNotExistent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I couldn&apos;t quite get that. Type `{0}help` for help..
         /// </summary>
         public static string err_DMCommandError {
@@ -781,6 +808,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The configuration file appears to be corrupt! Please report this to the owner..
+        /// </summary>
+        public static string err_malformedConfig {
+            get {
+                return ResourceManager.GetString("err_malformedConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This command exists in more than one module. Therefore, it cannot be used at the moment. Please report this to @FairPlay137-TTS#8972 via a DM or something..
         /// </summary>
         public static string err_multipleCommandDefs {
@@ -790,7 +826,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It appears that no bot owner ID has been specified in config.json! This command can&apos;t be used..
+        ///   Looks up a localized string similar to It appears that the owner hasn&apos;t put their user ID in config.json! This command can&apos;t be used..
         /// </summary>
         public static string err_noBotOwner {
             get {
@@ -817,7 +853,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I couldn&apos;t find that module..
+        ///   Looks up a localized string similar to I couldn&apos;t find that module. (Did you type it wrong?).
         /// </summary>
         public static string err_nonexistentModule {
             get {
@@ -898,7 +934,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not enough args have been given..
+        ///   Looks up a localized string similar to Not enough arguments have been given..
         /// </summary>
         public static string err_tooFewArgs {
             get {
@@ -907,7 +943,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Too many args have been given..
+        ///   Looks up a localized string similar to Too many arguments have been given..
         /// </summary>
         public static string err_tooManyArgs {
             get {
@@ -916,7 +952,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unknown command. Did you type it wrong,.
+        ///   Looks up a localized string similar to Unknown command. Be sure you typed it correctly, or type &quot;{0}help&quot; for help..
         /// </summary>
         public static string err_unknownCommand {
             get {
@@ -1353,6 +1389,24 @@ namespace PaletteBot.Resources {
         public static string Utils_stats_voiceChannels {
             get {
                 return ResourceManager.GetString("Utils_stats_voiceChannels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alright, incorrectly used commands will no longer show errors..
+        /// </summary>
+        public static string Utils_verboseErrors_off {
+            get {
+                return ResourceManager.GetString("Utils_verboseErrors_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Okay, incorrectly used commands will now show errors..
+        /// </summary>
+        public static string Utils_verboseErrors_on {
+            get {
+                return ResourceManager.GetString("Utils_verboseErrors_on", resourceCulture);
             }
         }
     }

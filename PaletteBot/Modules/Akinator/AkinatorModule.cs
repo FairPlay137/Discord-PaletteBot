@@ -7,7 +7,7 @@ using PaletteBot.Common;
 
 namespace PaletteBot.Modules
 {
-    public class Akinator : ModuleBase<SocketCommandContext>
+    public class Akinator : PaletteBotModuleBase<SocketCommandContext>
     {
         [Command("akinator")]
         [Summary("Starts an Akinator game (COMING SOON)")]

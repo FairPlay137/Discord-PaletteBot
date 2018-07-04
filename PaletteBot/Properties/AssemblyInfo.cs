@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("PaletteBot")]
-[assembly: AssemblyDescription("A Discord bot which lets users assign colors to themselves")]
+[assembly: AssemblyDescription("An open-source, multi-purpose Discord bot.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("FairPlay137")]
 [assembly: AssemblyProduct("PaletteBot")]

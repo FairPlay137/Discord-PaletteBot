@@ -5,7 +5,7 @@ using PaletteBot.Common;
 
 namespace PaletteBot.Modules
 {
-    public class Help : ModuleBase<SocketCommandContext>
+    public class Help : PaletteBotModuleBase<SocketCommandContext>
     {
         [Command("help")]
         [Summary("To be implemented...")]

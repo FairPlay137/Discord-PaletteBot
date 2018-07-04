@@ -9,7 +9,7 @@ using PaletteBot.Common;
 
 namespace PaletteBot.Modules
 {
-    public class Admin : ModuleBase<SocketCommandContext>
+    public class Admin : PaletteBotModuleBase<SocketCommandContext>
     {
         [Command("shutdown")]
         [Summary("Shuts down the bot. **BOT OWNER ONLY**")]

@@ -4,5 +4,15 @@
   "defaultplaying": "pal:help",
   "ownerid": 0,
   "databasekey": "",
-  "botname": "PaletteBot"
+  "botname": "PaletteBot",
+  "8ballResponses": [
+
+  ],
+  "customReactions": {
+    "%mention% are you working?": [
+      "I think I am... :thinking:",
+      "Yeah, for the most part...",
+      "All systems operational, %user%!"
+    ]
+  }
 }

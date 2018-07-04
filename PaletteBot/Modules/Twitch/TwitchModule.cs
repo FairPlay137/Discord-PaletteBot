@@ -7,8 +7,8 @@ using PaletteBot.Common;
 
 namespace PaletteBot.Modules
 {
-    public class Twitch : ModuleBase<SocketCommandContext>
+    public class Twitch : PaletteBotModuleBase<SocketCommandContext>
     {
-        //TODO: Start this feature.
+        //TODO: Start this feature
     }
 }

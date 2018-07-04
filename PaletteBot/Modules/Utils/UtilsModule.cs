@@ -7,7 +7,7 @@ using PaletteBot.Common;
 
 namespace PaletteBot.Modules
 {
-    public class Utils : ModuleBase<SocketCommandContext>
+    public class Utils : PaletteBotModuleBase<SocketCommandContext>
     {
         [Command("ping")]
         [Summary("Pings the bot.")]

@@ -9,7 +9,7 @@ using PaletteBot.Common;
 
 namespace PaletteBot.Modules
 {
-    public class Moderation : ModuleBase<SocketCommandContext>
+    public class Moderation : PaletteBotModuleBase<SocketCommandContext>
     {
         
     }
