@@ -37,7 +37,7 @@ namespace PaletteBot
         public static string[] EightBallResponses = { };
         public static Dictionary<string, List<string>> CustomReactions = new Dictionary<string, List<string>>();
 
-        public static DateTime StartTime = DateTime.Now;
+        public static DateTime StartTime = DateTime.Now; //An easy way to calculate the startup time
         public static DateTime ConnectedAtTime;
 
         public static void SetupLogger()
@@ -76,12 +76,12 @@ namespace PaletteBot
                 case LogSeverity.Warning:
                     _log.Warn(msg.Source + " | " + msg.Message);
                     break;
-                default:
+                default: //Hopefully this'll never happen
                     _log.Info(msg.Source + " | " + msg.Message + $" (INVALID SEVERITY LEVEL {msg.Severity.ToString()})");
                     break;
             }
 
-            if (msg.Exception != null)
+            if (msg.Exception != null) //If there's an exception, output it to the console.
                 _log.Warn(msg.Exception);
             
             return Task.CompletedTask;
@@ -93,12 +93,12 @@ namespace PaletteBot
 
             _client = new DiscordSocketClient(new DiscordSocketConfig()
             {
-                WebSocketProvider = WS4NetProvider.Instance,
+                WebSocketProvider = WS4NetProvider.Instance, //To maintain compatibility with Windows 7. Mono doesn't like this very much
                 LogLevel = LogSeverity.Info
             });
             _commands = new PaletteBotCommandService();
 
-            _client.Log += Log;
+            _client.Log += Log; //Route Discord.NET logs to the console
 
             _log.Info($"PaletteBot v{GetType().Assembly.GetName().Version} is starting up...");
 
@@ -197,8 +197,8 @@ namespace PaletteBot
             _client.JoinedGuild += GuildJoin;
             _client.LeftGuild += GuildLeave;
 
-            if (databaseKey == "")
-                _log.Warn("The database key is blank! This could pose a potential security risk!");
+            //if (databaseKey == "") //commented out because we don't have anything that requires a SQLite database yet
+            //    _log.Warn("The database key is blank! This could pose a potential security risk!");
             if (OwnerID == 0)
                 _log.Warn("An owner ID has not been specified! You will need to shut down the bot manually.");
 
@@ -243,8 +243,8 @@ namespace PaletteBot
             foreach (var key in CustomReactions.Keys)
             {
                 string k = key.ToLower().Trim()
-                    .Replace("%mention%", _client.CurrentUser.Mention)
-                    .Replace("%user%",message.Author.Mention);
+                    .Replace("%mention%", _client.CurrentUser.Mention) //Replace %mention% with the bot's mention
+                    .Replace("%user%",message.Author.Mention); //Replace %user% with the user's mention
                 if (message.Content.ToLower().Trim().StartsWith(k))
                     return;
             }
@@ -263,19 +263,19 @@ namespace PaletteBot
                 string errtext;
                 switch (result.Error)
                 {
-                    case CommandError.UnknownCommand:
+                    case CommandError.UnknownCommand: //Unknown command
                         errtext = StringResourceHandler.GetTextStatic("err","unknownCommand");
                         break;
-                    case CommandError.UnmetPrecondition:
+                    case CommandError.UnmetPrecondition: //Insufficient permissions
                         errtext = StringResourceHandler.GetTextStatic("err", "unmetPrecondition");
                         break;
-                    case CommandError.MultipleMatches:
+                    case CommandError.MultipleMatches: //oops
                         errtext = StringResourceHandler.GetTextStatic("err", "multipleCommandDefs");
                         break;
-                    case CommandError.Exception:
+                    case CommandError.Exception: //Exception during command processing
                         errtext = StringResourceHandler.GetTextStatic("err", "exception", result.ErrorReason);
                         break;
-                    default:
+                    default: //Other situations which I haven't accounted for
                         errtext = result.ErrorReason;
                         break;
                 }
@@ -341,7 +341,7 @@ namespace PaletteBot
                 cfg.EightBallResponses = EightBallResponses;
                 cfg.CustomReactions = CustomReactions;
                 string json = JsonConvert.SerializeObject(cfg, Formatting.Indented);
-
+                //TODO: This doesn't actually save yet. Implement writing to config.json
                 _log.Info("Save complete!");
             }
             catch(Exception e)
