@@ -30,7 +30,7 @@ namespace PaletteBot.Modules
         {
             Random random = new Random();
             string answer = (Program.EightBallResponses.Length > 0)?
-                EightBallResponses[random.Next(Program.EightBallResponses.Length)]:
+                Program.EightBallResponses[random.Next(Program.EightBallResponses.Length)]:
                 EightBallResponses[random.Next(EightBallResponses.Length)];
             await ReplyAsync("", false, new EmbedBuilder()
                 .AddField($":question: {StringResourceHandler.GetTextStatic("Fun", "8ball_question")}", question)
