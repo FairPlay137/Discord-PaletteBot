@@ -299,7 +299,7 @@
     <Compile Include="Common\StringResourceHandler.cs" />
     <Compile Include="Modules\Utils\UtilsModule.cs" />
     <Compile Include="Services\CustomReactionService.cs" />
-    <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\PaletteBotService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

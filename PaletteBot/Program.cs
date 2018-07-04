@@ -12,6 +12,7 @@ using NLog.Targets;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using PaletteBot.Common;
+using PaletteBot.Services;
 using Discord.Net.Providers.WS4Net;
 using System.Linq;
 using System.Collections.Generic;
@@ -209,6 +210,7 @@ namespace PaletteBot
                 .BuildServiceProvider();
 
             await InstallCommandsAsync();
+            CustomReactionService crService = new CustomReactionService(_client);
 
             _commands.Log += Log;
             _commands.CommandExecuted += LogCommandExecution;

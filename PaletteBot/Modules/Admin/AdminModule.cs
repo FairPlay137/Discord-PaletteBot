@@ -23,7 +23,7 @@ namespace PaletteBot.Modules
             }
             else
             {
-                if (Program.OwnerID != Context.Message.Author.Id)
+                if (Program.OwnerID != Context.Message.Author.Id) //TODO: Make this a precondition rather than a hardcoded check
                 {
                     await ReplyAsync($":no_entry: `{StringResourceHandler.GetTextStatic("err", "notBotOwner")}`");
                 }

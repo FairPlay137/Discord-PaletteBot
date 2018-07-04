@@ -655,11 +655,29 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom reactions:.
+        /// </summary>
+        public static string CustomReactions_ListCustomReactions {
+            get {
+                return ResourceManager.GetString("CustomReactions_ListCustomReactions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom Reaction created!.
         /// </summary>
         public static string CustomReactions_NewCustomReaction {
             get {
                 return ResourceManager.GetString("CustomReactions_NewCustomReaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *There are no custom reactions.*.
+        /// </summary>
+        public static string CustomReactions_noCustomReactions {
+            get {
+                return ResourceManager.GetString("CustomReactions_noCustomReactions", resourceCulture);
             }
         }
         
@@ -678,6 +696,24 @@ namespace PaletteBot.Resources {
         public static string CustomReactions_restartPrompt {
             get {
                 return ResourceManager.GetString("CustomReactions_restartPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are {0} custom reactions in total..
+        /// </summary>
+        public static string CustomReactions_TotalCountMultiple {
+            get {
+                return ResourceManager.GetString("CustomReactions_TotalCountMultiple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is one custom reaction in total..
+        /// </summary>
+        public static string CustomReactions_TotalCountOne {
+            get {
+                return ResourceManager.GetString("CustomReactions_TotalCountOne", resourceCulture);
             }
         }
         
