@@ -36,10 +36,10 @@ namespace PaletteBot.Services
             var message = messageParam as SocketUserMessage;
             foreach (var cr in Program.CustomReactions)
             {
-                string key = cr.Key.ToLower()
+                string key = cr.Key.ToLower().Trim()
                     .Replace("%mention%", _client.CurrentUser.Mention)
                     .Replace("%user%", message.Author.Mention);
-                if (message.Content.ToLower().StartsWith(key))
+                if (message.Content.ToLower().Trim().StartsWith(key))
                 {
                     Random random = new Random();
                     string value = cr.Value[random.Next(cr.Value.Count)]

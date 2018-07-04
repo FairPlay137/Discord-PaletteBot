@@ -94,7 +94,7 @@ namespace PaletteBot
             _client = new DiscordSocketClient(new DiscordSocketConfig()
             {
                 WebSocketProvider = WS4NetProvider.Instance,
-                LogLevel = LogSeverity.Verbose
+                LogLevel = LogSeverity.Info
             });
             _commands = new PaletteBotCommandService();
 
@@ -242,10 +242,10 @@ namespace PaletteBot
             // If it's part of a custom reaction, skip command processing
             foreach (var key in CustomReactions.Keys)
             {
-                string k = key.ToLower()
+                string k = key.ToLower().Trim()
                     .Replace("%mention%", _client.CurrentUser.Mention)
                     .Replace("%user%",message.Author.Mention);
-                if (message.Content.ToLower().StartsWith(k))
+                if (message.Content.ToLower().Trim().StartsWith(k))
                     return;
             }
 
