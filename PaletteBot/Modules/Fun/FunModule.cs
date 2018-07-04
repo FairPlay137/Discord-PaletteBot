@@ -17,10 +17,10 @@ namespace PaletteBot.Modules
         {
             if(Program.EightBallResponses.Length == 0)
             {
-                LogManager.GetCurrentClassLogger().Warn("No 8ball responses found in config.json! Defaulting to built-in responses...");
+                LogManager.GetCurrentClassLogger().Warn("No 8ball responses found in config.json! Using built-in responses instead...");
             }else
             {
-                LogManager.GetCurrentClassLogger().Info($"Found {EightBallResponses.Length} 8ball response(s).");
+                LogManager.GetCurrentClassLogger().Info($"Found {Program.EightBallResponses.Length} 8ball response(s).");
             }
         }
 
