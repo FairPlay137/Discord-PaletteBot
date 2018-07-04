@@ -546,20 +546,20 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Counting_lastPlayerStanding" xml:space="preserve">
     <value>Oh my! It seems like {0} is the last one standing! Therefore, {0} won this round! We made it to {1}.</value>
   </data>
+  <data name="CustomReactions_lcr_noCustomReactions" xml:space="preserve">
+    <value>*There are no custom reactions.*</value>
+  </data>
+  <data name="CustomReactions_lcr_TotalCountMultiple" xml:space="preserve">
+    <value>**There are {0} custom reactions in total.**</value>
+  </data>
+  <data name="CustomReactions_lcr_TotalCountOne" xml:space="preserve">
+    <value>**There is one custom reaction in total.**</value>
+  </data>
   <data name="CustomReactions_ListCustomReactions" xml:space="preserve">
     <value>Custom reactions:</value>
   </data>
-  <data name="CustomReactions_noCustomReactions" xml:space="preserve">
-    <value>*There are no custom reactions.*</value>
-  </data>
   <data name="CustomReactions_restartPrompt" xml:space="preserve">
     <value>Please restart the bot for this change to take effect.</value>
-  </data>
-  <data name="CustomReactions_TotalCountMultiple" xml:space="preserve">
-    <value>There are {0} custom reactions in total.</value>
-  </data>
-  <data name="CustomReactions_TotalCountOne" xml:space="preserve">
-    <value>There is one custom reaction in total.</value>
   </data>
   <data name="err_CustomReactionNotExistent" xml:space="preserve">
     <value>That custom reaction doesn't exist.</value>

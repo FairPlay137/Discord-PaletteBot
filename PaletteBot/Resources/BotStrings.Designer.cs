@@ -655,6 +655,33 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to *There are no custom reactions.*.
+        /// </summary>
+        public static string CustomReactions_lcr_noCustomReactions {
+            get {
+                return ResourceManager.GetString("CustomReactions_lcr_noCustomReactions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to **There are {0} custom reactions in total.**.
+        /// </summary>
+        public static string CustomReactions_lcr_TotalCountMultiple {
+            get {
+                return ResourceManager.GetString("CustomReactions_lcr_TotalCountMultiple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to **There is one custom reaction in total.**.
+        /// </summary>
+        public static string CustomReactions_lcr_TotalCountOne {
+            get {
+                return ResourceManager.GetString("CustomReactions_lcr_TotalCountOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom reactions:.
         /// </summary>
         public static string CustomReactions_ListCustomReactions {
@@ -673,15 +700,6 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *There are no custom reactions.*.
-        /// </summary>
-        public static string CustomReactions_noCustomReactions {
-            get {
-                return ResourceManager.GetString("CustomReactions_noCustomReactions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Response #{0}:.
         /// </summary>
         public static string CustomReactions_response {
@@ -696,24 +714,6 @@ namespace PaletteBot.Resources {
         public static string CustomReactions_restartPrompt {
             get {
                 return ResourceManager.GetString("CustomReactions_restartPrompt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There are {0} custom reactions in total..
-        /// </summary>
-        public static string CustomReactions_TotalCountMultiple {
-            get {
-                return ResourceManager.GetString("CustomReactions_TotalCountMultiple", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There is one custom reaction in total..
-        /// </summary>
-        public static string CustomReactions_TotalCountOne {
-            get {
-                return ResourceManager.GetString("CustomReactions_TotalCountOne", resourceCulture);
             }
         }
         

@@ -9,10 +9,15 @@
 
   ],
   "customReactions": {
-    "%mention% are you working?": [
-      "I think I am... :thinking:",
-      "Yeah, for the most part...",
-      "All systems operational, %user%!"
-    ]
+    "PaletteBot, test custom reaction": [
+	    "%user%, this is response 1.",
+	    "%user%, this is response 2.",
+	    "%user%, this is response 3.",
+	    "%user%, this is response 4.",
+	    "%user%, this is response 5.",
+	    "%user%, this is response 6.",
+	    "%user%, this is response 7.",
+	    "%user%, this is response 8."
+	  ]
   }
 }
