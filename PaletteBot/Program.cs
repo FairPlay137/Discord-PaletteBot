@@ -94,7 +94,7 @@ namespace PaletteBot
             _client = new DiscordSocketClient(new DiscordSocketConfig()
             {
                 WebSocketProvider = WS4NetProvider.Instance, //To maintain compatibility with Windows 7. Mono doesn't like this very much
-                LogLevel = LogSeverity.Info
+                LogLevel = LogSeverity.Info //Not too verbose, since we want to utilize the logging ourselves too, and we don't want it buried underneath a ton of Discord.NET logs
             });
             _commands = new PaletteBotCommandService();
 
@@ -240,14 +240,38 @@ namespace PaletteBot
             if (message == null) return;
 
             // If it's part of a custom reaction, skip command processing
-            foreach (var key in CustomReactions.Keys)
-            {
-                string k = key.ToLower().Trim()
-                    .Replace("%mention%", _client.CurrentUser.Mention) //Replace %mention% with the bot's mention
-                    .Replace("%user%",message.Author.Mention); //Replace %user% with the user's mention
-                if (message.Content.ToLower().Trim().StartsWith(k))
-                    return;
-            }
+                foreach (var k in CustomReactions.Keys)
+                {
+                    string[] key = k.ToLower().Trim().Split(' ');
+                    string[] msg = message.Content.ToLower().Trim().Split(' ');
+                    bool matchesKey = true;
+                    int index = 0;
+                    try
+                    {
+                        foreach (string kword in key)
+                        {
+                            string keyw;
+                            switch (kword)
+                            {
+                                case "%mention%":
+                                    keyw = _client.CurrentUser.Mention; break;
+                                case "%user%":
+                                    keyw = message.Author.Mention; break;
+                                default:
+                                    keyw = kword; break;
+                            }
+                            if (kword != msg[index])
+                                matchesKey = false;
+                            index++;
+                        }
+                    }
+                    catch(Exception) //TODO: This is a sloppy workaround and may not be the best solution; rewrite the code
+                    {
+                        //LogManager.GetCurrentClassLogger().Debug("fix buggy message handling code in Program.cs pl0x");
+                    }
+                    if (matchesKey)
+                        return;
+                }
 
             // Create a number to track where the prefix ends and the command begins
             int argPos = 0;
@@ -290,10 +314,13 @@ namespace PaletteBot
                 _log.Info($" Cmd: \"{cmdinfo.Name}\" in module \"{cmdinfo.Module.Name}\"");
                 _log.Info($" Msg: \"{context.Message}\"");
                 _log.Info($" Usr: @{context.User.Username}#{context.User.Discriminator} ({context.User.Id})");
-                if(context.Guild == null)
-                    _log.Info(" Srvr: (DIRECT)");
+                if (context.Guild == null)
+                    _log.Info(" [Sent in DMs]");
                 else
+                {
                     _log.Info($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
+                    _log.Info($" Chnl: #{context.Channel.Name} ({context.Channel.Id})");
+                }
             }
             else
             {
@@ -302,9 +329,12 @@ namespace PaletteBot
                 _log.Warn($" Msg: \"{context.Message}\"");
                 _log.Warn($" Usr: @{context.User.Username}#{context.User.Discriminator} ({context.User.Id})");
                 if (context.Guild == null)
-                    _log.Info(" Srvr: (DIRECT)");
+                    _log.Info(" [Sent in DMs]");
                 else
-                    _log.Warn($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
+                {
+                    _log.Info($" Srvr: \"{context.Guild.Name}\" ({context.Guild.Id})");
+                    _log.Info($" Chnl: #{context.Channel.Name} ({context.Channel.Id})");
+                }
             }
             return Task.CompletedTask;
         }
@@ -313,7 +343,7 @@ namespace PaletteBot
             _log.Info($"Joined guild: {guild.Name} ({guild.Id})");
             _log.Info($" {guild.TextChannels.Count} Text Channel(s)");
             _log.Info($" {guild.VoiceChannels.Count} Voice Channel(s)");
-            _log.Info($" {guild.Users.Count} users");
+            _log.Info($" {guild.Users.Count} user(s)");
             _log.Info($" Owner: @{guild.Owner.Username}#{guild.Owner.Discriminator} ({guild.OwnerId})");
             _log.Info($" Created {guild.CreatedAt}");
             return Task.CompletedTask;

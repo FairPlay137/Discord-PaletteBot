@@ -718,20 +718,47 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom Reaction entry:.
+        /// </summary>
+        public static string CustomReactions_ShowCustomReaction {
+            get {
+                return ResourceManager.GetString("CustomReactions_ShowCustomReaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiple entries found. Results:.
+        /// </summary>
+        public static string CustomReactions_ShowCustomReaction_multipleResults {
+            get {
+                return ResourceManager.GetString("CustomReactions_ShowCustomReaction_multipleResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Reaction not found.
+        /// </summary>
+        public static string CustomReactions_ShowCustomReaction_noResults {
+            get {
+                return ResourceManager.GetString("CustomReactions_ShowCustomReaction_noResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No custom reactions with the trigger &quot;{0}&quot; were found..
+        /// </summary>
+        public static string CustomReactions_ShowCustomReactions_noResults_desc {
+            get {
+                return ResourceManager.GetString("CustomReactions_ShowCustomReactions_noResults_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trigger:.
         /// </summary>
         public static string CustomReactions_trigger {
             get {
                 return ResourceManager.GetString("CustomReactions_trigger", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Viewing Custom Reaction:.
-        /// </summary>
-        public static string CustomReactions_ViewCustomReaction {
-            get {
-                return ResourceManager.GetString("CustomReactions_ViewCustomReaction", resourceCulture);
             }
         }
         
@@ -795,15 +822,6 @@ namespace PaletteBot.Resources {
         public static string err_cooldownRequired {
             get {
                 return ResourceManager.GetString("err_cooldownRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to That custom reaction doesn&apos;t exist..
-        /// </summary>
-        public static string err_CustomReactionNotExistent {
-            get {
-                return ResourceManager.GetString("err_CustomReactionNotExistent", resourceCulture);
             }
         }
         
@@ -1276,7 +1294,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Oh, uh, my paddle seems to be turning a little red... Is this normal?.
+        ///   Looks up a localized string similar to Oh, uh, my paddle seems to be turning a bit red... Is this normal?.
         /// </summary>
         public static string Utils_ping_subtitle1 {
             get {

@@ -10,23 +10,18 @@ using NLog;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
-// TODO: Finish this feature
+// TODO: Custom Reaction functionality is still partially hardcoded into the bot
 
 namespace PaletteBot.Modules.CustomReactions
 {
     public class CustomReactions : PaletteBotModuleBase<SocketCommandContext>
     {
-        protected override void OnModuleBuilding(CommandService cs, ModuleBuilder b)
-        {
-            
-        }
-        
         [Command("lcr")]
-        [Summary("List all the custom reactions stored in the bot.")]
+        [Summary("Lists all the custom reactions stored in the bot.")]
         public async Task ListCustomReactions()
         {
             string desc = "";
-            foreach(var cr in Program.CustomReactions)
+            foreach (var cr in Program.CustomReactions)
                 desc += "• " + cr.Key + '\n';
             if (Program.CustomReactions.Count == 0)
                 desc += StringResourceHandler.GetTextStatic("CustomReactions", "lcr_noCustomReactions");
@@ -41,6 +36,48 @@ namespace PaletteBot.Modules.CustomReactions
             await ReplyAsync(Context.Message.Author.Mention, false, eb.Build());
         }
 
-        //TODO: Add pal:scr (show custom reaction), pal:acr (add custom reaction), pal:dcr (delete custom reaction), and pal:ecr (edit custom reaction)
+        [Command("scr")]
+        [Summary("Shows all the responses for a specified custom reaction")]
+        public async Task ShowCustomReaction([Remainder] [Summary("Custom reaction to view")] string ikey)
+        {
+            int matches = 0;
+            string inputkey = ikey.Trim().ToLower();
+            EmbedBuilder eb = new EmbedBuilder();
+            foreach (var cr in Program.CustomReactions)
+            {
+                if(cr.Key.Trim().ToLower().Equals(inputkey))
+                {
+                    string desc = "";
+                    string title = cr.Key;
+                    int respnum = 1;
+                    foreach(var response in cr.Value.ToArray())
+                    {
+                        desc += $"***{StringResourceHandler.GetTextStatic("CustomReactions", "response", respnum)}*** {response}\n";
+                        respnum++;
+                    }
+                    desc = desc.Trim();
+                    if (matches > 0)
+                        title += $" ({matches})";
+                    eb.AddField(title, desc);
+                    matches++;
+                }
+            }
+            if(matches==0)
+            {
+                eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReactions_noResults"))
+                    .WithDescription(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReactions_noResults_desc",ikey))
+                    .WithColor(Color.Red);
+            }
+            else
+            {
+                eb.WithColor(Color.Green);
+                if(matches>1)
+                    eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReactions_multipleResults"));
+                else
+                    eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReactions"));
+            }
+            await ReplyAsync(Context.Message.Author.Mention, false, eb.Build());
+        }
+        //TODO: Add pal:acr (add custom reaction), pal:dcr (delete custom reaction), and pal:ecr (edit custom reaction)
     }
 }
