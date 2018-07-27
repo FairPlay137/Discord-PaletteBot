@@ -64,17 +64,17 @@ namespace PaletteBot.Modules.CustomReactions
             }
             if(matches==0)
             {
-                eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReactions_noResults"))
-                    .WithDescription(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReactions_noResults_desc",ikey))
+                eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReaction_noResults"))
+                    .WithDescription(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReaction_noResults_desc",ikey))
                     .WithColor(Color.Red);
             }
             else
             {
                 eb.WithColor(Color.Green);
                 if(matches>1)
-                    eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReactions_multipleResults"));
+                    eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReaction_multipleResults"));
                 else
-                    eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReactions"));
+                    eb.WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ShowCustomReaction"));
             }
             await ReplyAsync(Context.Message.Author.Mention, false, eb.Build());
         }
