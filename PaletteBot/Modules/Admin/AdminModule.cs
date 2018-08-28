@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
+using Discord.WebSocket;
 using System.Diagnostics;
 using System.Reflection;
 using NLog;
@@ -17,13 +18,13 @@ namespace PaletteBot.Modules
         public async Task Shutdown()
         {
             LogManager.GetCurrentClassLogger().Debug($"Owner ID is \"{Program.OwnerID}\"; author ID is \"{Context.Message.Author.Id.ToString()}\"");
-            if (Program.OwnerID == 0)
+            if (Program.OwnerID == 0) //TODO: Make this check a precondition rather than an in-command hardcoded check
             {
                 await ReplyAsync($":no_entry: `{StringResourceHandler.GetTextStatic("err", "noBotOwner")}`");
             }
             else
             {
-                if (Program.OwnerID != Context.Message.Author.Id) //TODO: Make this a precondition rather than a hardcoded check
+                if (Program.OwnerID != Context.Message.Author.Id)
                 {
                     await ReplyAsync($":no_entry: `{StringResourceHandler.GetTextStatic("err", "notBotOwner")}`");
                 }
@@ -40,7 +41,7 @@ namespace PaletteBot.Modules
         public async Task Restart()
         {
             LogManager.GetCurrentClassLogger().Debug($"Owner ID is \"{Program.OwnerID}\"; author ID is \"{Context.Message.Author.Id}\"");
-            if (Program.OwnerID == 0)
+            if (Program.OwnerID == 0) //TODO: Make this check a precondition rather than an in-command hardcoded check
             {
                 await ReplyAsync($":no_entry: `{StringResourceHandler.GetTextStatic("err", "noBotOwner")}`");
             }
@@ -64,7 +65,7 @@ namespace PaletteBot.Modules
         public async Task SetGame([Remainder] [Summary("Game to show on status")] string game)
         {
             LogManager.GetCurrentClassLogger().Debug($"Owner ID is \"{Program.OwnerID}\"; author ID is \"{Context.Message.Author.Id.ToString()}\"");
-            if (Program.OwnerID == 0)
+            if (Program.OwnerID == 0) //TODO: Make this check a precondition rather than an in-command hardcoded check
             {
                 await ReplyAsync($":no_entry: `{StringResourceHandler.GetTextStatic("err", "noBotOwner")}`");
             }
@@ -86,7 +87,7 @@ namespace PaletteBot.Modules
         public async Task SetStatus([Summary("Status (Online/Idle/DnD/Invisible)")] string status)
         {
             LogManager.GetCurrentClassLogger().Debug($"Owner ID is \"{Program.OwnerID}\"; author ID is \"{Context.Message.Author.Id.ToString()}\"");
-            if (Program.OwnerID == 0)
+            if (Program.OwnerID == 0) //TODO: Make this check a precondition rather than an in-command hardcoded check
             {
                 await ReplyAsync($":no_entry: `{StringResourceHandler.GetTextStatic("err", "noBotOwner")}`");
             }

@@ -79,7 +79,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restarting... I&apos;ll be back in a few moments!.
+        ///   Looks up a localized string similar to Restarting... I&apos;ll be back in a moment!.
         /// </summary>
         public static string Admin_restart {
             get {
@@ -378,9 +378,9 @@ namespace PaletteBot.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Hi there! Thank you for inviting PaletteBot to your server! {0}, please type `{1}setup` to set up the bot..
         /// </summary>
-        public static string Core_guildJoinText {
+        public static string Core_guildJoinText_setupRequired {
             get {
-                return ResourceManager.GetString("Core_guildJoinText", resourceCulture);
+                return ResourceManager.GetString("Core_guildJoinText_setupRequired", resourceCulture);
             }
         }
         
@@ -520,7 +520,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Oh my! It seems like {0} is the last one standing! Therefore, {0} won this round! We made it to {1}..
+        ///   Looks up a localized string similar to Oh dear! It seems like {0} is the last one standing! Therefore, {0} won this round! We made it to {1}..
         /// </summary>
         public static string Counting_lastPlayerStanding {
             get {
@@ -565,11 +565,11 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} went twice! Therefore, they lost a life!.
+        ///   Looks up a localized string similar to {0} went again! Therefore, they lost a life!.
         /// </summary>
-        public static string Counting_loseLife_prematurePost {
+        public static string Counting_loseLife_multipleSuccessive {
             get {
-                return ResourceManager.GetString("Counting_loseLife_prematurePost", resourceCulture);
+                return ResourceManager.GetString("Counting_loseLife_multipleSuccessive", resourceCulture);
             }
         }
         
@@ -619,7 +619,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It appears we have a winner! {0} has won this round! Good job everyone for managing to count to {1}! Stay tuned for the next round!.
+        ///   Looks up a localized string similar to Wow! We made it to {1}, so we have a winner! {0} has won this round! Stay tuned for the next round!.
         /// </summary>
         public static string Counting_roundComplete {
             get {
@@ -763,11 +763,11 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This action requires the bot to have the &quot;Administrator&quot; permission..
+        ///   Looks up a localized string similar to This action requires the bot to have the &quot;{0}&quot; permission..
         /// </summary>
-        public static string err_botMissingAdmin {
+        public static string err_botMissingPermission {
             get {
-                return ResourceManager.GetString("err_botMissingAdmin", resourceCulture);
+                return ResourceManager.GetString("err_botMissingPermission", resourceCulture);
             }
         }
         
@@ -970,7 +970,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setup is currently in progress..
+        ///   Looks up a localized string similar to Setup is already in progress!.
         /// </summary>
         public static string err_setupAlreadyInProgress {
             get {
@@ -1006,6 +1006,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This command cannot be executed in DMs..
+        /// </summary>
+        public static string err_unavailableInDMs {
+            get {
+                return ResourceManager.GetString("err_unavailableInDMs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unknown command. Be sure you typed it correctly, or type &quot;{0}help&quot; for help..
         /// </summary>
         public static string err_unknownCommand {
@@ -1015,11 +1024,11 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You don&apos;t have permission to use this command..
+        ///   Looks up a localized string similar to This action requires you to have the &quot;{0}&quot; permission..
         /// </summary>
-        public static string err_unmetPrecondition {
+        public static string err_userMissingPermission {
             get {
-                return ResourceManager.GetString("err_unmetPrecondition", resourceCulture);
+                return ResourceManager.GetString("err_userMissingPermission", resourceCulture);
             }
         }
         
@@ -1038,6 +1047,123 @@ namespace PaletteBot.Resources {
         public static string Fun_8ball_question {
             get {
                 return ResourceManager.GetString("Fun_8ball_question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A text portal has been created!.
+        /// </summary>
+        public static string Fun_textportal {
+            get {
+                return ResourceManager.GetString("Fun_textportal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text portal has opened! Say hello to the other side! :wave:.
+        /// </summary>
+        public static string Fun_textportal_connectionEstablished {
+            get {
+                return ResourceManager.GetString("Fun_textportal_connectionEstablished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text portal has been closed since the other side has deleted the channel it was leading to..
+        /// </summary>
+        public static string Fun_textportal_connectionLost_deletedChannel {
+            get {
+                return ResourceManager.GetString("Fun_textportal_connectionLost_deletedChannel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text portal has been closed..
+        /// </summary>
+        public static string Fun_textportal_connectionLost_generic {
+            get {
+                return ResourceManager.GetString("Fun_textportal_connectionLost_generic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text portal failed to open since no other text portals were found..
+        /// </summary>
+        public static string Fun_textportal_connectionLost_noResponse {
+            get {
+                return ResourceManager.GetString("Fun_textportal_connectionLost_noResponse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The other side has closed the text portal....
+        /// </summary>
+        public static string Fun_textportal_connectionLost_otherSideClose {
+            get {
+                return ResourceManager.GetString("Fun_textportal_connectionLost_otherSideClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text portal has closed itself due to overload! (If it were to remain open, it&apos;d probably explode!).
+        /// </summary>
+        public static string Fun_textportal_connectionLost_overload {
+            get {
+                return ResourceManager.GetString("Fun_textportal_connectionLost_overload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text portal has closed itself due to {0} seconds of inactivity..
+        /// </summary>
+        public static string Fun_textportal_connectionLost_timeout {
+            get {
+                return ResourceManager.GetString("Fun_textportal_connectionLost_timeout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, text portals have been disabled by the bot owner!.
+        /// </summary>
+        public static string Fun_textportal_error_featureDisabled {
+            get {
+                return ResourceManager.GetString("Fun_textportal_error_featureDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot create a text portal due to the {0} portal limit on this bot being hit! Please try again later!.
+        /// </summary>
+        public static string Fun_textportal_error_limitReached {
+            get {
+                return ResourceManager.GetString("Fun_textportal_error_limitReached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting for another text portal....
+        /// </summary>
+        public static string Fun_textportal_waiting {
+            get {
+                return ResourceManager.GetString("Fun_textportal_waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}, your message hasn&apos;t been sent to the other side due to one or more of the words in your message being blacklisted on the other end..
+        /// </summary>
+        public static string Fun_textportal_wordBlacklisted_otherSide {
+            get {
+                return ResourceManager.GetString("Fun_textportal_wordBlacklisted_otherSide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}, your message hasn&apos;t been sent to the other side due to the word blacklist in effect on this server..
+        /// </summary>
+        public static string Fun_textportal_wordBlacklisted_yourSide {
+            get {
+                return ResourceManager.GetString("Fun_textportal_wordBlacklisted_yourSide", resourceCulture);
             }
         }
         
@@ -1159,7 +1285,16 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Successfully banned {0} from the server, deleting {1} day(s) of messages..
+        ///   Looks up a localized string similar to :mailbox: I would&apos;ve DMed you some helpful information, but you must&apos;ve disabled DMs! Please enable DMs and try this command again..
+        /// </summary>
+        public static string Help_unableToDM {
+            get {
+                return ResourceManager.GetString("Help_unableToDM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully banned {0} from the server..
         /// </summary>
         public static string Moderation_ban {
             get {
@@ -1168,11 +1303,92 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Couldn&apos;t ban {0}. Either the user has a higher role than me, or I do not have permission to ban people..
+        ///   Looks up a localized string similar to Couldn&apos;t ban {0}. The user might have a higher role than me..
         /// </summary>
         public static string Moderation_banFailed {
             get {
                 return ResourceManager.GetString("Moderation_banFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully banned {0} from the server for reason: {1}.
+        /// </summary>
+        public static string Moderation_banWithReason {
+            get {
+                return ResourceManager.GetString("Moderation_banWithReason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;ve been banned from `{0}`!.
+        /// </summary>
+        public static string Moderation_dm_ban_header {
+            get {
+                return ResourceManager.GetString("Moderation_dm_ban_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Banned.
+        /// </summary>
+        public static string Moderation_dm_banned {
+            get {
+                return ResourceManager.GetString("Moderation_dm_banned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *{0} by:*.
+        /// </summary>
+        public static string Moderation_dm_by {
+            get {
+                return ResourceManager.GetString("Moderation_dm_by", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;ve been kicked from `{0}`!.
+        /// </summary>
+        public static string Moderation_dm_kick_header {
+            get {
+                return ResourceManager.GetString("Moderation_dm_kick_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kicked.
+        /// </summary>
+        public static string Moderation_dm_kicked {
+            get {
+                return ResourceManager.GetString("Moderation_dm_kicked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to **Reason:**.
+        /// </summary>
+        public static string Moderation_dm_reason {
+            get {
+                return ResourceManager.GetString("Moderation_dm_reason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to :no_entry_sign: **Couldn&apos;t DM the target: `{0}`**.
+        /// </summary>
+        public static string Moderation_DMFailed {
+            get {
+                return ResourceManager.GetString("Moderation_DMFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully hackbanned user ID {0}..
+        /// </summary>
+        public static string Moderation_hackban {
+            get {
+                return ResourceManager.GetString("Moderation_hackban", resourceCulture);
             }
         }
         
@@ -1186,7 +1402,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Couldn&apos;t kick {0}. Either the user has a higher role than me, or I do not have permission to kick people..
+        ///   Looks up a localized string similar to Couldn&apos;t kick {0}. The user might have a higher role than me..
         /// </summary>
         public static string Moderation_kickFailed {
             get {
@@ -1204,7 +1420,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to lock down channel. I might not have the Manage Channel permission..
+        ///   Looks up a localized string similar to Failed to lock down channel..
         /// </summary>
         public static string Moderation_lockdown_fail {
             get {
@@ -1294,7 +1510,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Oh, uh, my paddle seems to be turning a bit red... Is this normal?.
+        ///   Looks up a localized string similar to Dang, you got me!.
         /// </summary>
         public static string Utils_ping_subtitle1 {
             get {
@@ -1312,7 +1528,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nothing like a little ping-pong to brighten the mood!.
+        ///   Looks up a localized string similar to Wow, you&apos;re good at this!.
         /// </summary>
         public static string Utils_ping_subtitle3 {
             get {
@@ -1321,7 +1537,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pingus pangus pongus!.
+        ///   Looks up a localized string similar to Oh, uh, my paddle seems to be turning a bit red... Is this normal?.
         /// </summary>
         public static string Utils_ping_subtitle4 {
             get {

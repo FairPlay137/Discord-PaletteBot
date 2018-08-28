@@ -290,20 +290,18 @@ namespace PaletteBot
                     case CommandError.UnknownCommand: //Unknown command
                         errtext = StringResourceHandler.GetTextStatic("err","unknownCommand");
                         break;
-                    case CommandError.UnmetPrecondition: //Insufficient permissions
-                        errtext = StringResourceHandler.GetTextStatic("err", "unmetPrecondition");
-                        break;
                     case CommandError.MultipleMatches: //oops
                         errtext = StringResourceHandler.GetTextStatic("err", "multipleCommandDefs");
                         break;
                     case CommandError.Exception: //Exception during command processing
                         errtext = StringResourceHandler.GetTextStatic("err", "exception", result.ErrorReason);
                         break;
-                    default: //Other situations which I haven't accounted for
+                    default: //Other situations which I haven't accounted for (or are better shown as-is)
                         errtext = result.ErrorReason;
                         break;
                 }
                 await context.Channel.SendMessageAsync($":no_entry: `{errtext}`");
+                //TODO: There are a ton of strings for errors in BotStrings.resx; perhaps we should use those eventually?
             }
         }
         private Task LogCommandExecution(CommandInfo cmdinfo, ICommandContext context, IResult result)

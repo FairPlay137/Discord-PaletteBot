@@ -8,7 +8,7 @@ namespace PaletteBot.Modules
     public class Help : PaletteBotModuleBase<SocketCommandContext>
     {
         [Command("help")]
-        [Summary("To be implemented...")]
+        [Summary("No description currently available for this command.")]
         [Alias("h")]
         public async Task HelpCmd()
         {
@@ -65,5 +65,12 @@ namespace PaletteBot.Modules
                 await ReplyAsync(Context.User.Mention, false, commandseb.Build());
             }
         }
+        /*[Command("help")]
+        [Summary("Shows detailed help for a specific command.")]
+        [Alias("h")]
+        public async Task CommandHelp(string commandName)
+        {
+
+        }*/
     }
 }
