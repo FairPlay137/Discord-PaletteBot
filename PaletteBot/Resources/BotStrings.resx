@@ -154,15 +154,15 @@
     <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
   <data name="Core_setup_step1_responseyes" xml:space="preserve">
-    <value>Okay! I will create color roles for you! The list of colors I will add is as follows:</value>
+    <value>Okay, I will create color roles for you! The list of colors I will add is as follows:</value>
     <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
   <data name="Core_setup_step2" xml:space="preserve">
-    <value>Next, which roles would you like to be in the color list? (Type in the IDs of the roles, seperated by spaces)</value>
+    <value>Next, which roles do you want to be in the color list? (Type in the IDs of the roles, seperated by spaces)</value>
     <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
   <data name="Core_setup_step2_invalidids" xml:space="preserve">
-    <value>Hmm...seems like I can't find the role with ID {0} in this server... Try again, perhaps?</value>
+    <value>Hmm...seems like I can't find the role with ID {0} in the server... Try again, perhaps?</value>
     <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
   <data name="Core_setup_step3" xml:space="preserve">
@@ -187,7 +187,7 @@
     <value>I can't assign that color if I don't have the Manage Roles or Administrator permission, or it's higher than my role.</value>
   </data>
   <data name="err_ccDisabled" xml:space="preserve">
-    <value>Sorry, custom colors has been disabled on this server!</value>
+    <value>Sorry, custom colors have been disabled on this server!</value>
   </data>
   <data name="err_exception" xml:space="preserve">
     <value>An error occurred while processing this command: {0}</value>
@@ -253,7 +253,7 @@
     <value>Commands executed this session:</value>
   </data>
   <data name="Utils_stats_descriptionPublic" xml:space="preserve">
-    <value>Hi! I'm PaletteBot, an open-source, multi-purpose bot! I'm still under construction, so expect stuff to change as time goes on.</value>
+    <value>Hi! I'm PaletteBot; an open-source, multi-purpose bot! I'm still under construction, so expect stuff to change as time goes on.</value>
   </data>
   <data name="Utils_stats_guilds" xml:space="preserve">
     <value>Servers:</value>
@@ -292,7 +292,7 @@
     <value>It appear there aren't any colors in the color list. Type "{0}setup" to re-setup the bot, or type "{0}addcolor" to add a color to the color list.</value>
   </data>
   <data name="err_multipleCommandDefs" xml:space="preserve">
-    <value>This command exists in more than one module. Therefore, it cannot be used at the moment. Please report this to @FairPlay137-TTS#8972 via a DM or something.</value>
+    <value>This command exists in more than one module. Therefore, it cannot be used at the moment. Please report this to @FairPlay137-TTS#8972 via DMs, or open an issue on GitHub (https://github.com/FairPlay137/Discord-PaletteBot)</value>
   </data>
   <data name="err_noBotOwner" xml:space="preserve">
     <value>It appears that the owner hasn't put their user ID in config.json! This command can't be used.</value>
@@ -311,7 +311,7 @@
 __**Here's what you can try:**__
 Type `{0}modules` to view all available modules.
 Type `{0}commands (module name)` to view all commands in a module.
-Type `{0}invite` to get an invite link for this bot!
+Type `{0}invite` to get the invite link for this bot!
 
 GitHub: https://github.com/FairPlay137/Discord-PaletteBot
 
@@ -342,10 +342,10 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>{0} has lost a life!</value>
   </data>
   <data name="Counting_loseLife_invalidFormat" xml:space="preserve">
-    <value>Because {0} posted a non-number, they have lost a life!</value>
+    <value>Because {0} posted a non-number message, they have lost a life!</value>
   </data>
   <data name="Counting_loseLife_multipleSuccessive" xml:space="preserve">
-    <value>{0} went again! Therefore, they lost a life!</value>
+    <value>{0} went a second time! Therefore, they lost a life!</value>
   </data>
   <data name="Counting_loseLife_repeatedNumber" xml:space="preserve">
     <value>Because the number {1} had been posted already, {0} has lost a life!</value>
@@ -363,7 +363,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>All players' life counters have been reset!</value>
   </data>
   <data name="Counting_startGame" xml:space="preserve">
-    <value>Welcome to {0}! Start from 1, and count as high as you can! Make sure to not skip or repeat any numbers and keep it as whole decimal numbers, or you'll get a strike! Also, once you post your number, you gotta wait for another person posts the next number before you post your next number! GOOD LUCK!</value>
+    <value>Welcome to {0}! Start from 1, and count as high as you can! Make sure to not skip or repeat any numbers and keep it as whole decimal numbers, or you'll get a strike! Also, once you post your number, you gotta wait for another person to post the next number before you post your next number! GOOD LUCK!</value>
     <comment>This feature is still in the concept stages as of writing this comment, so expect stuff in these strings to change.</comment>
   </data>
   <data name="CustomReactions_ShowCustomReaction" xml:space="preserve">
@@ -397,10 +397,10 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Question:</value>
   </data>
   <data name="Admin_changeGlobalPrefix" xml:space="preserve">
-    <value>Okay, {0}'s default prefix is now `{1}`.</value>
+    <value>Okay, my default prefix is now `{0}`.</value>
   </data>
   <data name="Admin_changeServerPrefix" xml:space="preserve">
-    <value>Alright, {0}'s prefix on this server is now `{1}`.</value>
+    <value>Alright, my prefix on this server is now `{0}`.</value>
   </data>
   <data name="Admin_setGame" xml:space="preserve">
     <value>Okay, I will now be playing "{0}".</value>
@@ -412,7 +412,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>This action requires you to have the "{0}" permission.</value>
   </data>
   <data name="err_DMCommandsDisabled" xml:space="preserve">
-    <value>Commands in DMs are currently disabled. DM functionality will be reenabled shortly.</value>
+    <value>Commands in DMs are currently disabled. Try again later.</value>
   </data>
   <data name="err_invalidStatus" xml:space="preserve">
     <value>You have specified an invalid status. Valid types are: "online", "idle", "dnd", and "invisible"</value>
@@ -421,7 +421,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Aliases:</value>
   </data>
   <data name="Help_commandListEmpty" xml:space="preserve">
-    <value>There seems to be no commands in this module.</value>
+    <value>There seem to be no commands in this module.</value>
   </data>
   <data name="Moderation_banWithReason" xml:space="preserve">
     <value>Successfully banned {0} from the server for reason: {1}</value>
@@ -442,13 +442,13 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Okay, my username is now "{0}".</value>
   </data>
   <data name="Admin_setNick" xml:space="preserve">
-    <value>I will now be referred to as "{0}" on this server.</value>
+    <value>Okay, I will now be referred to as "{0}" on this server.</value>
   </data>
   <data name="Help_intro" xml:space="preserve">
     <value>I'm **{0}**, a fork of FairPlay137-TTS's PaletteBot!</value>
   </data>
   <data name="Help_introPublic" xml:space="preserve">
-    <value>I'm **PaletteBot**, a public bot written by FairPlay137-TTS!</value>
+    <value>I'm **PaletteBot**; a public bot written by FairPlay137-TTS!</value>
   </data>
   <data name="Utils_stats_description" xml:space="preserve">
     <value>Hi! I'm **{0}**! I'm based off of PaletteBot, an open-source, multi-purpose bot! I'm still under construction, so expect stuff to change as time goes on.</value>
@@ -515,19 +515,19 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>**Question {0}**</value>
   </data>
   <data name="Akinator_ServersDown" xml:space="preserve">
-    <value>Sorry, Akinator's servers are down for the `{0}` region! Try again later!</value>
+    <value>Sorry; Akinator's `{0}` region servers are down at the moment! Try again later!</value>
   </data>
   <data name="Akinator_TechnicalError" xml:space="preserve">
-    <value>Sorry, Akinator's servers have encountered a technical error in the `{0}` region! Try again later!</value>
+    <value>Sorry; Akinator's `{0}` region servers have experienced a technical error! Try again later!</value>
   </data>
   <data name="Akinator_UnknownError" xml:space="preserve">
-    <value>An unknown error has occurred! It has been logged, and hopefully it'll be resolved soon!</value>
+    <value>An unknown error has occurred! The error has been logged, and hopefully it should be resolved soon.</value>
   </data>
   <data name="Help_modules_moreInfo" xml:space="preserve">
     <value>To list a module's commands, just type `{0}cmds ModuleName`</value>
   </data>
   <data name="Akinator_comingSoon" xml:space="preserve">
-    <value>Sorry, Akinator on PaletteBot is not available yet! Check back later!</value>
+    <value>Sorry, Akinator on PaletteBot is not yet ready! Check back later!</value>
   </data>
   <data name="Utils_ping_footer1" xml:space="preserve">
     <value>Holy smokes, that's REALLY fast!</value>
@@ -560,7 +560,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Waiting for Discord API to return the ball...</value>
   </data>
   <data name="Counting_lastPlayerStanding" xml:space="preserve">
-    <value>Oh dear! It seems like {0} is the last one standing! Therefore, {0} won this round! We made it to {1}.</value>
+    <value>Oh dear! It seems like {0} is the last one standing! Therefore, they have won this round! We made it to {1}.</value>
   </data>
   <data name="CustomReactions_lcr_noCustomReactions" xml:space="preserve">
     <value>*There are no custom reactions.*</value>
@@ -578,7 +578,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Please restart the bot for this change to take effect.</value>
   </data>
   <data name="err_malformedConfig" xml:space="preserve">
-    <value>The configuration file appears to be corrupt! Please report this to the owner.</value>
+    <value>The configuration file appears to be corrupt! Please report this to the bot owner.</value>
   </data>
   <data name="Moderation_lockdown" xml:space="preserve">
     <value>This channel has been placed on lockdown for {0}.</value>
@@ -617,23 +617,23 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>A text portal has been created!</value>
   </data>
   <data name="Fun_textportal_connectionEstablished" xml:space="preserve">
-    <value>The text portal has opened! Say hello to the other side! :wave:</value>
+    <value>The text portal has opened! Say hello to the other end! :wave:</value>
   </data>
   <data name="Fun_textportal_connectionLost_deletedChannel" xml:space="preserve">
-    <value>The text portal has been closed since the other side has deleted the channel it was leading to.</value>
+    <value>The text portal has been closed since the other end has deleted the channel it was leading to.</value>
     <comment>I doubt anyone's gonna see this message, if it ever gets implemented</comment>
   </data>
   <data name="Fun_textportal_connectionLost_generic" xml:space="preserve">
-    <value>The text portal has been closed.</value>
+    <value>The text portal has closed.</value>
   </data>
   <data name="Fun_textportal_connectionLost_noResponse" xml:space="preserve">
     <value>The text portal failed to open since no other text portals were found.</value>
   </data>
   <data name="Fun_textportal_connectionLost_otherSideClose" xml:space="preserve">
-    <value>The other side has closed the text portal...</value>
+    <value>The other end has closed the text portal...</value>
   </data>
   <data name="Fun_textportal_connectionLost_overload" xml:space="preserve">
-    <value>The text portal has closed itself due to overload! (If it were to remain open, it'd probably explode!)</value>
+    <value>The text portal has closed itself due to overload!</value>
   </data>
   <data name="Fun_textportal_connectionLost_timeout" xml:space="preserve">
     <value>The text portal has closed itself due to {0} seconds of inactivity.</value>
@@ -648,13 +648,13 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Waiting for another text portal...</value>
   </data>
   <data name="Fun_textportal_wordBlacklisted_otherSide" xml:space="preserve">
-    <value>{0}, your message hasn't been sent to the other side due to one or more of the words in your message being blacklisted on the other end.</value>
+    <value>{0}, your message hasn't been sent to the other end due to one or more of the words in your message being blacklisted on the other end.</value>
   </data>
   <data name="Fun_textportal_wordBlacklisted_yourSide" xml:space="preserve">
-    <value>{0}, your message hasn't been sent to the other side due to the word blacklist in effect on this server.</value>
+    <value>{0}, your message hasn't been sent to the other end due to the word blacklist in effect on this server.</value>
   </data>
   <data name="Help_unableToDM" xml:space="preserve">
-    <value>:mailbox: I would've DMed you some helpful information, but you must've disabled DMs! Please enable DMs and try this command again.</value>
+    <value>:mailbox: I would've DMed you some helpful information, but I can't DM you! Please enable DMs and try this command again.</value>
   </data>
   <data name="Moderation_hackban" xml:space="preserve">
     <value>Successfully hackbanned user ID {0}.</value>
