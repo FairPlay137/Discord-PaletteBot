@@ -35,7 +35,7 @@ namespace PaletteBot.Modules
             try
             {
                 var userdm = await target.GetOrCreateDMChannelAsync();
-                await userdm.SendMessageAsync($":anger: {StringResourceHandler.GetTextStatic("Moderation", "dm_ban_header")}"));
+                await userdm.SendMessageAsync($":anger: {StringResourceHandler.GetTextStatic("Moderation", "dm_ban_header")}");
             }
             catch(Exception e)
             {
