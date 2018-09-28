@@ -460,6 +460,9 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Akinator_AgainPrompt" xml:space="preserve">
     <value>Type `{0}aki` to play again!</value>
   </data>
+  <data name="Akinator_akianswer_NoGameRunning" xml:space="preserve">
+    <value>No Akinator game is running. Therefore, this command cannot be used.</value>
+  </data>
   <data name="Akinator_akianswer_InvalidAnswerG" xml:space="preserve">
     <value>Invalid answer. Valid answers are "yes" or "no".</value>
   </data>
@@ -479,7 +482,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Bravo!</value>
   </data>
   <data name="Akinator_EmbedFooter" xml:space="preserve">
-    <value>Powered by https://akinator.com/ - API implementation is WIP</value>
+    <value>Powered by Akinator.NET - Akinator.NET is a WIP implementation of the Akinator API</value>
   </data>
   <data name="Akinator_ErrorTitle" xml:space="preserve">
     <value>Error!</value>
@@ -493,6 +496,9 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Akinator_GuessCorrectTitle" xml:space="preserve">
     <value>Great! Guessed right one more time.</value>
   </data>
+  <data name="Akinator_CharacterPlayedTimes" xml:space="preserve">
+    <value>This character has been played {0} times before.</value>
+  </data>
   <data name="Akinator_GuessPrompt" xml:space="preserve">
     <value>Type `{0}aa [answer]` where `[answer]` is "yes" or "no".</value>
   </data>
@@ -503,7 +509,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Here's my guess:</value>
   </data>
   <data name="Akinator_IntroDesc" xml:space="preserve">
-    <value>Think about a real or fictional character. I will try to guess who it is.</value>
+    <value>Hello, I am Akinator! Think about a real or fictional character. I will try to guess who it is.</value>
   </data>
   <data name="Akinator_IntroTitle" xml:space="preserve">
     <value>Akinator</value>
@@ -520,6 +526,9 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Akinator_TechnicalError" xml:space="preserve">
     <value>Sorry; Akinator's `{0}` region servers have experienced a technical error! Try again later!</value>
   </data>
+  <data name="Akinator_Rejected" xml:space="preserve">
+    <value>Hmm... Akinator rejected the connection... This error has been logged.</value>
+  </data>
   <data name="Akinator_UnknownError" xml:space="preserve">
     <value>An unknown error has occurred! The error has been logged, and hopefully it should be resolved soon.</value>
   </data>
@@ -528,6 +537,9 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   </data>
   <data name="Akinator_comingSoon" xml:space="preserve">
     <value>Sorry, Akinator on PaletteBot is not yet ready! Check back later!</value>
+  </data>
+  <data name="Akinator_akiEnd" xml:space="preserve">
+    <value>Your Akinator game has been stopped.</value>
   </data>
   <data name="Utils_ping_footer1" xml:space="preserve">
     <value>Holy smokes, that's REALLY fast!</value>
