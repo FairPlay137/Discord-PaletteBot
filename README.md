@@ -9,6 +9,7 @@ PaletteBot is a Discord Chatbot written by FairPlay137-TTS using C# along with t
 * Documentation (Coming soon)
 
 ## How to compile for self-hosting?
+
 ### To compile, you will need:
 * Visual Studio 2017 Community (or any version of VS2017 or VS2015 you own)
 
@@ -27,7 +28,7 @@ PaletteBot is a Discord Chatbot written by FairPlay137-TTS using C# along with t
 * Basic bot owner commands
 * Some utility commands (ping, stats, invite)
 ### 🛠 Work-in-progress features
-* Akinator module (.NET-based API is yet to be worked on; this feature is on hold until either someone points me to an Akinator API for .NET or I figure out how to use the Akinator API)
+* Akinator module (.NET-based API is yet to be worked on)
 * Moderation module
 * Custom Reactions module (still need a way for a bot owner to create, edit, and remove custom reactions)
 ### 💭 Planned features
@@ -35,7 +36,8 @@ PaletteBot is a Discord Chatbot written by FairPlay137-TTS using C# along with t
 * *Twitch Notification module*
 * Counting game module
 * Text Portal command (allows for communication across two servers)
-* *User join and leave messages*
-* *Module enabling/disabling* (might be difficult to pull off with the current code base)
+* *User join and leave messages* **(Backlog)**
+* *Module enabling/disabling* **(Backlog)**
+* *Moderation logs* **(Backlog)**
 
 *Italicized entries mean no strings currently exist for these features*
