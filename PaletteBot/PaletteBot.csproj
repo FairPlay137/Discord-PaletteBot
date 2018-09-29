@@ -278,7 +278,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Attributes\OwnerOnlyPrecondition.cs" />
+    <Compile Include="Common\Attributes\OwnerOnlyAttribute.cs" />
     <Compile Include="Common\ConfigJsonStructure.cs" />
     <Compile Include="Common\PaletteBotCommandService.cs" />
     <Compile Include="Modules\PaletteBotModuleBase.cs" />
