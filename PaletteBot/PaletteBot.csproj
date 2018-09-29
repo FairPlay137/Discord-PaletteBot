@@ -278,6 +278,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Attributes\OwnerOnlyPrecondition.cs" />
+    <Compile Include="Common\ConfigJsonStructure.cs" />
     <Compile Include="Common\PaletteBotCommandService.cs" />
     <Compile Include="Modules\PaletteBotModuleBase.cs" />
     <Compile Include="Modules\Admin\AdminModule.cs" />
@@ -298,8 +300,9 @@
     </Compile>
     <Compile Include="Common\StringResourceHandler.cs" />
     <Compile Include="Modules\Utils\UtilsModule.cs" />
-    <Compile Include="Services\CustomReactionService.cs" />
-    <Compile Include="Services\PaletteBotService.cs" />
+    <Compile Include="Modules\CustomReactions\Services\CustomReactionService.cs" />
+    <Compile Include="Services\IBotConfigurationProvider.cs" />
+    <Compile Include="Services\IPaletteBotService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -316,7 +319,9 @@
       <LastGenOutput>BotStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\Impl\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

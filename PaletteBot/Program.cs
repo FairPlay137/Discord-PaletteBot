@@ -16,6 +16,7 @@ using PaletteBot.Services;
 using Discord.Net.Providers.WS4Net;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace PaletteBot
 {
@@ -210,7 +211,6 @@ namespace PaletteBot
                 .BuildServiceProvider();
 
             await InstallCommandsAsync();
-            CustomReactionService crService = new CustomReactionService(_client);
 
             _commands.Log += Log;
             _commands.CommandExecuted += LogCommandExecution;

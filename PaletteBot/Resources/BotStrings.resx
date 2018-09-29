@@ -453,10 +453,6 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Utils_stats_description" xml:space="preserve">
     <value>Hi! I'm **{0}**! I'm based off of PaletteBot, an open-source, multi-purpose bot! I'm still under construction, so expect stuff to change as time goes on.</value>
   </data>
-  <data name="akiDefaultLocale" xml:space="preserve">
-    <value>us</value>
-    <comment>TRANSLATORS: Change this if you want Akinator to start in a different language. Possible options are us, de, fr, in, en, es, cn, ar, il, it, jp, kr, nl, pl, pt, ru, tr</comment>
-  </data>
   <data name="Akinator_AgainPrompt" xml:space="preserve">
     <value>Type `{0}aki` to play again!</value>
   </data>
@@ -588,6 +584,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   </data>
   <data name="CustomReactions_restartPrompt" xml:space="preserve">
     <value>Please restart the bot for this change to take effect.</value>
+    <comment>This string will probably go unused, due to the fact that it'll refresh the custom reactions list on the fly.</comment>
   </data>
   <data name="err_malformedConfig" xml:space="preserve">
     <value>The configuration file appears to be corrupt! Please report this to the bot owner.</value>

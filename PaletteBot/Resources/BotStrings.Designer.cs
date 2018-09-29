@@ -19,7 +19,7 @@ namespace PaletteBot.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class BotStrings {
@@ -61,7 +61,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Okay, {0}&apos;s default prefix is now `{1}`..
+        ///   Looks up a localized string similar to Okay, my default prefix is now `{0}`..
         /// </summary>
         public static string Admin_changeGlobalPrefix {
             get {
@@ -70,7 +70,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alright, {0}&apos;s prefix on this server is now `{1}`..
+        ///   Looks up a localized string similar to Alright, my prefix on this server is now `{0}`..
         /// </summary>
         public static string Admin_changeServerPrefix {
             get {
@@ -106,7 +106,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I will now be referred to as &quot;{0}&quot; on this server..
+        ///   Looks up a localized string similar to Okay, I will now be referred to as &quot;{0}&quot; on this server..
         /// </summary>
         public static string Admin_setNick {
             get {
@@ -129,15 +129,6 @@ namespace PaletteBot.Resources {
         public static string Admin_shutdown {
             get {
                 return ResourceManager.GetString("Admin_shutdown", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to us.
-        /// </summary>
-        public static string akiDefaultLocale {
-            get {
-                return ResourceManager.GetString("akiDefaultLocale", resourceCulture);
             }
         }
         
@@ -169,6 +160,24 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Akinator game is running. Therefore, this command cannot be used..
+        /// </summary>
+        public static string Akinator_akianswer_NoGameRunning {
+            get {
+                return ResourceManager.GetString("Akinator_akianswer_NoGameRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Akinator game has been stopped..
+        /// </summary>
+        public static string Akinator_akiEnd {
+            get {
+                return ResourceManager.GetString("Akinator_akiEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid region!.
         /// </summary>
         public static string Akinator_akiregion_invalidRegion {
@@ -187,7 +196,16 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, Akinator on PaletteBot is not available yet! Check back later!.
+        ///   Looks up a localized string similar to This character has been played {0} times before..
+        /// </summary>
+        public static string Akinator_CharacterPlayedTimes {
+            get {
+                return ResourceManager.GetString("Akinator_CharacterPlayedTimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, Akinator on PaletteBot is not yet ready! Check back later!.
         /// </summary>
         public static string Akinator_comingSoon {
             get {
@@ -214,7 +232,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Powered by https://akinator.com/ - API implementation is WIP.
+        ///   Looks up a localized string similar to Powered by Akinator.NET - Akinator.NET is a WIP implementation of the Akinator API.
         /// </summary>
         public static string Akinator_EmbedFooter {
             get {
@@ -286,7 +304,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Think about a real or fictional character. I will try to guess who it is..
+        ///   Looks up a localized string similar to Hello, I am Akinator! Think about a real or fictional character. I will try to guess who it is..
         /// </summary>
         public static string Akinator_IntroDesc {
             get {
@@ -322,7 +340,16 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, Akinator&apos;s servers are down for the `{0}` region! Try again later!.
+        ///   Looks up a localized string similar to Hmm... Akinator rejected the connection... This error has been logged..
+        /// </summary>
+        public static string Akinator_Rejected {
+            get {
+                return ResourceManager.GetString("Akinator_Rejected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry; Akinator&apos;s `{0}` region servers are down at the moment! Try again later!.
         /// </summary>
         public static string Akinator_ServersDown {
             get {
@@ -331,7 +358,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, Akinator&apos;s servers have encountered a technical error in the `{0}` region! Try again later!.
+        ///   Looks up a localized string similar to Sorry; Akinator&apos;s `{0}` region servers have experienced a technical error! Try again later!.
         /// </summary>
         public static string Akinator_TechnicalError {
             get {
@@ -340,7 +367,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An unknown error has occurred! It has been logged, and hopefully it&apos;ll be resolved soon!.
+        ///   Looks up a localized string similar to An unknown error has occurred! The error has been logged, and hopefully it should be resolved soon..
         /// </summary>
         public static string Akinator_UnknownError {
             get {
@@ -439,7 +466,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Okay! I will create color roles for you! The list of colors I will add is as follows:.
+        ///   Looks up a localized string similar to Okay, I will create color roles for you! The list of colors I will add is as follows:.
         /// </summary>
         public static string Core_setup_step1_responseyes {
             get {
@@ -448,7 +475,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Next, which roles would you like to be in the color list? (Type in the IDs of the roles, seperated by spaces).
+        ///   Looks up a localized string similar to Next, which roles do you want to be in the color list? (Type in the IDs of the roles, seperated by spaces).
         /// </summary>
         public static string Core_setup_step2 {
             get {
@@ -457,7 +484,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hmm...seems like I can&apos;t find the role with ID {0} in this server... Try again, perhaps?.
+        ///   Looks up a localized string similar to Hmm...seems like I can&apos;t find the role with ID {0} in the server... Try again, perhaps?.
         /// </summary>
         public static string Core_setup_step2_invalidids {
             get {
@@ -520,7 +547,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Oh dear! It seems like {0} is the last one standing! Therefore, {0} won this round! We made it to {1}..
+        ///   Looks up a localized string similar to Oh dear! It seems like {0} is the last one standing! Therefore, they have won this round! We made it to {1}..
         /// </summary>
         public static string Counting_lastPlayerStanding {
             get {
@@ -556,7 +583,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Because {0} posted a non-number, they have lost a life!.
+        ///   Looks up a localized string similar to Because {0} posted a non-number message, they have lost a life!.
         /// </summary>
         public static string Counting_loseLife_invalidFormat {
             get {
@@ -565,7 +592,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} went again! Therefore, they lost a life!.
+        ///   Looks up a localized string similar to {0} went a second time! Therefore, they lost a life!.
         /// </summary>
         public static string Counting_loseLife_multipleSuccessive {
             get {
@@ -628,7 +655,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to {0}! Start from 1, and count as high as you can! Make sure to not skip or repeat any numbers and keep it as whole decimal numbers, or you&apos;ll get a strike! Also, once you post your number, you gotta wait for another person posts the next number before you post your next number! GOOD LUCK!.
+        ///   Looks up a localized string similar to Welcome to {0}! Start from 1, and count as high as you can! Make sure to not skip or repeat any numbers and keep it as whole decimal numbers, or you&apos;ll get a strike! Also, once you post your number, you gotta wait for another person to post the next number before you post your next number! GOOD LUCK!.
         /// </summary>
         public static string Counting_startGame {
             get {
@@ -781,7 +808,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, custom colors has been disabled on this server!.
+        ///   Looks up a localized string similar to Sorry, custom colors have been disabled on this server!.
         /// </summary>
         public static string err_ccDisabled {
             get {
@@ -835,7 +862,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Commands in DMs are currently disabled. DM functionality will be reenabled shortly..
+        ///   Looks up a localized string similar to Commands in DMs are currently disabled. Try again later..
         /// </summary>
         public static string err_DMCommandsDisabled {
             get {
@@ -862,7 +889,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The configuration file appears to be corrupt! Please report this to the owner..
+        ///   Looks up a localized string similar to The configuration file appears to be corrupt! Please report this to the bot owner..
         /// </summary>
         public static string err_malformedConfig {
             get {
@@ -871,7 +898,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This command exists in more than one module. Therefore, it cannot be used at the moment. Please report this to @FairPlay137-TTS#8972 via a DM or something..
+        ///   Looks up a localized string similar to This command exists in more than one module. Therefore, it cannot be used at the moment. Please report this to @FairPlay137-TTS#8972 via DMs, or open an issue on GitHub (https://github.com/FairPlay137/Discord-PaletteBot).
         /// </summary>
         public static string err_multipleCommandDefs {
             get {
@@ -1060,7 +1087,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The text portal has opened! Say hello to the other side! :wave:.
+        ///   Looks up a localized string similar to The text portal has opened! Say hello to the other end! :wave:.
         /// </summary>
         public static string Fun_textportal_connectionEstablished {
             get {
@@ -1069,7 +1096,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The text portal has been closed since the other side has deleted the channel it was leading to..
+        ///   Looks up a localized string similar to The text portal has been closed since the other end has deleted the channel it was leading to..
         /// </summary>
         public static string Fun_textportal_connectionLost_deletedChannel {
             get {
@@ -1078,7 +1105,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The text portal has been closed..
+        ///   Looks up a localized string similar to The text portal has closed..
         /// </summary>
         public static string Fun_textportal_connectionLost_generic {
             get {
@@ -1096,7 +1123,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The other side has closed the text portal....
+        ///   Looks up a localized string similar to The other end has closed the text portal....
         /// </summary>
         public static string Fun_textportal_connectionLost_otherSideClose {
             get {
@@ -1105,7 +1132,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The text portal has closed itself due to overload! (If it were to remain open, it&apos;d probably explode!).
+        ///   Looks up a localized string similar to The text portal has closed itself due to overload!.
         /// </summary>
         public static string Fun_textportal_connectionLost_overload {
             get {
@@ -1150,7 +1177,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}, your message hasn&apos;t been sent to the other side due to one or more of the words in your message being blacklisted on the other end..
+        ///   Looks up a localized string similar to {0}, your message hasn&apos;t been sent to the other end due to one or more of the words in your message being blacklisted on the other end..
         /// </summary>
         public static string Fun_textportal_wordBlacklisted_otherSide {
             get {
@@ -1159,7 +1186,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}, your message hasn&apos;t been sent to the other side due to the word blacklist in effect on this server..
+        ///   Looks up a localized string similar to {0}, your message hasn&apos;t been sent to the other end due to the word blacklist in effect on this server..
         /// </summary>
         public static string Fun_textportal_wordBlacklisted_yourSide {
             get {
@@ -1177,7 +1204,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There seems to be no commands in this module..
+        ///   Looks up a localized string similar to There seem to be no commands in this module..
         /// </summary>
         public static string Help_commandListEmpty {
             get {
@@ -1199,7 +1226,7 @@ namespace PaletteBot.Resources {
         ///__**Here&apos;s what you can try:**__
         ///Type `{0}modules` to view all available modules.
         ///Type `{0}commands (module name)` to view all commands in a module.
-        ///Type `{0}invite` to get an invite link for this bot!
+        ///Type `{0}invite` to get the invite link for this bot!
         ///
         ///GitHub: https://github.com/FairPlay137/Discord-PaletteBot
         ///
@@ -1249,7 +1276,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I&apos;m **PaletteBot**, a public bot written by FairPlay137-TTS!.
+        ///   Looks up a localized string similar to I&apos;m **PaletteBot**; a public bot written by FairPlay137-TTS!.
         /// </summary>
         public static string Help_introPublic {
             get {
@@ -1285,7 +1312,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to :mailbox: I would&apos;ve DMed you some helpful information, but you must&apos;ve disabled DMs! Please enable DMs and try this command again..
+        ///   Looks up a localized string similar to :mailbox: I would&apos;ve DMed you some helpful information, but I can&apos;t DM you! Please enable DMs and try this command again..
         /// </summary>
         public static string Help_unableToDM {
             get {
@@ -1609,7 +1636,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi! I&apos;m PaletteBot, an open-source, multi-purpose bot! I&apos;m still under construction, so expect stuff to change as time goes on..
+        ///   Looks up a localized string similar to Hi! I&apos;m PaletteBot; an open-source, multi-purpose bot! I&apos;m still under construction, so expect stuff to change as time goes on..
         /// </summary>
         public static string Utils_stats_descriptionPublic {
             get {

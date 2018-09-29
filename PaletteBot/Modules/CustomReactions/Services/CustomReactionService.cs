@@ -8,12 +8,15 @@ using Discord.Commands;
 using Discord.Commands.Builders;
 using NLog;
 using Discord.WebSocket;
+using PaletteBot.Services;
 
-namespace PaletteBot.Services
+namespace PaletteBot.Modules.CustomReactions.Services
 {
-    public class CustomReactionService : PaletteBotService
+    public class CustomReactionService : IPaletteBotService
     {
-        static DiscordSocketClient _client;
+        private readonly DiscordSocketClient _client;
+
+        private Dictionary<string, List<string>> _reactions;
 
         public CustomReactionService(DiscordSocketClient client)
         {
@@ -35,7 +38,7 @@ namespace PaletteBot.Services
         {
             var message = messageParam as SocketUserMessage;
             SocketGuildChannel channel = (SocketGuildChannel)message.Channel;
-            foreach (var cr in Program.CustomReactions)
+            foreach (var cr in _reactions)
             {
                 string[] key = cr.Key.ToLower().Trim().Split(' ');
                 string[] msg = message.Content.ToLower().Trim().Split(' ');
@@ -60,9 +63,9 @@ namespace PaletteBot.Services
                         index++;
                     }
                 }
-                catch (Exception) //TODO: This is a sloppy workaround and may not be the best solution; rewrite the code
+                catch (Exception)
                 {
-                    //LogManager.GetCurrentClassLogger().Debug("fix buggy message handling code in CustomReactionService.cs pl0x");
+
                 }
                 if (matchesKey)
                 {
