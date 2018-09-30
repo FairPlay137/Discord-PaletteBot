@@ -29,14 +29,14 @@ namespace PaletteBot.Modules.CustomReactions
         public async Task ListCustomReactions()
         {
             string desc = "";
-            foreach (var cr in Program.CustomReactions)
+            foreach (var cr in _config.CustomReactions)
                 desc += "• " + cr.Key + '\n';
-            if (Program.CustomReactions.Count == 0)
+            if (_config.CustomReactions.Count == 0)
                 desc += StringResourceHandler.GetTextStatic("CustomReactions", "lcr_noCustomReactions");
-            else if(Program.CustomReactions.Count == 1)
+            else if(_config.CustomReactions.Count == 1)
                 desc += StringResourceHandler.GetTextStatic("CustomReactions", "lcr_TotalCountOne");
             else
-                desc += StringResourceHandler.GetTextStatic("CustomReactions", "lcr_TotalCountMultiple", Program.CustomReactions.Count);
+                desc += StringResourceHandler.GetTextStatic("CustomReactions", "lcr_TotalCountMultiple", _config.CustomReactions.Count);
             EmbedBuilder eb = new EmbedBuilder()
                 .WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "ListCustomReactions"))
                 .WithDescription(desc)
@@ -51,7 +51,7 @@ namespace PaletteBot.Modules.CustomReactions
             int matches = 0;
             string inputkey = ikey.Trim().ToLower();
             EmbedBuilder eb = new EmbedBuilder();
-            foreach (var cr in Program.CustomReactions)
+            foreach (var cr in _config.CustomReactions)
             {
                 if(cr.Key.Trim().ToLower().Equals(inputkey))
                 {

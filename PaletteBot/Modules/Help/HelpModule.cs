@@ -66,7 +66,7 @@ namespace PaletteBot.Modules
                 if (targetmodule.Commands.Count > 0)
                 {
                     foreach (var command in targetmodule.Commands)
-                        commandseb.AddField("» " + Program.prefix + command.Name, command.Summary);
+                        commandseb.AddField("» " + _config.DefaultPrefix + command.Name, command.Summary);
                 }
                 else
                 {

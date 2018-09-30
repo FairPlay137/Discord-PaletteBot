@@ -20,6 +20,9 @@ namespace PaletteBot
 {
     class Program
     {
+        static void Main(string[] args)
+            => new PaletteBot().StartAndBlockAsync().GetAwaiter().GetResult();
+        /*
         public static CommandService _commands;
         private DiscordSocketClient _client;
         private IPaletteServiceProvider _services;
@@ -345,8 +348,7 @@ namespace PaletteBot
             _log.Info($"Left guild: {guild.Name} ({guild.Id})");
             return Task.CompletedTask;
         }
-        static void Main(string[] args)
-            => new PaletteBot().StartAndBlockAsync().GetAwaiter().GetResult();
+        
         private void SaveConfig()
         {
             _log.Info("Saving config.json...");
@@ -400,6 +402,6 @@ namespace PaletteBot
         public string[] EightBallResponses { get; set; }
 
         [JsonProperty("customReactions")]
-        public Dictionary<string, List<string>> CustomReactions { get; set; }
+        public Dictionary<string, List<string>> CustomReactions { get; set; }*/
     }
 }
