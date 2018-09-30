@@ -5,17 +5,25 @@ using Discord.Commands;
 using Discord.Commands.Builders;
 using System.Diagnostics;
 using PaletteBot.Common;
+using PaletteBot.Modules.CustomReactions.Services;
+using PaletteBot.Services;
 using Discord.WebSocket;
 using NLog;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
-// TODO: Custom Reaction functionality is still partially hardcoded into the bot
-
 namespace PaletteBot.Modules.CustomReactions
 {
-    public class CustomReactions : PaletteBotModuleBase<SocketCommandContext>
+    public class CustomReactions : PaletteBotModuleBase<CustomReactionService>
     {
+
+        private readonly IBotConfiguration _config;
+
+        public CustomReactions(IBotConfiguration config)
+        {
+            _config = config;
+        }
+
         [Command("lcr")]
         [Summary("Lists all the custom reactions stored in the bot.")]
         public async Task ListCustomReactions()

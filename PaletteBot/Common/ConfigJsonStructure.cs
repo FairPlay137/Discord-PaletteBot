@@ -21,9 +21,6 @@ namespace PaletteBot.Common
         [JsonProperty("ownerid")]
         public ulong OwnerID { get; set; }
 
-        [JsonProperty("databasekey")]
-        public string DatabaseKey { get; set; }
-
         [JsonProperty("botname")]
         public string BotName { get; set; }
 

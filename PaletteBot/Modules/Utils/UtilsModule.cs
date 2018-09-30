@@ -4,11 +4,22 @@ using Discord;
 using Discord.Commands;
 using System.Diagnostics;
 using PaletteBot.Common;
+using PaletteBot.Services;
 
 namespace PaletteBot.Modules
 {
     public class Utils : PaletteBotModuleBase<SocketCommandContext>
     {
+        private readonly PaletteBot _bot;
+
+        private readonly IBotConfiguration _config;
+
+        public Utils(PaletteBot bot)
+        {
+            _bot = bot;
+            _config = bot.Configuration;
+        }
+
         [Command("ping")]
         [Summary("Pings the bot.")]
         public async Task Ping()
@@ -49,13 +60,13 @@ namespace PaletteBot.Modules
         [Summary("Gets this bot's stats.")]
         public async Task Stats()
         {
-            TimeSpan uptime = new TimeSpan(DateTime.Now.Ticks - Program.StartTime.Ticks);
+            TimeSpan uptime = new TimeSpan(DateTime.Now.Ticks - _bot.StartTime.Ticks);
             await ReplyAsync(Context.User.Mention, false, new EmbedBuilder()
                 .WithTitle(StringResourceHandler.GetTextStatic("Utils", "stats_title"))
-                .WithDescription((Program.botName == "PaletteBot") ?
+                .WithDescription((_config.BotName == "PaletteBot") ?
                 StringResourceHandler.GetTextStatic("Utils", "stats_descriptionPublic")
                 :
-                StringResourceHandler.GetTextStatic("Utils", "stats_description", Program.botName))
+                StringResourceHandler.GetTextStatic("Utils", "stats_description", _config.BotName))
                 .WithAuthor($"{Context.Client.CurrentUser.Username} v{typeof(Program).Assembly.GetName().Version}",Context.Client.CurrentUser.GetAvatarUrl())
                 .AddField(StringResourceHandler.GetTextStatic("Utils", "stats_guilds"),Context.Client.Guilds.Count,true)
                 .AddField(StringResourceHandler.GetTextStatic("Utils", "stats_uptime"), uptime.ToString(), true)

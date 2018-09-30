@@ -11,7 +11,7 @@ using PaletteBot.Common.Attributes;
 
 namespace PaletteBot.Modules
 {
-    public class Admin : PaletteBotModuleBase<SocketCommandContext>
+    public class Admin : PaletteBotModuleBase<CommandContext>
     {
         [Command("shutdown")]
         [Summary("Shuts down the bot. **BOT OWNER ONLY**")]

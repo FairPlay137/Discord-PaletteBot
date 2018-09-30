@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Discord.Commands;
+using PaletteBot.Services;
 
 namespace PaletteBot.Common.Attributes
 {
@@ -9,13 +10,14 @@ namespace PaletteBot.Common.Attributes
     {
         public override Task<PreconditionResult> CheckPermissionsAsync(ICommandContext context, CommandInfo command, IServiceProvider services)
         {
-            if (Program.OwnerID == 0)
+            var config = (IBotConfiguration)services.GetService(typeof(IBotConfiguration));
+            if (config.BotOwnerID == 0)
             {
                 return Task.FromResult(PreconditionResult.FromError(StringResourceHandler.GetTextStatic("err", "noBotOwner")));
             }
             else
             {
-                if (Program.OwnerID != context.Message.Author.Id)
+                if (config.BotOwnerID != context.Message.Author.Id)
                 {
                     return Task.FromResult(PreconditionResult.FromError(StringResourceHandler.GetTextStatic("err", "notBotOwner")));
                 }

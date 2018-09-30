@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace PaletteBot.Services
 {
-    public interface IBotConfigurationProvider
+    public interface IBotConfiguration
     {
         string BotName { get; }
         string BotToken { get; }
-        ulong[] BotOwnerIDs { get; }
+        ulong BotOwnerID { get; }
+
+        string DefaultPlayingString { get; }
+        string DefaultPrefix { get; set; }
+
+        string[] EightBallResponses { get; }
 
         Dictionary<string, List<string>> CustomReactions { get; set; }
-        string[] EightBallResponses { get; }
+        
     }
 }

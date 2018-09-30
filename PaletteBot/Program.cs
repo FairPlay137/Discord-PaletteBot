@@ -14,17 +14,15 @@ using Microsoft.Extensions.DependencyInjection;
 using PaletteBot.Common;
 using PaletteBot.Services;
 using Discord.Net.Providers.WS4Net;
-using System.Linq;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 
 namespace PaletteBot
 {
     class Program
     {
-        public static PaletteBotCommandService _commands;
+        public static CommandService _commands;
         private DiscordSocketClient _client;
-        private IServiceProvider _services;
+        private IPaletteServiceProvider _services;
 
         public Logger _log;
 
@@ -32,7 +30,7 @@ namespace PaletteBot
         public static string defaultPlayingString = null;
         public static string prefix = null;
         public static ulong OwnerID = 0;
-        public static string databaseKey = null;
+        //public static string databaseKey = null;
         public static string botName = "PaletteBot";
         public static bool verboseErrors = false;
         public static string[] EightBallResponses = { };
@@ -97,7 +95,7 @@ namespace PaletteBot
                 WebSocketProvider = WS4NetProvider.Instance, //To maintain compatibility with Windows 7. Mono doesn't like this very much
                 LogLevel = LogSeverity.Info //Not too verbose, since we want to utilize the logging ourselves too, and we don't want it buried underneath a ton of Discord.NET logs
             });
-            _commands = new PaletteBotCommandService();
+            _commands = new CommandService();
 
             _client.Log += Log; //Route Discord.NET logs to the console
 
@@ -160,7 +158,7 @@ namespace PaletteBot
                 }
                 defaultPlayingString = cfgjson.DefaultPlayingString;
                 OwnerID = cfgjson.OwnerID;
-                databaseKey = cfgjson.DatabaseKey;
+                //databaseKey = cfgjson.DatabaseKey;
                 botName = cfgjson.BotName;
                 EightBallResponses = cfgjson.EightBallResponses;
                 CustomReactions = cfgjson.CustomReactions;
@@ -185,8 +183,8 @@ namespace PaletteBot
                     prefix = "pal:";
                 if ((defaultPlayingString == null) || (defaultPlayingString == ""))
                     defaultPlayingString = "pal:help";
-                if (databaseKey == null)
-                    databaseKey = "";
+                //if (databaseKey == null)
+                //    databaseKey = "";
                 Console.WriteLine("Would you like to save these into config.json now? YOUR OLD CONFIG.JSON WILL BE OVERWRITTEN.");
                 Console.WriteLine("If you want, make a backup of your current config.json before continuing.");
                 Console.Write("(Y/N)> ");
@@ -197,18 +195,17 @@ namespace PaletteBot
 
             _client.JoinedGuild += GuildJoin;
             _client.LeftGuild += GuildLeave;
-
-            //if (databaseKey == "") //commented out because we don't have anything that requires a SQLite database yet
-            //    _log.Warn("The database key is blank! This could pose a potential security risk!");
+            
             if (OwnerID == 0)
                 _log.Warn("An owner ID has not been specified! You will need to shut down the bot manually.");
 
             _log.Info("Initializing modules...");
 
-            _services = new ServiceCollection()
-                .AddSingleton(_client)
-                .AddSingleton(_commands)
-                .BuildServiceProvider();
+            _services = new PaletteServiceProvider.ServiceProviderBuilder()
+                .AddManual(_client)
+                .AddManual(_commands)
+                .LoadFrom(Assembly.GetEntryAssembly())
+                .Build();
 
             await InstallCommandsAsync();
 
@@ -266,9 +263,7 @@ namespace PaletteBot
                         }
                     }
                     catch(Exception) //TODO: This is a sloppy workaround and may not be the best solution; rewrite the code
-                    {
-                        //LogManager.GetCurrentClassLogger().Debug("fix buggy message handling code in Program.cs pl0x");
-                    }
+                    { }
                     if (matchesKey)
                         return;
                 }
@@ -301,7 +296,6 @@ namespace PaletteBot
                         break;
                 }
                 await context.Channel.SendMessageAsync($":no_entry: `{errtext}`");
-                //TODO: There are a ton of strings for errors in BotStrings.resx; perhaps we should use those eventually?
             }
         }
         private Task LogCommandExecution(CommandInfo cmdinfo, ICommandContext context, IResult result)
@@ -352,7 +346,7 @@ namespace PaletteBot
             return Task.CompletedTask;
         }
         static void Main(string[] args)
-            => new Program().StartAsync().GetAwaiter().GetResult();
+            => new PaletteBot().StartAndBlockAsync().GetAwaiter().GetResult();
         private void SaveConfig()
         {
             _log.Info("Saving config.json...");
@@ -363,7 +357,7 @@ namespace PaletteBot
                 cfg.CommandPrefix = prefix;
                 cfg.DefaultPlayingString = defaultPlayingString;
                 cfg.OwnerID = OwnerID;
-                cfg.DatabaseKey = databaseKey;
+                //cfg.DatabaseKey = databaseKey;
                 cfg.BotName = botName;
                 cfg.VerboseErrors = verboseErrors;
                 cfg.EightBallResponses = EightBallResponses;
@@ -393,8 +387,8 @@ namespace PaletteBot
         [JsonProperty("ownerid")]
         public ulong OwnerID { get; set; }
 
-        [JsonProperty("databasekey")]
-        public string DatabaseKey { get; set; }
+        //[JsonProperty("databasekey")]
+        //public string DatabaseKey { get; set; }
 
         [JsonProperty("botname")]
         public string BotName { get; set; }

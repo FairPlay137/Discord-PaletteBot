@@ -9,39 +9,29 @@ using Discord.Commands.Builders;
 using NLog;
 using Discord.WebSocket;
 using PaletteBot.Services;
+using PaletteBot.Common.ModuleBehaviors;
 
 namespace PaletteBot.Modules.CustomReactions.Services
 {
-    public class CustomReactionService : IPaletteBotService
+    public class CustomReactionService : IPreXBlockerExecutor, IPaletteBotService
     {
         private readonly DiscordSocketClient _client;
 
-        private Dictionary<string, List<string>> _reactions;
+        private readonly IBotConfiguration _config;
 
-        public CustomReactionService(DiscordSocketClient client)
+        public CustomReactionService(DiscordSocketClient client, IBotConfiguration config)
         {
-            try
-            {
-                LogManager.GetCurrentClassLogger().Info("Initializing custom reactions...");
-                _client = client;
-                _client.MessageReceived += CheckMessageAsync;
-            }
-            catch (Exception e)
-            {
-                LogManager.GetCurrentClassLogger().Error("Failed to load custom reaction handler!");
-                LogManager.GetCurrentClassLogger().Error(e);
-            }
-            
+            _client = client;
+            _config = config;
         }
 
-        private async Task CheckMessageAsync(SocketMessage messageParam)
+        public async Task<bool> TryExecuteEarly(DiscordSocketClient client, IGuild guild, IUserMessage msg)
         {
-            var message = messageParam as SocketUserMessage;
-            SocketGuildChannel channel = (SocketGuildChannel)message.Channel;
-            foreach (var cr in _reactions)
+            IGuildChannel channel = (IGuildChannel)msg.Channel;
+            foreach (var cr in _config.CustomReactions)
             {
                 string[] key = cr.Key.ToLower().Trim().Split(' ');
-                string[] msg = message.Content.ToLower().Trim().Split(' ');
+                string[] message = msg.Content.ToLower().Trim().Split(' ');
                 bool matchesKey = true;
                 int index = 0;
                 try
@@ -54,11 +44,11 @@ namespace PaletteBot.Modules.CustomReactions.Services
                             case "%mention%":
                                 keyw = _client.CurrentUser.Mention; break;
                             case "%user%":
-                                keyw = message.Author.Mention; break;
+                                keyw = msg.Author.Mention; break;
                             default:
                                 keyw = kword; break;
                         }
-                        if (kword != msg[index])
+                        if (kword != message[index])
                             matchesKey = false;
                         index++;
                     }
@@ -70,17 +60,18 @@ namespace PaletteBot.Modules.CustomReactions.Services
                 if (matchesKey)
                 {
                     string target = "";
-                    for(int x = index; x<msg.Length; x++)
-                        target += ' '+msg[x];
+                    for(int x = index; x<message.Length; x++)
+                        target += ' '+message[x];
                     target = target.TrimStart();
                     Random random = new Random();
                     string value = cr.Value[random.Next(cr.Value.Count)]
                         .Replace("%mention%", _client.CurrentUser.Mention)
-                        .Replace("%user%", message.Author.Mention)
+                        .Replace("%user%", msg.Author.Mention)
                         .Replace("%target%", target);
                     //TODO: Add "%rng%" for full NadekoBot compatibility
-                    await message.Channel.SendMessageAsync(value);
-                    LogManager.GetCurrentClassLogger().Info("**Custom Reaction Executed");
+                    await msg.Channel.SendMessageAsync(value);
+                    return true;
+                    /*LogManager.GetCurrentClassLogger().Info("**Custom Reaction Executed");
                     LogManager.GetCurrentClassLogger().Info($" Key: \"{cr}\"");
                     LogManager.GetCurrentClassLogger().Info($" Resp: \"{value}\"");
                     if (channel.Guild == null)
@@ -89,10 +80,10 @@ namespace PaletteBot.Modules.CustomReactions.Services
                     {
                         LogManager.GetCurrentClassLogger().Info($" Srvr: \"{channel.Guild.Name}\" ({channel.Guild.Id})");
                         LogManager.GetCurrentClassLogger().Info($" Chnl: #{channel.Name} ({channel.Id})");
-                    }
-                    return;
+                    }*/
                 }
             }
+            return false;
         }
     }
 }

@@ -4,24 +4,22 @@ using Discord;
 using Discord.Commands;
 using Discord.Commands.Builders;
 using PaletteBot.Common;
+using PaletteBot.Services;
 using NLog;
 
 namespace PaletteBot.Modules
 {
     public class Fun : PaletteBotModuleBase<SocketCommandContext>
     {
-        string[] EightBallResponses = { "Yes.", "No.", "Ask again later.", "Maybe???", "It is certain", "Very doubtful",
+        string[] DefaultEightBallResponses = { "Yes.", "No.", "Ask again later.", "Maybe???", "It is certain", "Very doubtful",
                                         "NO - It'll cause a time paradox.", "Chances are as high as the sky.", "lolnope",
                                         "Obviously.", "Don't count on it.", "I'd say so.", "Received interference; try again."};
-        protected override void OnModuleBuilding(CommandService cs, ModuleBuilder b)
+
+        private readonly IBotConfiguration _config;
+
+        public Fun(IBotConfiguration config)
         {
-            if(Program.EightBallResponses.Length == 0)
-            {
-                LogManager.GetCurrentClassLogger().Warn("No 8ball responses found in config.json! Using built-in responses instead...");
-            }else
-            {
-                LogManager.GetCurrentClassLogger().Info($"Found {Program.EightBallResponses.Length} 8ball response(s).");
-            }
+            _config = config;
         }
 
         [Command("8ball")]
@@ -29,9 +27,9 @@ namespace PaletteBot.Modules
         public async Task EightBall([Remainder] [Summary("The question")] string question)
         {
             Random random = new Random();
-            string answer = (Program.EightBallResponses.Length > 0)?
-                Program.EightBallResponses[random.Next(Program.EightBallResponses.Length)]:
-                EightBallResponses[random.Next(EightBallResponses.Length)];
+            string answer = (_config.EightBallResponses.Length > 0)?
+                _config.EightBallResponses[random.Next(_config.EightBallResponses.Length)]:
+                DefaultEightBallResponses[random.Next(DefaultEightBallResponses.Length)];
             await ReplyAsync("", false, new EmbedBuilder()
                 .AddField($":question: {StringResourceHandler.GetTextStatic("Fun", "8ball_question")}", question)
                 .AddField($":8ball: {StringResourceHandler.GetTextStatic("Fun", "8ball_answer")}", answer)

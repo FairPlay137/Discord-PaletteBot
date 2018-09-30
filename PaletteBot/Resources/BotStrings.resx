@@ -293,6 +293,7 @@
   </data>
   <data name="err_multipleCommandDefs" xml:space="preserve">
     <value>This command exists in more than one module. Therefore, it cannot be used at the moment. Please report this to @FairPlay137-TTS#8972 via DMs, or open an issue on GitHub (https://github.com/FairPlay137/Discord-PaletteBot)</value>
+    <comment>This message will likely go unused due to some of the command handling code being borrowed from NadekoBot</comment>
   </data>
   <data name="err_noBotOwner" xml:space="preserve">
     <value>It appears that the owner hasn't put their user ID in config.json! This command can't be used.</value>
@@ -584,7 +585,6 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   </data>
   <data name="CustomReactions_restartPrompt" xml:space="preserve">
     <value>Please restart the bot for this change to take effect.</value>
-    <comment>This string will probably go unused, due to the fact that it'll refresh the custom reactions list on the fly.</comment>
   </data>
   <data name="err_malformedConfig" xml:space="preserve">
     <value>The configuration file appears to be corrupt! Please report this to the bot owner.</value>
