@@ -24,6 +24,7 @@ namespace PaletteBot.Modules
         [Summary("Pings the bot.")]
         public async Task Ping()
         {
+            var pleasewait = Context.Channel.EnterTypingState();
             string pingwaitmsg = StringResourceHandler.GetTextStatic("Utils", "ping_wait");
             var msg = await Context.Channel.SendMessageAsync("🏓 " + pingwaitmsg).ConfigureAwait(false);
             var sw = Stopwatch.StartNew();
@@ -40,6 +41,7 @@ namespace PaletteBot.Modules
                 footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer4");
             if (sw.ElapsedMilliseconds > 5000)
                 footerText = StringResourceHandler.GetTextStatic("Utils", "ping_footer5");
+            pleasewait.Dispose();
             await ReplyAsync(Context.User.Mention, false, new EmbedBuilder()
                 .WithTitle("🏓 " + StringResourceHandler.GetTextStatic("Utils", "ping_title"))
                 .WithDescription(subtitleText+'\n'+StringResourceHandler.GetTextStatic("Utils", "ping_pingtime", sw.ElapsedMilliseconds))

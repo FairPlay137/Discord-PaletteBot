@@ -8,11 +8,19 @@ using System.Reflection;
 using NLog;
 using PaletteBot.Common;
 using PaletteBot.Common.Attributes;
+using PaletteBot.Services;
 
 namespace PaletteBot.Modules
 {
     public class Admin : PaletteBotModuleBase<CommandContext>
     {
+        private readonly IBotConfiguration _config;
+
+        public Admin(IBotConfiguration config)
+        {
+            _config = config;
+        }
+
         [Command("shutdown")]
         [Summary("Shuts down the bot. **BOT OWNER ONLY**")]
         [Alias("die")]
@@ -65,6 +73,19 @@ namespace PaletteBot.Modules
                     return;
             }
             await ReplyAsync($":ok: `{StringResourceHandler.GetTextStatic("Admin", "setStatus")}`").ConfigureAwait(false);
+        }
+        [Command("verboseerrors")]
+        [Summary("Enables/disables verbose error messages **BOT OWNER ONLY**")]
+        [OwnerOnly]
+        public async Task ToggleVerboseErrors()
+        {
+            _config.VerboseErrors = !_config.VerboseErrors;
+            _config.SaveConfig();
+            _config.ReloadConfig();
+            string toCueUp = "verboseErrors_disable";
+            if(_config.VerboseErrors)
+                toCueUp = "verboseErrors_enable";
+            await ReplyAsync($":ok: `{StringResourceHandler.GetTextStatic("Admin", toCueUp)}`").ConfigureAwait(false);
         }
     }
 }

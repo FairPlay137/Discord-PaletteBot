@@ -125,7 +125,7 @@ namespace PaletteBot.Services
                 if(svc is IPreXBlocker blocker &&
                     await blocker.TryBlockEarly(guild, usrMsg).ConfigureAwait(false))
                 {
-                    _log.Info("**BLOCKED USER");
+                    _log.Info(">>BLOCKED USER");
                     _log.Info("User: "+usrMsg.Author);
                     _log.Info("Message: "+usrMsg.Content);
                     _log.Info("Service: "+svc.GetType().Name);
@@ -138,7 +138,7 @@ namespace PaletteBot.Services
                 if (svc is IPreXBlockerExecutor exec &&
                     await exec.TryExecuteEarly(_client, guild, usrMsg).ConfigureAwait(false))
                 {
-                    _log.Info("**REACTION EXECUTED");
+                    _log.Info(">>REACTION EXECUTED");
                     _log.Info("User: " + usrMsg.Author);
                     _log.Info("Message: " + usrMsg.Content);
                     _log.Info("Service: " + svc.GetType().Name);
@@ -166,7 +166,7 @@ namespace PaletteBot.Services
                 var result = await ExecuteCommandAsync(new SocketCommandContext(_client, usrMsg), messageContent, prefix.Length, _services, MultiMatchHandling.Best);
                 if(result.IsSuccess)
                 {
-                    _log.Info("**COMMAND EXECUTED");
+                    _log.Info(">>COMMAND EXECUTED");
                     _log.Info("User: " + usrMsg.Author + " ("+usrMsg.Author.Id+")");
                     _log.Info("Server: " + (channel == null ? "[Direct]" : guild.Name + " (" + guild.Id + ")"));
                     _log.Info("Channel: " + (channel == null ? "[Direct]" : channel.Name + " (" + channel.Id + ")"));
@@ -175,7 +175,7 @@ namespace PaletteBot.Services
                 }
                 else if(result.Error != null)
                 {
-                    _log.Warn("**COMMAND ERRORED");
+                    _log.Warn(">>COMMAND ERRORED");
                     _log.Warn("User: " + usrMsg.Author + " (" + usrMsg.Author.Id + ")");
                     _log.Warn("Server: " + (channel == null ? "[Direct]" : guild.Name + " (" + guild.Id + ")"));
                     _log.Warn("Channel: " + (channel == null ? "[Direct]" : channel.Name + " (" + channel.Id + ")"));
@@ -198,7 +198,8 @@ namespace PaletteBot.Services
                             errtext = result.ErrorReason;
                             break;
                     }
-                    await channel.SendMessageAsync($":no_entry: `{errtext}`");
+                    if(_config.VerboseErrors)
+                        await channel.SendMessageAsync($":no_entry: `{errtext}`");
                 }
             }
             else

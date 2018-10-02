@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace PaletteBot.Common
@@ -32,5 +28,11 @@ namespace PaletteBot.Common
 
         [JsonProperty("customReactions")]
         public Dictionary<string, List<string>> CustomReactions { get; set; }
+
+        [JsonProperty("rotatePlayingStatuses")]
+        public bool RotatePlaying { get; set; }
+
+        [JsonProperty("playingStatuses")]
+        public string[] PlayingStatuses { get; set; }
     }
 }

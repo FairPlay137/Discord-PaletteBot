@@ -79,6 +79,24 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Well, looks like %user% left....
+        /// </summary>
+        public static string Admin_defaultUserByeText {
+            get {
+                return ResourceManager.GetString("Admin_defaultUserByeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome, %mention%! Hope you enjoy your time here!.
+        /// </summary>
+        public static string Admin_defaultUserGreetText {
+            get {
+                return ResourceManager.GetString("Admin_defaultUserGreetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restarting... I&apos;ll be back in a moment!.
         /// </summary>
         public static string Admin_restart {
@@ -376,177 +394,6 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Okay, I have added &quot;{0}&quot; to the color list..
-        /// </summary>
-        public static string Core_addroletocolorlist {
-            get {
-                return ResourceManager.GetString("Core_addroletocolorlist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ***Poof!*** You&apos;re **{0}** now..
-        /// </summary>
-        public static string Core_color {
-            get {
-                return ResourceManager.GetString("Core_color", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ***Poof!*** You have been assigned the custom color hex **{0}**!.
-        /// </summary>
-        public static string Core_customColor {
-            get {
-                return ResourceManager.GetString("Core_customColor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hi there! Thank you for inviting PaletteBot to your server! {0}, please type `{1}setup` to set up the bot..
-        /// </summary>
-        public static string Core_guildJoinText_setupRequired {
-            get {
-                return ResourceManager.GetString("Core_guildJoinText_setupRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to __**Here&apos;s a list of colors you can assign to yourself on this server:**__.
-        /// </summary>
-        public static string Core_listColors {
-            get {
-                return ResourceManager.GetString("Core_listColors", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Okay, I have removed &quot;{0}&quot; from the color list..
-        /// </summary>
-        public static string Core_removerolefromcolorlist {
-            get {
-                return ResourceManager.GetString("Core_removerolefromcolorlist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to :arrow_right: Continuing in DMs....
-        /// </summary>
-        public static string Core_setup {
-            get {
-                return ResourceManager.GetString("Core_setup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alright, setup is complete. PaletteBot is ready for use!.
-        /// </summary>
-        public static string Core_setup_complete {
-            get {
-                return ResourceManager.GetString("Core_setup_complete", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to First off, do you want me to create color roles for you in &quot;{0}&quot;?.
-        /// </summary>
-        public static string Core_setup_step1 {
-            get {
-                return ResourceManager.GetString("Core_setup_step1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alright then. I won&apos;t create role colors..
-        /// </summary>
-        public static string Core_setup_step1_responseno {
-            get {
-                return ResourceManager.GetString("Core_setup_step1_responseno", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Okay, I will create color roles for you! The list of colors I will add is as follows:.
-        /// </summary>
-        public static string Core_setup_step1_responseyes {
-            get {
-                return ResourceManager.GetString("Core_setup_step1_responseyes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Next, which roles do you want to be in the color list? (Type in the IDs of the roles, seperated by spaces).
-        /// </summary>
-        public static string Core_setup_step2 {
-            get {
-                return ResourceManager.GetString("Core_setup_step2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hmm...seems like I can&apos;t find the role with ID {0} in the server... Try again, perhaps?.
-        /// </summary>
-        public static string Core_setup_step2_invalidids {
-            get {
-                return ResourceManager.GetString("Core_setup_step2_invalidids", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finally, do you wish to enable custom color assignment on &quot;{0}&quot;?.
-        /// </summary>
-        public static string Core_setup_step3 {
-            get {
-                return ResourceManager.GetString("Core_setup_step3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alright, custom colors are disabled for this server..
-        /// </summary>
-        public static string Core_setup_step3_responseno {
-            get {
-                return ResourceManager.GetString("Core_setup_step3_responseno", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Okay, users will be able to assign custom colors to themselves using the `{0}customcolor` command..
-        /// </summary>
-        public static string Core_setup_step3_responseyes {
-            get {
-                return ResourceManager.GetString("Core_setup_step3_responseyes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to I couldn&apos;t quite understand that. Try again..
-        /// </summary>
-        public static string Core_setup_syntaxerror {
-            get {
-                return ResourceManager.GetString("Core_setup_syntaxerror", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ***Poof!*** You&apos;re no longer **{0}**!.
-        /// </summary>
-        public static string Core_uncolor {
-            get {
-                return ResourceManager.GetString("Core_uncolor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ***Poof!*** Your colors have been removed!.
-        /// </summary>
-        public static string Core_uncolor_multipleRemoval {
-            get {
-                return ResourceManager.GetString("Core_uncolor_multipleRemoval", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Oh dear! It seems like {0} is the last one standing! Therefore, they have won this round! We made it to {1}..
         /// </summary>
         public static string Counting_lastPlayerStanding {
@@ -754,6 +601,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to `Plus {0} more...`.
+        /// </summary>
+        public static string CustomReactions_ShowCustomReaction_more {
+            get {
+                return ResourceManager.GetString("CustomReactions_ShowCustomReaction_more", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Multiple entries found. Results:.
         /// </summary>
         public static string CustomReactions_ShowCustomReaction_multipleResults {
@@ -774,9 +630,9 @@ namespace PaletteBot.Resources {
         /// <summary>
         ///   Looks up a localized string similar to No custom reactions with the trigger &quot;{0}&quot; were found..
         /// </summary>
-        public static string CustomReactions_ShowCustomReactions_noResults_desc {
+        public static string CustomReactions_ShowCustomReaction_noResults_desc {
             get {
-                return ResourceManager.GetString("CustomReactions_ShowCustomReactions_noResults_desc", resourceCulture);
+                return ResourceManager.GetString("CustomReactions_ShowCustomReaction_noResults_desc", resourceCulture);
             }
         }
         
@@ -907,7 +763,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It appears that the owner hasn&apos;t put their user ID in config.json! This command can&apos;t be used..
+        ///   Looks up a localized string similar to This command cannot be used because this bot&apos;s `config.json` does not specify a bot owner ID..
         /// </summary>
         public static string err_noBotOwner {
             get {
@@ -961,15 +817,6 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PaletteBot is not fully set up on this server yet. {0} needs to type &quot;{1}setup&quot; in order to finish the setup process..
-        /// </summary>
-        public static string err_notSetUpYet {
-            get {
-                return ResourceManager.GetString("err_notSetUpYet", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Oh dear...it seems that color doesn&apos;t exist anymore. I have removed it from the color list..
         /// </summary>
         public static string err_removedColor {
@@ -993,24 +840,6 @@ namespace PaletteBot.Resources {
         public static string err_roleNotFound {
             get {
                 return ResourceManager.GetString("err_roleNotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Setup is already in progress!.
-        /// </summary>
-        public static string err_setupAlreadyInProgress {
-            get {
-                return ResourceManager.GetString("err_setupAlreadyInProgress", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You don&apos;t have permission to set up the bot. (This bot can only be set up by the server owner).
-        /// </summary>
-        public static string err_setupNotOwner {
-            get {
-                return ResourceManager.GetString("err_setupNotOwner", resourceCulture);
             }
         }
         
@@ -1195,6 +1024,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please wait....
+        /// </summary>
+        public static string generic_PleaseWait {
+            get {
+                return ResourceManager.GetString("generic_PleaseWait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aliases:.
         /// </summary>
         public static string Help_aliasList {
@@ -1330,7 +1168,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Couldn&apos;t ban {0}. The user might have a higher role than me..
+        ///   Looks up a localized string similar to Couldn&apos;t ban {0} due to them having a higher role..
         /// </summary>
         public static string Moderation_banFailed {
             get {
@@ -1366,7 +1204,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *{0} by:*.
+        ///   Looks up a localized string similar to **{0} by:**.
         /// </summary>
         public static string Moderation_dm_by {
             get {
@@ -1393,7 +1231,16 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to **Reason:**.
+        ///   Looks up a localized string similar to (no reason specified).
+        /// </summary>
+        public static string Moderation_dm_NoReasonSpecified {
+            get {
+                return ResourceManager.GetString("Moderation_dm_NoReasonSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reason:.
         /// </summary>
         public static string Moderation_dm_reason {
             get {
@@ -1429,7 +1276,7 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Couldn&apos;t kick {0}. The user might have a higher role than me..
+        ///   Looks up a localized string similar to Couldn&apos;t kick {0} due to them having a higher role..
         /// </summary>
         public static string Moderation_kickFailed {
             get {
@@ -1470,6 +1317,204 @@ namespace PaletteBot.Resources {
         public static string Moderation_softban {
             get {
                 return ResourceManager.GetString("Moderation_softban", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PaletteBot is not fully set up on this server yet. {0} needs to type &quot;{1}setup&quot; in order to finish the setup process..
+        /// </summary>
+        public static string old_err_notSetUpYet {
+            get {
+                return ResourceManager.GetString("old_err_notSetUpYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setup is already in progress!.
+        /// </summary>
+        public static string old_err_setupAlreadyInProgress {
+            get {
+                return ResourceManager.GetString("old_err_setupAlreadyInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You don&apos;t have permission to set up the bot. (This bot can only be set up by the server owner).
+        /// </summary>
+        public static string old_err_setupNotOwner {
+            get {
+                return ResourceManager.GetString("old_err_setupNotOwner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi there! Thank you for inviting PaletteBot to your server! {0}, please type `{1}setup` to set up the bot..
+        /// </summary>
+        public static string old_Palette_guildJoinText_setupRequired {
+            get {
+                return ResourceManager.GetString("old_Palette_guildJoinText_setupRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to :arrow_right: Continuing in DMs....
+        /// </summary>
+        public static string old_Palette_setup {
+            get {
+                return ResourceManager.GetString("old_Palette_setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alright, setup is complete. PaletteBot is ready for use!.
+        /// </summary>
+        public static string old_Palette_setup_complete {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First off, do you want me to create color roles for you in &quot;{0}&quot;?.
+        /// </summary>
+        public static string old_Palette_setup_step1 {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_step1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alright then. I won&apos;t create role colors..
+        /// </summary>
+        public static string old_Palette_setup_step1_responseno {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_step1_responseno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Okay, I will create color roles for you! The list of colors I will add is as follows:.
+        /// </summary>
+        public static string old_Palette_setup_step1_responseyes {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_step1_responseyes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next, which roles do you want to be in the color list? (Type in the IDs of the roles, seperated by spaces).
+        /// </summary>
+        public static string old_Palette_setup_step2 {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_step2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hmm...seems like I can&apos;t find the role with ID {0} in the server... Try again, perhaps?.
+        /// </summary>
+        public static string old_Palette_setup_step2_invalidids {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_step2_invalidids", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finally, do you wish to enable custom color assignment on &quot;{0}&quot;?.
+        /// </summary>
+        public static string old_Palette_setup_step3 {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_step3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alright, custom colors are disabled for this server..
+        /// </summary>
+        public static string old_Palette_setup_step3_responseno {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_step3_responseno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Okay, users will be able to assign custom colors to themselves using the `{0}customcolor` command..
+        /// </summary>
+        public static string old_Palette_setup_step3_responseyes {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_step3_responseyes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I couldn&apos;t quite understand that. Try again..
+        /// </summary>
+        public static string old_Palette_setup_syntaxerror {
+            get {
+                return ResourceManager.GetString("old_Palette_setup_syntaxerror", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Okay, I have added &quot;{0}&quot; to the color list..
+        /// </summary>
+        public static string Palette_addroletocolorlist {
+            get {
+                return ResourceManager.GetString("Palette_addroletocolorlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ***Poof!*** You&apos;re **{0}** now..
+        /// </summary>
+        public static string Palette_color {
+            get {
+                return ResourceManager.GetString("Palette_color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ***Poof!*** You have been assigned the custom color hex **{0}**!.
+        /// </summary>
+        public static string Palette_customColor {
+            get {
+                return ResourceManager.GetString("Palette_customColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to __**Here&apos;s a list of colors you can assign to yourself on this server:**__.
+        /// </summary>
+        public static string Palette_listColors {
+            get {
+                return ResourceManager.GetString("Palette_listColors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Okay, I have removed &quot;{0}&quot; from the color list..
+        /// </summary>
+        public static string Palette_removerolefromcolorlist {
+            get {
+                return ResourceManager.GetString("Palette_removerolefromcolorlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ***Poof!*** You&apos;re no longer **{0}**!.
+        /// </summary>
+        public static string Palette_uncolor {
+            get {
+                return ResourceManager.GetString("Palette_uncolor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ***Poof!*** Your colors have been removed!.
+        /// </summary>
+        public static string Palette_uncolor_multipleRemoval {
+            get {
+                return ResourceManager.GetString("Palette_uncolor_multipleRemoval", resourceCulture);
             }
         }
         

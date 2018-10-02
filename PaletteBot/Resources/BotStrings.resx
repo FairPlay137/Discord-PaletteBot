@@ -123,64 +123,52 @@
   <data name="Admin_shutdown" xml:space="preserve">
     <value>Shutting down...</value>
   </data>
-  <data name="Core_color" xml:space="preserve">
+  <data name="Palette_color" xml:space="preserve">
     <value>***Poof!*** You're **{0}** now.</value>
   </data>
-  <data name="Core_customColor" xml:space="preserve">
+  <data name="Palette_customColor" xml:space="preserve">
     <value>***Poof!*** You have been assigned the custom color hex **{0}**!</value>
   </data>
-  <data name="Core_guildJoinText_setupRequired" xml:space="preserve">
+  <data name="old_Palette_guildJoinText_setupRequired" xml:space="preserve">
     <value>Hi there! Thank you for inviting PaletteBot to your server! {0}, please type `{1}setup` to set up the bot.</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup" xml:space="preserve">
+  <data name="old_Palette_setup" xml:space="preserve">
     <value>:arrow_right: Continuing in DMs...</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_complete" xml:space="preserve">
+  <data name="old_Palette_setup_complete" xml:space="preserve">
     <value>Alright, setup is complete. PaletteBot is ready for use!</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_syntaxerror" xml:space="preserve">
+  <data name="old_Palette_setup_syntaxerror" xml:space="preserve">
     <value>I couldn't quite understand that. Try again.</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_step1" xml:space="preserve">
+  <data name="old_Palette_setup_step1" xml:space="preserve">
     <value>First off, do you want me to create color roles for you in "{0}"?</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_step1_responseno" xml:space="preserve">
+  <data name="old_Palette_setup_step1_responseno" xml:space="preserve">
     <value>Alright then. I won't create role colors.</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_step1_responseyes" xml:space="preserve">
+  <data name="old_Palette_setup_step1_responseyes" xml:space="preserve">
     <value>Okay, I will create color roles for you! The list of colors I will add is as follows:</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_step2" xml:space="preserve">
+  <data name="old_Palette_setup_step2" xml:space="preserve">
     <value>Next, which roles do you want to be in the color list? (Type in the IDs of the roles, seperated by spaces)</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_step2_invalidids" xml:space="preserve">
+  <data name="old_Palette_setup_step2_invalidids" xml:space="preserve">
     <value>Hmm...seems like I can't find the role with ID {0} in the server... Try again, perhaps?</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_step3" xml:space="preserve">
+  <data name="old_Palette_setup_step3" xml:space="preserve">
     <value>Finally, do you wish to enable custom color assignment on "{0}"?</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_step3_responseno" xml:space="preserve">
+  <data name="old_Palette_setup_step3_responseno" xml:space="preserve">
     <value>Alright, custom colors are disabled for this server.</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_setup_step3_responseyes" xml:space="preserve">
+  <data name="old_Palette_setup_step3_responseyes" xml:space="preserve">
     <value>Okay, users will be able to assign custom colors to themselves using the `{0}customcolor` command.</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="Core_uncolor" xml:space="preserve">
+  <data name="Palette_uncolor" xml:space="preserve">
     <value>***Poof!*** You're no longer **{0}**!</value>
   </data>
-  <data name="Core_uncolor_multipleRemoval" xml:space="preserve">
+  <data name="Palette_uncolor_multipleRemoval" xml:space="preserve">
     <value>***Poof!*** Your colors have been removed!</value>
   </data>
   <data name="err_cannotAssignColor" xml:space="preserve">
@@ -204,20 +192,17 @@
   <data name="err_notBotOwner" xml:space="preserve">
     <value>Sorry, you must be the bot owner to do that!</value>
   </data>
-  <data name="err_notSetUpYet" xml:space="preserve">
+  <data name="old_err_notSetUpYet" xml:space="preserve">
     <value>PaletteBot is not fully set up on this server yet. {0} needs to type "{1}setup" in order to finish the setup process.</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
   <data name="err_removedColor" xml:space="preserve">
     <value>Oh dear...it seems that color doesn't exist anymore. I have removed it from the color list.</value>
   </data>
-  <data name="err_setupAlreadyInProgress" xml:space="preserve">
+  <data name="old_err_setupAlreadyInProgress" xml:space="preserve">
     <value>Setup is already in progress!</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
-  <data name="err_setupNotOwner" xml:space="preserve">
+  <data name="old_err_setupNotOwner" xml:space="preserve">
     <value>You don't have permission to set up the bot. (This bot can only be set up by the server owner)</value>
-    <comment>The setup code probably will never make it into PaletteBot, but I'm keeping the strings just in case I change my mind.</comment>
   </data>
   <data name="err_tooFewArgs" xml:space="preserve">
     <value>Not enough arguments have been given.</value>
@@ -276,16 +261,16 @@
   <data name="err_roleNotFound" xml:space="preserve">
     <value>I couldn't find a role in this server with that ID.</value>
   </data>
-  <data name="Core_addroletocolorlist" xml:space="preserve">
+  <data name="Palette_addroletocolorlist" xml:space="preserve">
     <value>Okay, I have added "{0}" to the color list.</value>
   </data>
-  <data name="Core_removerolefromcolorlist" xml:space="preserve">
+  <data name="Palette_removerolefromcolorlist" xml:space="preserve">
     <value>Okay, I have removed "{0}" from the color list.</value>
   </data>
   <data name="err_notAdmin" xml:space="preserve">
     <value>You don't have permission to use this command. (Administrator permission required)</value>
   </data>
-  <data name="Core_listColors" xml:space="preserve">
+  <data name="Palette_listColors" xml:space="preserve">
     <value>__**Here's a list of colors you can assign to yourself on this server:**__</value>
   </data>
   <data name="err_colorListEmpty" xml:space="preserve">
@@ -296,7 +281,7 @@
     <comment>This message will likely go unused due to some of the command handling code being borrowed from NadekoBot</comment>
   </data>
   <data name="err_noBotOwner" xml:space="preserve">
-    <value>It appears that the owner hasn't put their user ID in config.json! This command can't be used.</value>
+    <value>This command cannot be used because this bot's `config.json` does not specify a bot owner ID.</value>
   </data>
   <data name="err_nonexistentModule" xml:space="preserve">
     <value>I couldn't find that module. (Did you type it wrong?)</value>
@@ -365,7 +350,6 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   </data>
   <data name="Counting_startGame" xml:space="preserve">
     <value>Welcome to {0}! Start from 1, and count as high as you can! Make sure to not skip or repeat any numbers and keep it as whole decimal numbers, or you'll get a strike! Also, once you post your number, you gotta wait for another person to post the next number before you post your next number! GOOD LUCK!</value>
-    <comment>This feature is still in the concept stages as of writing this comment, so expect stuff in these strings to change.</comment>
   </data>
   <data name="CustomReactions_ShowCustomReaction" xml:space="preserve">
     <value>Custom Reaction entry:</value>
@@ -428,13 +412,13 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>Successfully banned {0} from the server for reason: {1}</value>
   </data>
   <data name="Moderation_banFailed" xml:space="preserve">
-    <value>Couldn't ban {0}. The user might have a higher role than me.</value>
+    <value>Couldn't ban {0} due to them having a higher role.</value>
   </data>
   <data name="Moderation_kick" xml:space="preserve">
     <value>Successfully kicked {0} from the server.</value>
   </data>
   <data name="Moderation_kickFailed" xml:space="preserve">
-    <value>Couldn't kick {0}. The user might have a higher role than me.</value>
+    <value>Couldn't kick {0} due to them having a higher role.</value>
   </data>
   <data name="Moderation_softban" xml:space="preserve">
     <value>Successfully kicked {0} from the server and deleted {1} day(s) of messages.</value>
@@ -610,7 +594,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Utils_verboseErrors_on" xml:space="preserve">
     <value>Okay, incorrectly used commands will now show errors.</value>
   </data>
-  <data name="CustomReactions_ShowCustomReactions_noResults_desc" xml:space="preserve">
+  <data name="CustomReactions_ShowCustomReaction_noResults_desc" xml:space="preserve">
     <value>No custom reactions with the trigger "{0}" were found.</value>
   </data>
   <data name="CustomReactions_ShowCustomReaction_multipleResults" xml:space="preserve">
@@ -681,7 +665,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>You've been banned from `{0}`!</value>
   </data>
   <data name="Moderation_dm_by" xml:space="preserve">
-    <value>*{0} by:*</value>
+    <value>**{0} by:**</value>
   </data>
   <data name="Moderation_dm_kicked" xml:space="preserve">
     <value>Kicked</value>
@@ -690,6 +674,21 @@ PaletteBot is a work-in-progress, so expect issues to arise.
     <value>You've been kicked from `{0}`!</value>
   </data>
   <data name="Moderation_dm_reason" xml:space="preserve">
-    <value>**Reason:**</value>
+    <value>Reason:</value>
+  </data>
+  <data name="Moderation_dm_NoReasonSpecified" xml:space="preserve">
+    <value>(no reason specified)</value>
+  </data>
+  <data name="Admin_defaultUserByeText" xml:space="preserve">
+    <value>Well, looks like %user% left...</value>
+  </data>
+  <data name="Admin_defaultUserGreetText" xml:space="preserve">
+    <value>Welcome, %mention%! Hope you enjoy your time here!</value>
+  </data>
+  <data name="CustomReactions_ShowCustomReaction_more" xml:space="preserve">
+    <value>`Plus {0} more...`</value>
+  </data>
+  <data name="generic_PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
   </data>
 </root>

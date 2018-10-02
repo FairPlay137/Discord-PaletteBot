@@ -29,15 +29,16 @@ PaletteBot is a Discord Chatbot written by FairPlay137-TTS using C# along with t
 * Some utility commands (ping, stats, invite)
 ### 🛠 Work-in-progress features
 * Akinator module (.NET-based API is yet to be worked on)
-* Moderation module
-* Custom Reactions module (still need a way for a bot owner to create, edit, and remove custom reactions)
+* Basic Moderation commands (kick, ban, softban, etc.)
+* Custom Reactions module (still need a way for a bot owner to edit and remove custom reactions)
 ### 💭 Planned features
-* Palette module (will allow for users to assign themselves color roles)
+* Palette module (will allow for users to assign themselves color roles) **Backlog**
 * *Twitch Notification module*
 * Counting game module
 * Text Portal command (allows for communication across two servers)
-* *User join and leave messages* **(Backlog)**
+* User join and leave messages
 * *Module enabling/disabling* **(Backlog)**
 * *Moderation logs* **(Backlog)**
+* *Automatic Slowmode*
 
 *Italicized entries mean no strings currently exist for these features*

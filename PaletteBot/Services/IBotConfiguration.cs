@@ -15,9 +15,16 @@ namespace PaletteBot.Services
         string DefaultPlayingString { get; }
         string DefaultPrefix { get; set; }
 
+        bool VerboseErrors { get; set; }
+
         string[] EightBallResponses { get; }
 
         Dictionary<string, List<string>> CustomReactions { get; set; }
-        
+
+        bool RotatePlayingStatuses { get; set; }
+        string[] PlayingStatuses { get; set; }
+
+        bool ReloadConfig();
+        bool SaveConfig();
     }
 }

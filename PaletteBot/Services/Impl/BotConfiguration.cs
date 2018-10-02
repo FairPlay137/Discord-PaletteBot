@@ -27,6 +27,9 @@ namespace PaletteBot.Services.Impl
 
         public Dictionary<string, List<string>> CustomReactions { get; set; }
 
+        public bool RotatePlayingStatuses { get; set; }
+        public string[] PlayingStatuses { get; set; }
+
         public BotConfiguration()
         {
             _log = LogManager.GetCurrentClassLogger();
@@ -92,6 +95,9 @@ namespace PaletteBot.Services.Impl
                 BotName = cfgjson.BotName;
                 EightBallResponses = cfgjson.EightBallResponses;
                 CustomReactions = cfgjson.CustomReactions;
+                VerboseErrors = cfgjson.VerboseErrors;
+                RotatePlayingStatuses = cfgjson.RotatePlaying;
+                PlayingStatuses = cfgjson.PlayingStatuses;
                 SaveConfig();
             }
             catch (Exception e)
@@ -162,6 +168,9 @@ namespace PaletteBot.Services.Impl
                     BotName = "PaletteBot";
                 EightBallResponses = cfgjson.EightBallResponses;
                 CustomReactions = cfgjson.CustomReactions;
+                VerboseErrors = cfgjson.VerboseErrors;
+                RotatePlayingStatuses = cfgjson.RotatePlaying;
+                PlayingStatuses = cfgjson.PlayingStatuses;
             }
             catch (Exception e)
             {
@@ -185,7 +194,9 @@ namespace PaletteBot.Services.Impl
                     BotName = BotName,
                     VerboseErrors = VerboseErrors,
                     EightBallResponses = EightBallResponses,
-                    CustomReactions = CustomReactions
+                    CustomReactions = CustomReactions,
+                    RotatePlaying = RotatePlayingStatuses,
+                    PlayingStatuses = PlayingStatuses
                 };
                 string json = JsonConvert.SerializeObject(cfg, Formatting.Indented);
                 File.WriteAllText("config.json", json);

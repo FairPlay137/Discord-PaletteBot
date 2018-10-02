@@ -4,19 +4,23 @@
   "defaultplaying": "pal:help",
   "ownerid": 0,
   "botname": "PaletteBot",
+  "verboseerrors": false,
   "8ballResponses": [
 
   ],
   "customReactions": {
     "PaletteBot, test custom reaction": [
-	    "%user%, this is response 1.",
-	    "%user%, this is response 2.",
-	    "%user%, this is response 3.",
-	    "%user%, this is response 4.",
-	    "%user%, this is response 5.",
-	    "%user%, this is response 6.",
-	    "%user%, this is response 7.",
-	    "%user%, this is response 8."
-	  ]
-  }
+      "%user%, this is response 1.",
+      "%user%, this is response 2.",
+      "%user%, this is response 3.",
+      "%user%, this is response 4.",
+      "%user%, this is response 5.",
+      "%user%, this is response 6.",
+      "%user%, this is response 7.",
+      "%user%, this is response 8."
+    ]
+  },
+  "playingStatuses": [
+    "pal:help"
+  ]
 }

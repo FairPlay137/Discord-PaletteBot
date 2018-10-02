@@ -13,8 +13,4 @@ namespace PaletteBot.Modules
     {
         //TODO: Add in commands
     }
-    public class PaletteHandlers
-    {
-
-    }
 }
