@@ -12,6 +12,8 @@ namespace PaletteBot.Services
         string BotToken { get; }
         ulong BotOwnerID { get; }
 
+        int TotalShards { get; }
+
         string DefaultPlayingString { get; }
         string DefaultPrefix { get; set; }
 
@@ -24,7 +26,7 @@ namespace PaletteBot.Services
         bool RotatePlayingStatuses { get; set; }
         string[] PlayingStatuses { get; set; }
 
-        bool ReloadConfig();
-        bool SaveConfig();
+        bool ReloadConfig(bool verbose);
+        bool SaveConfig(bool verbose);
     }
 }

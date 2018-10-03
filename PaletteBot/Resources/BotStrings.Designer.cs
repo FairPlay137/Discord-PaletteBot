@@ -1645,6 +1645,186 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categories:.
+        /// </summary>
+        public static string Utils_sinfo_categories {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created:.
+        /// </summary>
+        public static string Utils_sinfo_created {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emojis:.
+        /// </summary>
+        public static string Utils_sinfo_customemotes {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_customemotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom invite background.
+        /// </summary>
+        public static string Utils_sinfo_feature_INVITE_SPLASH {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_feature_INVITE_SPLASH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VIP Features:.
+        /// </summary>
+        public static string Utils_sinfo_features {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_features", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server ID:.
+        /// </summary>
+        public static string Utils_sinfo_id {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active invite links:.
+        /// </summary>
+        public static string Utils_sinfo_invites {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_invites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (none enabled).
+        /// </summary>
+        public static string Utils_sinfo_noFeatures {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_noFeatures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Owner:.
+        /// </summary>
+        public static string Utils_sinfo_owner {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_owner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roles:.
+        /// </summary>
+        public static string Utils_sinfo_roles {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_roles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text channels:.
+        /// </summary>
+        public static string Utils_sinfo_textchannels {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_textchannels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0} user(s)/{1} bot(s)).
+        /// </summary>
+        public static string Utils_sinfo_userbotratio {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_userbotratio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Members:.
+        /// </summary>
+        public static string Utils_sinfo_users {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verification level:.
+        /// </summary>
+        public static string Utils_sinfo_verificationlevel {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_verificationlevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string Utils_sinfo_verificationlevel_0 {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_verificationlevel_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low.
+        /// </summary>
+        public static string Utils_sinfo_verificationlevel_1 {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_verificationlevel_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium.
+        /// </summary>
+        public static string Utils_sinfo_verificationlevel_2 {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_verificationlevel_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (╯°□°）╯︵ ┻━┻.
+        /// </summary>
+        public static string Utils_sinfo_verificationlevel_3 {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_verificationlevel_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ┻━┻ミヽ(ಠ益ಠ)ﾉ彡┻━┻.
+        /// </summary>
+        public static string Utils_sinfo_verificationlevel_4 {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_verificationlevel_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voice channels:.
+        /// </summary>
+        public static string Utils_sinfo_voicechannels {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_voicechannels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bot ID:.
         /// </summary>
         public static string Utils_stats_botID {

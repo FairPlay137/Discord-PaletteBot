@@ -691,4 +691,64 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="generic_PleaseWait" xml:space="preserve">
     <value>Please wait...</value>
   </data>
+  <data name="Utils_sinfo_categories" xml:space="preserve">
+    <value>Categories:</value>
+  </data>
+  <data name="Utils_sinfo_created" xml:space="preserve">
+    <value>Created:</value>
+  </data>
+  <data name="Utils_sinfo_customemotes" xml:space="preserve">
+    <value>Emojis:</value>
+  </data>
+  <data name="Utils_sinfo_features" xml:space="preserve">
+    <value>VIP Features:</value>
+  </data>
+  <data name="Utils_sinfo_feature_INVITE_SPLASH" xml:space="preserve">
+    <value>Custom invite background</value>
+  </data>
+  <data name="Utils_sinfo_id" xml:space="preserve">
+    <value>Server ID:</value>
+  </data>
+  <data name="Utils_sinfo_invites" xml:space="preserve">
+    <value>Active invite links:</value>
+  </data>
+  <data name="Utils_sinfo_noFeatures" xml:space="preserve">
+    <value>(none enabled)</value>
+  </data>
+  <data name="Utils_sinfo_owner" xml:space="preserve">
+    <value>Owner:</value>
+  </data>
+  <data name="Utils_sinfo_roles" xml:space="preserve">
+    <value>Roles:</value>
+  </data>
+  <data name="Utils_sinfo_textchannels" xml:space="preserve">
+    <value>Text channels:</value>
+  </data>
+  <data name="Utils_sinfo_userbotratio" xml:space="preserve">
+    <value>({0} user(s)/{1} bot(s))</value>
+  </data>
+  <data name="Utils_sinfo_users" xml:space="preserve">
+    <value>Members:</value>
+  </data>
+  <data name="Utils_sinfo_verificationlevel" xml:space="preserve">
+    <value>Verification level:</value>
+  </data>
+  <data name="Utils_sinfo_verificationlevel_0" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Utils_sinfo_verificationlevel_1" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="Utils_sinfo_verificationlevel_2" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="Utils_sinfo_verificationlevel_3" xml:space="preserve">
+    <value>(╯°□°）╯︵ ┻━┻</value>
+  </data>
+  <data name="Utils_sinfo_verificationlevel_4" xml:space="preserve">
+    <value>┻━┻ミヽ(ಠ益ಠ)ﾉ彡┻━┻</value>
+  </data>
+  <data name="Utils_sinfo_voicechannels" xml:space="preserve">
+    <value>Voice channels:</value>
+  </data>
 </root>

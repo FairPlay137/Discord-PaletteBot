@@ -15,11 +15,11 @@ namespace PaletteBot.Modules.CustomReactions.Services
 {
     public class CustomReactionService : IPreXBlockerExecutor, IPaletteBotService
     {
-        private readonly DiscordSocketClient _client;
+        private readonly DiscordShardedClient _client;
 
         private readonly IBotConfiguration _config;
 
-        public CustomReactionService(DiscordSocketClient client, IBotConfiguration config)
+        public CustomReactionService(DiscordShardedClient client, IBotConfiguration config)
         {
             _client = client;
             _config = config;

@@ -131,8 +131,8 @@ namespace PaletteBot.Modules.CustomReactions
                 _config.CustomReactions.Add(trigger, new List<string>());
                 _config.CustomReactions[trigger].Add(response);
             }
-            _config.SaveConfig();
-            _config.ReloadConfig();
+            _config.SaveConfig(true);
+            _config.ReloadConfig(false);
             var replyEmbed = new EmbedBuilder()
                 .WithTitle(StringResourceHandler.GetTextStatic("CustomReactions", "AddCustomReaction"))
                 .AddField(StringResourceHandler.GetTextStatic("CustomReactions", "trigger"), trigger)

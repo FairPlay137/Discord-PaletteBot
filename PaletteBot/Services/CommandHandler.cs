@@ -18,7 +18,7 @@ namespace PaletteBot.Services
 {
     public class CommandHandler : IPaletteBotService
     {
-        private readonly DiscordSocketClient _client;
+        private readonly DiscordShardedClient _client;
         private readonly CommandService _commandService;
         private readonly Logger _log;
         private readonly IBotConfiguration _config;
@@ -26,7 +26,7 @@ namespace PaletteBot.Services
         public string DefaultPrefix { get; private set; }
         private readonly PaletteBot _bot;
 
-        public CommandHandler(DiscordSocketClient client, CommandService commandService, IBotConfiguration config, PaletteBot bot)
+        public CommandHandler(DiscordShardedClient client, CommandService commandService, IBotConfiguration config, PaletteBot bot)
         {
             _client = client;
             _commandService = commandService;
@@ -119,7 +119,7 @@ namespace PaletteBot.Services
 
         public async Task TryExecuteCommand(SocketGuild guild, ISocketMessageChannel channel, SocketUserMessage usrMsg)
         {
-            
+            var client = _client.GetShardFor(guild);
             foreach (var svc in _services)
             {
                 if(svc is IPreXBlocker blocker &&
@@ -136,7 +136,7 @@ namespace PaletteBot.Services
             foreach (var svc in _services)
             {
                 if (svc is IPreXBlockerExecutor exec &&
-                    await exec.TryExecuteEarly(_client, guild, usrMsg).ConfigureAwait(false))
+                    await exec.TryExecuteEarly(client, guild, usrMsg).ConfigureAwait(false))
                 {
                     _log.Info(">>REACTION EXECUTED");
                     _log.Info("User: " + usrMsg.Author);
@@ -163,7 +163,7 @@ namespace PaletteBot.Services
             
             if(messageContent.StartsWith(prefix))
             {
-                var result = await ExecuteCommandAsync(new SocketCommandContext(_client, usrMsg), messageContent, prefix.Length, _services, MultiMatchHandling.Best);
+                var result = await ExecuteCommandAsync(new SocketCommandContext(client, usrMsg), messageContent, prefix.Length, _services, MultiMatchHandling.Best);
                 if(result.IsSuccess)
                 {
                     _log.Info(">>COMMAND EXECUTED");
@@ -211,7 +211,7 @@ namespace PaletteBot.Services
             {
                 if (svc is IPostXExecutor exec)
                 {
-                    await exec.LateExecute(_client, guild, usrMsg).ConfigureAwait(false);
+                    await exec.LateExecute(client, guild, usrMsg).ConfigureAwait(false);
                 }
             }
         }

@@ -11,6 +11,9 @@ namespace PaletteBot.Common
         [JsonProperty("prefix")]
         public string CommandPrefix { get; set; }
 
+        [JsonProperty("totalShards")]
+        public int TotalShards { get; set; }
+
         [JsonProperty("defaultplaying")]
         public string DefaultPlayingString { get; set; }
 

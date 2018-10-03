@@ -5,6 +5,7 @@ using Discord.Commands;
 using System.Diagnostics;
 using PaletteBot.Common;
 using PaletteBot.Services;
+using PaletteBot.Common.Attributes;
 
 namespace PaletteBot.Modules
 {
@@ -72,6 +73,46 @@ namespace PaletteBot.Modules
                 .WithAuthor($"{Context.Client.CurrentUser.Username} v{typeof(Program).Assembly.GetName().Version}",Context.Client.CurrentUser.GetAvatarUrl())
                 .AddField(StringResourceHandler.GetTextStatic("Utils", "stats_guilds"),Context.Client.Guilds.Count,true)
                 .AddField(StringResourceHandler.GetTextStatic("Utils", "stats_uptime"), uptime.ToString(), true)
+                .Build());
+        }
+        [Command("serverinfo")]
+        [Summary("Retrieves the server's information")]
+        [CannotUseInDMs]
+        public async Task GuildInfo()
+        {
+            string featureList = StringResourceHandler.GetTextStatic("Utils", "sinfo_noFeatures");
+            if(Context.Guild.Features.Count>0)
+            {
+                featureList = "";
+                foreach(string feature in Context.Guild.Features)
+                {
+                    featureList += "• " + feature + '\n';
+                }
+            }
+            var inviteLinks = await Context.Guild.GetInvitesAsync().ConfigureAwait(false);
+            int userCount = 0;
+            int botCount = 0;
+            foreach(var user in Context.Guild.Users)
+            {
+                if (user.IsBot)
+                    botCount++;
+                else
+                    userCount++;
+            }
+            await ReplyAsync(Context.User.Mention, false, new EmbedBuilder()
+                .WithTitle(Context.Guild.Name)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_id"),Context.Guild.Id,true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_created"), Context.Guild.CreatedAt, true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_owner"), $"@{Context.Guild.Owner.Username}#{Context.Guild.Owner.Discriminator} ({Context.Guild.Owner.Id})", true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_users"), $"{Context.Guild.MemberCount} {StringResourceHandler.GetTextStatic("Utils", "sinfo_userbotratio",userCount,botCount)}", true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_categories"), Context.Guild.CategoryChannels.Count, true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_textchannels"), Context.Guild.TextChannels.Count, true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_voicechannels"), Context.Guild.VoiceChannels.Count, true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_roles"), Context.Guild.Roles.Count, true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_features"), featureList, true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_invites"), inviteLinks.Count, true)
+                .AddField(StringResourceHandler.GetTextStatic("Utils", "sinfo_customemotes"), Context.Guild.Emotes.Count, true)
+                .WithThumbnailUrl(Context.Guild.IconUrl)
                 .Build());
         }
     }

@@ -7,6 +7,7 @@ using System.Reflection;
 using NLog;
 using PaletteBot.Common;
 using Discord.WebSocket;
+using PaletteBot.Common.Attributes;
 
 namespace PaletteBot.Modules
 {
@@ -17,6 +18,7 @@ namespace PaletteBot.Modules
         [RequireContext(ContextType.Guild)]
         [RequireBotPermission(GuildPermission.KickMembers)]
         [RequireUserPermission(GuildPermission.KickMembers)]
+        [CannotUseInDMs]
         public async Task Kick([Summary("User to kick")] IGuildUser target, [Remainder] string reason = null)
         {
 
@@ -43,6 +45,7 @@ namespace PaletteBot.Modules
         [RequireContext(ContextType.Guild)]
         [RequireBotPermission(GuildPermission.BanMembers)]
         [RequireUserPermission(GuildPermission.BanMembers)]
+        [CannotUseInDMs]
         public async Task Ban([Summary("User to ban")] IGuildUser target, [Remainder] string reason = null)
         {
             

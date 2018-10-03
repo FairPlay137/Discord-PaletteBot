@@ -28,6 +28,11 @@ namespace PaletteBot.Modules
         public async Task Shutdown()
         {
             await ReplyAsync($":ok: `{StringResourceHandler.GetTextStatic("Admin", "shutdown")}`").ConfigureAwait(false);
+            LogManager.GetCurrentClassLogger().Info(">>SHUTTING DOWN");
+            _config.SaveConfig(true);
+            LogManager.GetCurrentClassLogger().Info("Logging out...");
+            await Context.Client.LogoutAsync().ConfigureAwait(false);
+            LogManager.GetCurrentClassLogger().Info("The bot is now DOWN!");
             await Task.Delay(2000).ConfigureAwait(false);
             Environment.Exit(0);
         }
@@ -37,7 +42,12 @@ namespace PaletteBot.Modules
         public async Task Restart()
         {
             await ReplyAsync($":ok: `{StringResourceHandler.GetTextStatic("Admin", "restart")}`");
-            await Task.Delay(2000);
+            LogManager.GetCurrentClassLogger().Info(">>RESTARTING");
+            _config.SaveConfig(true);
+            LogManager.GetCurrentClassLogger().Info("Logging out...");
+            await Context.Client.LogoutAsync().ConfigureAwait(false);
+            LogManager.GetCurrentClassLogger().Info("Relaunching in 2 seconds...");
+            await Task.Delay(2000).ConfigureAwait(false);
             Process.Start(Assembly.GetExecutingAssembly().Location);
             Environment.Exit(0);
         }
@@ -80,8 +90,8 @@ namespace PaletteBot.Modules
         public async Task ToggleVerboseErrors()
         {
             _config.VerboseErrors = !_config.VerboseErrors;
-            _config.SaveConfig();
-            _config.ReloadConfig();
+            _config.SaveConfig(true);
+            _config.ReloadConfig(false);
             string toCueUp = "verboseErrors_disable";
             if(_config.VerboseErrors)
                 toCueUp = "verboseErrors_enable";

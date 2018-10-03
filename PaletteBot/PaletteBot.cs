@@ -26,7 +26,7 @@ namespace PaletteBot
     {
         private Logger _log;
 
-        public DiscordSocketClient Client { get; }
+        public DiscordShardedClient Client { get; }
         public CommandService CommandService { get; }
 
         public TaskCompletionSource<bool> Ready { get; private set; } = new TaskCompletionSource<bool>();
@@ -45,13 +45,14 @@ namespace PaletteBot
             SimpleElevatedPermissionCheck();
 
             Configuration = new BotConfiguration();
-            Client = new DiscordSocketClient(new DiscordSocketConfig()
+            Client = new DiscordShardedClient(new DiscordSocketConfig()
             {
                 WebSocketProvider = WS4NetProvider.Instance,
                 LogLevel = LogSeverity.Info,
                 ConnectionTimeout = int.MaxValue,
                 MessageCacheSize = 10,
-                AlwaysDownloadUsers = false
+                AlwaysDownloadUsers = false,
+                TotalShards = Configuration.TotalShards
             });
             CommandService = new CommandService(new CommandServiceConfig()
             {
@@ -80,14 +81,14 @@ namespace PaletteBot
         {
             var clientReady = new TaskCompletionSource<bool>();
 
-            Task SetClientReady()
+            Task SetClientReady(DiscordSocketClient shardClient)
             {
                 var _ = Task.Run(async () =>
                 {
                     clientReady.TrySetResult(true);
                     try
                     {
-                        foreach (var chan in (await Client.GetDMChannelsAsync()))
+                        foreach (var chan in (await shardClient.GetDMChannelsAsync()))
                         {
                             await chan.CloseAsync().ConfigureAwait(false);
                         }
@@ -107,11 +108,13 @@ namespace PaletteBot
             //connect
             await Client.LoginAsync(TokenType.Bot, token).ConfigureAwait(false);
             await Client.StartAsync().ConfigureAwait(false);
-            Client.Ready += SetClientReady;
+            Client.ShardReady += SetClientReady;
             await clientReady.Task.ConfigureAwait(false);
-            Client.Ready -= SetClientReady;
+            Client.ShardReady -= SetClientReady;
             Client.JoinedGuild += GuildJoin;
             Client.LeftGuild += GuildLeave;
+            Client.ShardConnected += ShardConnect;
+            Client.ShardDisconnected += ShardDisconnect;
         }
 
         public async Task StartAsync(params string[] args)
@@ -223,6 +226,15 @@ namespace PaletteBot
             _log.Info($"Left guild: {guild.Name} ({guild.Id})");
             return Task.CompletedTask;
         }
-
+        private Task ShardConnect(DiscordSocketClient client)
+        {
+            _log.Info($"Shard #{client.ShardId} has connected!");
+            return Task.CompletedTask;
+        }
+        private Task ShardDisconnect(Exception error, DiscordSocketClient client)
+        {
+            _log.Info($"Shard #{client.ShardId} has lost connection!");
+            return Task.CompletedTask;
+        }
     }
 }

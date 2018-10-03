@@ -18,6 +18,8 @@ namespace PaletteBot.Services.Impl
         public string BotToken { get; private set; }
         public ulong BotOwnerID { get; private set; }
 
+        public int TotalShards { get; private set; }
+
         public string DefaultPlayingString { get; private set; }
         public string DefaultPrefix { get; set; }
 
@@ -98,7 +100,9 @@ namespace PaletteBot.Services.Impl
                 VerboseErrors = cfgjson.VerboseErrors;
                 RotatePlayingStatuses = cfgjson.RotatePlaying;
                 PlayingStatuses = cfgjson.PlayingStatuses;
-                SaveConfig();
+                TotalShards = cfgjson.TotalShards;
+                _log.Info("Loaded.");
+                SaveConfig(false);
             }
             catch (Exception e)
             {
@@ -125,16 +129,17 @@ namespace PaletteBot.Services.Impl
                 Console.Write("(Y/N)> ");
                 string choice = Console.ReadLine();
                 if (choice.ToLower().StartsWith("y"))
-                    SaveConfig();
+                    SaveConfig(true);
             }
         }
 
-        public bool ReloadConfig()
+        public bool ReloadConfig(bool verbose)
         {
             var json = "";
             try
             {
-                _log.Info("Reloading config.json...");
+                if (verbose)
+                    _log.Info("Reloading config.json...");
                 using (var fs = File.OpenRead("config.json"))
                 using (var sr = new StreamReader(fs, new UTF8Encoding(false)))
                     json = sr.ReadToEnd();
@@ -171,6 +176,7 @@ namespace PaletteBot.Services.Impl
                 VerboseErrors = cfgjson.VerboseErrors;
                 RotatePlayingStatuses = cfgjson.RotatePlaying;
                 PlayingStatuses = cfgjson.PlayingStatuses;
+                TotalShards = cfgjson.TotalShards;
             }
             catch (Exception e)
             {
@@ -178,13 +184,21 @@ namespace PaletteBot.Services.Impl
                 _log.Error(e);
                 return false;
             }
+            if (verbose)
+                _log.Info("Reload complete!");
             return true;
         }
-        public bool SaveConfig()
+        public bool SaveConfig(bool verbose)
         {
-            _log.Info("Saving config.json...");
+            if(verbose)
+                _log.Info("Saving config.json...");
             try
             {
+                if(TotalShards<1)
+                {
+                    _log.Warn($"TotalShards was at an invalid value! ({TotalShards}) Resetting to 1...");
+                    TotalShards = 1;
+                }
                 ConfigJsonStructure cfg = new ConfigJsonStructure
                 {
                     Token = BotToken,
@@ -196,16 +210,18 @@ namespace PaletteBot.Services.Impl
                     EightBallResponses = EightBallResponses,
                     CustomReactions = CustomReactions,
                     RotatePlaying = RotatePlayingStatuses,
-                    PlayingStatuses = PlayingStatuses
+                    PlayingStatuses = PlayingStatuses,
+                    TotalShards = TotalShards
                 };
                 string json = JsonConvert.SerializeObject(cfg, Formatting.Indented);
                 File.WriteAllText("config.json", json);
-                _log.Info("Save complete!");
+                if (verbose)
+                    _log.Info("Save complete!");
                 return true;
             }
             catch (Exception e)
             {
-                _log.Error("Save failed!");
+                _log.Error("Couldn't save config.json!");
                 _log.Error(e);
                 return false;
             }
