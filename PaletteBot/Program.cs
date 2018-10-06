@@ -21,7 +21,7 @@ namespace PaletteBot
     class Program
     {
         static void Main(string[] args)
-            => new PaletteBot().StartAndBlockAsync().GetAwaiter().GetResult();
+            => new PaletteBot().StartAndBlockAsync(args).GetAwaiter().GetResult();
         /*
         public static CommandService _commands;
         private DiscordSocketClient _client;

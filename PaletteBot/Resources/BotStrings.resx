@@ -751,4 +751,7 @@ PaletteBot is a work-in-progress, so expect issues to arise.
   <data name="Utils_sinfo_voicechannels" xml:space="preserve">
     <value>Voice channels:</value>
   </data>
+  <data name="Utils_sinfo_shard" xml:space="preserve">
+    <value>Shard:</value>
+  </data>
 </root>

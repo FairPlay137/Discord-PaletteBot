@@ -1735,6 +1735,15 @@ namespace PaletteBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shard:.
+        /// </summary>
+        public static string Utils_sinfo_shard {
+            get {
+                return ResourceManager.GetString("Utils_sinfo_shard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Text channels:.
         /// </summary>
         public static string Utils_sinfo_textchannels {

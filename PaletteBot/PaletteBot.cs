@@ -22,7 +22,7 @@ using System.Diagnostics;
 
 namespace PaletteBot
 {
-    public class PaletteBot
+    public class PaletteBot : IDisposable
     {
         private Logger _log;
 
@@ -37,6 +37,8 @@ namespace PaletteBot
 
         public DateTime StartTime = DateTime.Now; //An easy way to calculate the startup time
         public DateTime ConnectedAtTime;
+
+        private bool disposed = false;
 
         public PaletteBot()
         {
@@ -119,6 +121,7 @@ namespace PaletteBot
 
         public async Task StartAsync(params string[] args)
         {
+
             _log.Info($"PaletteBot v{GetType().Assembly.GetName().Version} is starting up...");
 
             var sw = Stopwatch.StartNew();
@@ -143,9 +146,9 @@ namespace PaletteBot
             _log.Info($"Booted in {new TimeSpan(ConnectedAtTime.Ticks - StartTime.Ticks).TotalSeconds} seconds.");
         }
 
-        public async Task StartAndBlockAsync()
+        public async Task StartAndBlockAsync(params string[] args)
         {
-            await StartAsync().ConfigureAwait(false);
+            await StartAsync(args).ConfigureAwait(false);
             await Task.Delay(-1).ConfigureAwait(false);
         }
 
@@ -235,6 +238,27 @@ namespace PaletteBot
         {
             _log.Info($"Shard #{client.ShardId} has lost connection!");
             return Task.CompletedTask;
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                Client.Dispose();
+                disposed = true;
+                if (disposing)
+                    GC.SuppressFinalize(this);
+            }
+        }
+
+        public void Dispose()
+        {
+            if(!disposed)
+                Dispose(true);
+        }
+        ~PaletteBot()
+        {
+            Dispose(false);
         }
     }
 }

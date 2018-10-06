@@ -90,7 +90,9 @@ namespace PaletteBot.Services
                     }
                     if (args.Count != argTypes.Length)
                         continue;
-                    _log.Info("Loading " + type.Name);
+#if DEBUG
+                    _log.Info("Loading " + type.Name+"...");
+#endif
                     swInstance.Restart();
                     var instance = ctor.Invoke(args.ToArray());
                     swInstance.Stop();

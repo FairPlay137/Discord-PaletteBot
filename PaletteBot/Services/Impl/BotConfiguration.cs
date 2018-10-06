@@ -32,6 +32,7 @@ namespace PaletteBot.Services.Impl
         public bool RotatePlayingStatuses { get; set; }
         public string[] PlayingStatuses { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public BotConfiguration()
         {
             _log = LogManager.GetCurrentClassLogger();
@@ -133,6 +134,7 @@ namespace PaletteBot.Services.Impl
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public bool ReloadConfig(bool verbose)
         {
             var json = "";

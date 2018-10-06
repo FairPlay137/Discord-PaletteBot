@@ -35,7 +35,7 @@ namespace PaletteBot.Modules
             }
             catch (Exception e)
             {
-                //await ReplyAsync(StringResourceHandler.GetTextStatic("Moderation", "DMFailed", e.Message));
+                await ReplyAsync(StringResourceHandler.GetTextStatic("Moderation", "DMFailed", e.Message));
             }
             await target.KickAsync(reason).ConfigureAwait(false);
             await ReplyAsync($":ok: `{StringResourceHandler.GetTextStatic("Moderation", "kick", $"@{target.Username}#{target.Discriminator}")}`").ConfigureAwait(false);
@@ -62,7 +62,7 @@ namespace PaletteBot.Modules
             }
             catch(Exception e)
             {
-                //await ReplyAsync(StringResourceHandler.GetTextStatic("Moderation", "DMFailed", e.Message));
+                await ReplyAsync(StringResourceHandler.GetTextStatic("Moderation", "DMFailed", e.Message));
             }
             await Context.Guild.AddBanAsync(target,7,reason).ConfigureAwait(false);
             await ReplyAsync($":ok: `{StringResourceHandler.GetTextStatic("Moderation", "ban", $"@{target.Username}#{target.Discriminator}")}`").ConfigureAwait(false);
